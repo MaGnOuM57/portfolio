@@ -1,0 +1,544 @@
+{
+  "months": {
+    "jan": "Jan",
+    "feb": "Feb",
+    "mar": "Mar",
+    "apr": "Apr",
+    "may": "May",
+    "jun": "Jun",
+    "jul": "Jul",
+    "aug": "Aug",
+    "sep": "Sep",
+    "oct": "Oct",
+    "nov": "Nov",
+    "dec": "Dec"
+  },
+  "navbar": {
+    "resume": "Resume",
+    "projects": "Projects",
+    "tokenization": "Tokenization (POC)",
+    "trading": "Trading",
+    "jobs": "Jobs",
+    "dashboards": "Dashboards"
+  },
+  "trading": {
+    "title": "Algorithmic Portfolio",
+    "header": {
+      "title": "Trading Portfolio",
+      "live_feed": "Live Feed",
+      "paused": "Replay",
+      "realtime_desc": "Real-time WebSocket connection via Alpaca Markets.",
+      "simulation_desc": "Viewing historical records (Offline Mode)."
+    },
+    "charts": {
+      "performance": "Cumulative Performance"
+    },
+    "kpi": {
+      "total_value": "Total Equity",
+      "pnl": "Daily Return",
+      "daily_change": "Daily Change",
+      "return_global": "Total",
+      "today": "Today",
+      "ytd_growth": "Annual Target",
+      "on_track": "On Track",
+      "sharpe_ratio": "Alpha vs S&P 500",
+      "excellent": "Excellent"
+    }
+  },
+  "resume": {
+    "role": "Founder of KPeye - Data & Performance Consultant",
+    "intro": "Former high-level athlete in athletics, I dedicate my life to challenge and performance! Expert in <1>Business Intelligence</1>, <2>Automation</2>, and <3>Data Strategy</3>.",
+    "location": "Worldwide",
+    "cta_trading": "View Trading Portfolio",
+    "cta_job_monitor": "Job Monitor",
+    "cta_download_cv": "Download CV",
+    "experience_title": "Professional Experience",
+    "education_title": "Education",
+    "skills_title": "Skills & Expertise",
+    "languages_title": "Languages",
+    "interests_title": "Interests",
+    "testimonials_title": "Testimonials",
+    "testimonials_subtitle": "What my collaborators say about me (LinkedIn Excerpts)",
+    "contact_title": "Contact Me",
+    "contact_subtitle": "A project? An idea? Let's discuss.",
+    "contact_automation_title": "Fast-Track Mode (Automation)",
+    "contact_automation_subtitle": "Don't waste time writing. Fill, click, sent.",
+    "form_name": "Your Name",
+    "form_company": "Your Company",
+    "form_email": "Your Email",
+    "form_message": "Your Message",
+    "form_send": "Send Message",
+    "form_auto_button": "Generate Contact Request",
+    "projects_autos": "Projects & Autos",
+    "see_all": "See All",
+    "key_skills": "Key Skills",
+    "certifications": "Certifications",
+    "see_details": "See Details",
+    "experiences": {
+      "sgss": {
+        "role": "Business Process and Data Analyst",
+        "company": "Societe Generale Securities Services - SGSS",
+        "period": "July 2025 - Present",
+        "location": "Esch-sur-Alzette, Luxembourg",
+        "details": [
+          "Internal audit and complete automation of business processes.",
+          "Development of a banking-specific LLM model.",
+          "Creation of a 'tool-box' to automate daily tasks.",
+          "Implementation of a performance scorecard for management."
+        ]
+      },
+      "kpeye": {
+        "role": "Founder – Data & Performance Consultant",
+        "company": "KPeye",
+        "period": "April 2025 - Present",
+        "location": "Metz, France",
+        "details": [
+          "Creation and development of KPeye, independent structure specialized in data analytics.",
+          "Performance audits (web, sales, operations).",
+          "Dashboard design (Power BI, Looker Studio, Excel).",
+          "Business process optimization via workflow automation.",
+          "Strategic support for data-driven decision making."
+        ]
+      },
+      "arcelor": {
+        "role": "Data Analyst Engineer",
+        "company": "ArcelorMittal France",
+        "period": "May 2024 - November 2024",
+        "location": "Florange, France",
+        "details": [
+          "Data analyst for management (digital transformation).",
+          "Monthly presentation of results to 5 sub-departments.",
+          "Consolidation of 10+ data sources (SQL, ETL, SharePoint).",
+          "Continuous support for 70+ business users on Power BI.",
+          "Creation of 20+ reports focused on HR, Finance, Safety, Project, Scorecard."
+        ]
+      },
+      "pumpup": {
+        "role": "Web Analytics Consultant",
+        "company": "PumpUp",
+        "period": "April 2023 - September 2023",
+        "location": "Grenoble, France",
+        "details": [
+          "Mastery of Google Analytics 4, Tag Manager, Data Studio, Google ADS.",
+          "Script creation in JavaScript or Python.",
+          "Autonomous management of a client portfolio (approx. 20).",
+          "Development of project management tools (Notion, Make automation)."
+        ]
+      },
+      "interdit": {
+        "role": "Production Manager",
+        "company": "interditaupublic.com",
+        "period": "January 2022 - July 2022",
+        "location": "Barcelona, Spain",
+        "details": [
+          "Mastery of Store Commander and Prestashop.",
+          "Mastery of analysis tools (SQL, Google Analytics).",
+          "Adaptation to a just-in-time system.",
+          "Mastery of data extraction and results transcription."
+        ]
+      }
+    }
+  },
+  "pedagogy": {
+    "title": "Why Tokenize?",
+    "subtitle": "Traditional finance is slow and expensive. Tokenization is the future.",
+    "traditional": "OLD WORLD",
+    "banking_maze": "The Banking Maze",
+    "you_investor": "You (Investor)",
+    "you_want_buy": "You want to buy 1 fund share.",
+    "intermediaries": "Mandatory Intermediaries",
+    "broker": "Broker",
+    "bank": "Bank",
+    "clearing_house": "Clearing House",
+    "custodian": "Custodian",
+    "delay": "Delay T+3 Days",
+    "high_fees": "High Fees",
+    "asset_company": "Asset Manager",
+    "share_delivered": "The share is delivered.",
+    "tokenization": "NEW WORLD",
+    "digital_highway": "The Digital Highway",
+    "you": "You",
+    "smart_contract": "Smart Contract",
+    "smart_contract_desc": "Code that replaces intermediaries.",
+    "instant_settlement": "Instant Settlement",
+    "near_zero_fees": "Near Zero Fees",
+    "asset": "Tokenized Asset",
+    "what_is_token": "What is a Token?",
+    "token_desc": "Imagine a digital casino chip, but unforgeable. It represents your property title. Instead of a paper at a notary, you have this token in your phone.",
+    "what_is_blockchain": "The Blockchain?",
+    "blockchain_desc": "It's a large shared notebook that everyone can read but no one can erase. It's trust through technology, no need to trust a central bank.",
+    "what_is_smart_contract": "Smart Contract?",
+    "smart_contract_def": "A robot-notary that automatically executes rules (payments, dividends) without human intervention.",
+    "business_model_title": "If fees are removed, how does the Bank make money?",
+    "volume_effect": "Volume Effect",
+    "volume_desc": "Today, selling a fund at €100 costs too much. Tomorrow, the bank can sell millions of shares at €100.",
+    "volume_highlight": "Less margin per client, but 100x more clients.",
+    "new_tech_jobs": "New Tech Jobs",
+    "tech_jobs_desc": "Manual jobs disappear in favor of high value-added jobs: Structuring, Custody, Code Audit.",
+    "improved_margin": "Improved Net Margin",
+    "margin_desc": "Even if revenue drops slightly, operational costs collapse (-40% to -60%).",
+    "margin_highlight": "Profit = Revenue (Stable) - Costs (Decreasing)",
+    "tech_comparison": "Going Further: Technical Comparison",
+    "service_financial": "Financial Service",
+    "model_trad": "Traditional Model (Silos)",
+    "model_token": "Tokenized Model (DLT)",
+    "advantage": "Advantage",
+    "custody": "Custody",
+    "custody_trad": "Multiple accounts, manual reconciliation.",
+    "custody_token": "Native asset on-chain. Single ledger.",
+    "custody_benefit": "Security",
+    "compliance": "Compliance",
+    "verification_trad": "Post-trade verification (T+1). Error risk.",
+    "verification_token": "Blocking 'On-chain' control (Code is Law).",
+    "verification_benefit": "Real Time",
+    "registry": "Registry Keeping",
+    "registry_trad": "Private database (SQL). Update T+3.",
+    "registry_token": "Immutable and transparent Ledger. Update T+0.",
+    "registry_benefit": "Transparency",
+    "settlement": "Settlement-Delivery",
+    "settlement_trad": "T+2 / T+3. Counterparty risk.",
+    "settlement_token": "Atomic Swap (DvP). Simultaneous exchange.",
+    "settlement_benefit": "0 Risk",
+    "admin_costs": "Administrative Costs",
+    "costs_high": "$$$ (High)",
+    "costs_low": "$ (Reduced)",
+    "profitability": "Profitability"
+  },
+  "tokenization": {
+    "page_title": "Fund Tokenization Platform",
+    "page_subtitle": "High-fidelity prototype demonstrating asset management transformation via Blockchain.",
+    "nav_pedagogy": "Understand",
+    "nav_investor": "Investor Area",
+    "nav_fund": "Fund Console",
+    "network_active": "Blockchain Network: Active",
+    "modal_invest_title": "Invest",
+    "modal_sell_title": "Sell",
+    "modal_invest_prompt": "How many shares do you want to acquire?",
+    "modal_sell_prompt": "How many shares do you want to sell?",
+    "cancel": "Cancel",
+    "buy": "Buy",
+    "sell_btn": "Sell",
+    "log_gen_report": "Generating audit report...",
+    "log_report_done": "Audit report generated and downloaded (Hash: 0xReport...7721)",
+    "alert_report_downloaded": "The complete audit report has been downloaded.",
+    "alert_vote_recorded": "Vote recorded!",
+    "public": "PUBLIC",
+    "last_block": "Last Block",
+    "visible_by_all": "Visible by all",
+    "waiting_tx": "Waiting for transactions...",
+    "title": "My Portfolio",
+    "welcome": "Welcome, Marc Dupont",
+    "kyc_validated": "KYC Validated",
+    "total_valuation": "Total Valuation",
+    "holdings": "Holdings",
+    "shares": "Shares",
+    "nav_price": "Share Price (NAV)",
+    "invest": "Invest",
+    "buy_action": "Buy",
+    "sell_action": "Sell",
+    "log_bought": "Investor bought {{amount}} shares.",
+    "log_sold": "Investor sold {{amount}} shares.",
+    "log_buy_success": "Buy order of {{amount}} shares executed on blockchain.",
+    "log_sell_success": "Sell order of {{amount}} shares executed. Cash received.",
+    "log_new_tx": "New Transaction: {{hash}}...",
+    "log_block_mined": "Block #{{block}} mined.",
+    "insufficient_funds": "Insufficient funds",
+    "sell": "Sell",
+    "vote": "Vote",
+    "transactions_title": "Latest Transactions",
+    "tx_type": "Type",
+    "tx_hash": "Hash (Proof)",
+    "tx_amount": "Amount",
+    "admin_title": "Management Console (Back-Office)",
+    "role_admin": "Role: ADMIN",
+    "global_view": "Global Smart Contract View",
+    "generate_report": "Generate Audit Report (T+0)",
+    "who_sees_what": "Who sees what?",
+    "admin_desc": "This view simulates the <1>Fund Administrator</1> interface (Asset Manager).",
+    "public_data": "Public Data:",
+    "public_desc": "The transaction ledger (Blockchain) is visible to everyone.",
+    "private_actions": "Private Actions:",
+    "private_desc": "Share management and report generation are restricted to authorized personnel.",
+    "total_aum": "Total AUM",
+    "investors": "Investors",
+    "circulating_shares": "Circulating Shares",
+    "portfolio_evolution": "Portfolio Evolution",
+    "time_1m": "1 Month",
+    "time_6m": "6 Months",
+    "time_1y": "1 Year",
+    "regulatory_docs": "Regulatory Documents",
+    "admin_only": "ADMIN ONLY",
+    "doc_esg": "Monthly ESG Report",
+    "doc_esg_date": "Generated on 12/15/2025",
+    "doc_nav": "NAV Reporting",
+    "doc_nav_date": "Real-time (Oracle)",
+    "sensitive_actions": "Sensitive Actions",
+    "pause_contract": "Pause Contract",
+    "whitelist": "Whitelist",
+    "live_ledger": "Distributed Ledger (Live Feed)",
+    "visible_by_all": "VISIBLE TO ALL",
+    "waiting_tx": "[System] Waiting for transactions...",
+    "last_block": "Last Block",
+    "public": "PUBLIC",
+    "transactions": {
+      "dividend": "Dividends",
+      "sell": "Sell",
+      "buy": "Investment",
+      "vote": "Vote"
+    }
+  },
+  
+  "tags": {
+    "sql": "SQL",
+    "vba": "VBA",
+    "finance_de_marche": "Market Finance",
+    "finance": "Finance",
+    "agile": "Agile",
+    "python": "Python", 
+    "powerbi": "PowerBI",
+    "predictive_maint": "Predictive Maint.",
+    "sap": "SAP",
+    "jira": "JIRA",
+    "scrum": "Scrum",
+    "cybersecurity": "Cybersecurity",
+    "prince2": "Prince2"
+  },
+
+  "footer": {
+    "description": "Expert in Business Intelligence and Automation. I transform complex data into clear strategic decisions.",
+    "navigation": "Navigation",
+    "home": "Home",
+    "projects": "Projects",
+    "dashboards": "Dashboards",
+    "trading": "Trading",
+    "contact": "Contact",
+    "location": "Metz, France",
+    "contact_me": "Contact Me",
+    "rights": "All rights reserved.",
+    "made_with": "Made with",
+    "and_react": "and React"
+  },
+  "projects": {
+    "title": "My <1>Projects</1>",
+    "subtitle": "A selection of my most ambitious work. From financial automation to applied artificial intelligence.",
+    "filters": {
+      "all": "All",
+      "ai_automation": "AI & Automation",
+      "finance_data": "Finance & Data",
+      "web_data": "Web & Data"
+    },
+    "categories": {
+      "finance_blockchain": "Finance & Blockchain",
+      "ai_automation": "AI & Automation",
+      "web_data": "Web & Data"
+    },
+    "status": {
+      "poc": "POC",
+      "production": "Production",
+      "live_v2": "Live v2.0",
+      "prototype": "Prototype",
+      "beta": "Beta",
+      "mvp": "MVP",
+      "tool": "Tool"
+    },
+    "read_more": "Read More",
+    "read_less": "Read Less",
+    "demo": "Demo",
+    "challenge": "Challenge",
+    "solution": "Solution"
+  },
+  "dashboards": {
+    "title": "Dashboards <1>Examples</1>",
+    "subtitle": "A collection of data visualization interfaces and interactive dashboards.",
+    "power_bi_title": "Power BI Integration",
+    "power_bi_desc": "This space is reserved for the integration of interactive Power BI reports. Dashboards will be connected in real-time to data sources.",
+    "demo_soon": "View Demo (Coming Soon)",
+    "analytics_title": "Interactive Analytics",
+    "total_users": "Total Users",
+    "total_revenue": "Total Revenue",
+    "active_sessions": "Active Sessions",
+    "conversion_rate": "Conversion Rate",
+    "revenue_overview": "Revenue Overview",
+    "user_activity": "User Activity",
+    "blockchain_title": "Blockchain Traceability",
+    "blockchain_desc": "Visualizing the immutable journey of a product through the supply chain.",
+    "steps": {
+      "production": "Production",
+      "quality": "Quality Check",
+      "shipping": "Shipping",
+      "delivery": "Final Delivery"
+    },
+    "verified": "Verified on Chain",
+    "contract": "Smart Contract Executed"
+  },
+  "job_monitor": {
+    "title": "Job Monitor",
+    "subtitle": "Live Feed • AI Matching Engine Active",
+    "filters": {
+      "all": "All",
+      "high_match": "High Match (>90%)"
+    },
+    "stats": {
+      "scanned": "Offers Scanned Today",
+      "matches": "High Quality Matches",
+      "detection_time": "Avg. Detection Time"
+    },
+    "loading": "Loading feed...",
+    "card": {
+      "match": "Match",
+      "ai_match_score": "AI Match Score",
+      "posted": "Posted",
+      "apply": "Apply Now"
+    }
+  },
+  "trading": {
+    "title": "Trading Portfolio",
+    "subtitle": "Live Market Data • Alpaca API Connected",
+    "header": {
+      "title": "Autonomous Trading Dashboard",
+      "realtime_desc": "Real-time data from Alpaca Markets (Read-Only Mode)",
+      "simulation_desc": "Live simulation of personal asset management strategies.",
+      "live_feed": "LIVE FEED",
+      "paused": "PAUSED"
+    },
+    "kpi": {
+      "total_value": "Global Performance",
+      "return_global": "All Time",
+      "daily_change": "Daily Change",
+      "pnl": "P&L (Est.)",
+      "today": "Today",
+      "ytd_growth": "YTD Growth / Target",
+      "on_track": "On Track",
+      "sharpe_ratio": "Alpha (vs S&P 500)",
+      "excellent": "Excellent"
+    },
+    "charts": {
+      "performance": "Performance",
+      "allocation": "Asset Allocation"
+    },
+    "correlation": {
+      "title": "Market Correlation Map",
+      "analyzing": "Analyzing...",
+      "computing": "Computing Real-Time Correlations...",
+      "fetching": "Fetching 30+ Asset Pairs"
+    },
+    "positions": {
+      "current": "Current Positions",
+      "recent": "Recent Transactions",
+      "refresh": "Refresh",
+      "table": {
+        "asset": "Asset",
+        "type": "Type",
+        "price": "Price",
+        "amount": "Amount",
+        "date": "Date"
+      }
+    }
+  },
+  "projects_list": {
+    "elliev": {
+      "title": "Elliev: E-Reputation Control Tower",
+      "shortDesc": "Strategic monitoring platform equipped with sentiment analysis AI.",
+      "fullDesc": "A strategic monitoring platform acting as an extension of your marketing team. Elliev continuously monitors the web (Google News, Reddit, Twitter, TikTok) to detect brand mentions. Equipped with sentiment analysis AI, the tool filters noise, deduplicates information, and sorts by relevance. Unlike invasive solutions, it offers full user control (on-demand updates, easy cleaning).",
+      "context": "Brands drown in noise. Missing a bad buzz or a key trend can be fatal.",
+      "challenge": "Aggregating highly unstable disparate sources (Social Media APIs) while ensuring a clean and relevant feed without duplicates.",
+      "solution": "Multi-Source Aggregator Architecture + NLP Filtering Pipeline."
+    },
+    "tokenization-platform": {
+      "title": "Fund Tokenization Platform (POC)",
+      "shortDesc": "Real World Asset (RWA) tokenization infrastructure on Blockchain for instant settlement (T+0).",
+      "fullDesc": "The application is segmented into three distinct interfaces to address all value chain actors: 'Understand' (Education & Onboarding), 'Investor Area' (Neo-bank like UX), and 'Fund Console' (Back-Office / Admin). This POC validates that the technology is mature to reinvent customer experience and optimize banking operations.",
+      "context": "To prove that replacing traditional banking infrastructure (silos, T+3 delays) with tokenized infrastructure results in a faster, transparent, and profitable system.",
+      "challenge": "Settlement delays (T+2 / T+3), Opacity & Data Silos, High administrative costs, and High entry barriers.",
+      "solution": "Atomic Settlement (T+0), Shared Ledger (DLT) for transparency, Smart Contracts for automation, and Fractionalization for accessibility."
+    },
+    "job-monitor": {
+      "title": "Job Monitor AI",
+      "shortDesc": "Discord bot orchestrator for 24/7 multi-platform job monitoring.",
+      "fullDesc": "A true 'agent factory' integrated into Discord. The system allows each user to deploy their own autonomous worker that monitors the web continuously. The tool integrates over 30 recruitment platforms covering Europe and the world, aggregating disparate sources (APIs, Scraping, Career Sites) into a single, clean feed.",
+      "context": "The fragmentation of the job market forces candidates to manually monitor dozens of sites, wasting precious time.",
+      "challenge": "Industrialize scraping on protected sites (LinkedIn, Indeed) while maintaining isolated sessions for each user.",
+      "solution": "Master-Slave architecture generating dynamic Node.js scripts on the fly. Intelligent queue system and proxy rotation for undetectability."
+    },
+    "algo-trading": {
+      "title": "Algo Trading Bot",
+      "shortDesc": "Quantitative trading bot (Momentum) on S&P 500 & Crypto with active risk management.",
+      "fullDesc": "An autonomous portfolio manager that orchestrates the complete investment cycle. It analyzes the S&P 500 universe and a selection of high-beta assets to build a diversified portfolio. The algorithm favors relative strength (Momentum) while mathematically filtering out overly correlated assets to minimize systemic risk.",
+      "context": "Manual investment often fails due to lack of emotional discipline in the face of volatility and trend reversals.",
+      "challenge": "Capture the explosiveness of growth assets (Tech/Crypto) while guaranteeing an automatic and cold exit before stock market crashes.",
+      "solution": "Pipeline 'Screener -> Filter -> Execute'. Use of trend filters (SMA), correlation matrices for selection, and server-side Trailing Stops orders to secure profits (Let Winners Run)."
+    },
+    "tiktok-automation": {
+      "title": "Viral News Automation",
+      "shortDesc": "100% autonomous pipeline: From Tech watch to viral TikTok publication.",
+      "fullDesc": "A fully automated video production studio driven by AI. The system monitors Tech news, detects subjects with high viral potential via OpenAI, and manages the entire production chain: script writing, contextual media search, speech synthesis (TTS), dynamic editing, and automatic publication on TikTok.",
+      "context": "Creating 'Short-Form' content requires exhausting regularity and responsiveness for a human creator.",
+      "challenge": "Automate video editing (usually manual and creative) while keeping a captivating narrative and visual consistency.",
+      "solution": "Creative ETL Pipeline: Scraping -> LLM Analysis (Viral Score) -> Asset Generation -> Programmatic Editing (MoviePy) -> Upload API."
+    },
+    "auto-stream": {
+      "title": "Autoclip (Twitch Automation)",
+      "shortDesc": "Viral detection pipeline and automatic vertical clip generation.",
+      "fullDesc": "A complete 'Content Automation' software solution that monitors live Twitch streams to extract highlights. The system uses advanced behavioral analysis (audio/video) to detect excitement and automatically generate clips in vertical format (9:16) ready for TikTok/Reels, without human intervention.",
+      "context": "Video editors spend hours watching replays to find 30 interesting seconds.",
+      "challenge": "Develop a 'brain' capable of objectively understanding what a viral moment is without relying solely on chat, by analyzing sound and visual energy.",
+      "solution": "Sequential Pipeline: Streamlink Capture -> Audio Analysis (Librosa) & Vision (OpenCV) -> Viral Composite Scoring -> Intelligent FFmpeg Cropping."
+    },
+    "sports-arbitrage": {
+      "title": "Sports Arbitrage Bot",
+      "shortDesc": "Real-time statistical arbitrage opportunity scanner (Surebets).",
+      "fullDesc": "A market 'sniper' designed to exploit pricing inefficiencies between local bookmakers and the international market. Unlike classic solutions based on Selenium, this bot uses API Reverse Engineering for maximum execution speed, allowing detection of mathematical discrepancies (Surebets) before market correction.",
+      "context": "Local bookmakers sometimes adjust their odds with a few seconds delay on the global market (Pinnacle/Bet365).",
+      "challenge": "The 'Smart Matching': Automatically reconcile entities named differently (e.g., 'Man. City' vs 'Manchester City FC') across heterogeneous data sources.",
+      "solution": "Modular Python Architecture: Direct API Scrapers (Reverse Engineering) -> Normalization Engine (Jaccard Similarity) -> Implied Probability Calculator."
+    },
+    "smart-cv": {
+      "title": "Smart CV Extension",
+      "shortDesc": "Generative AI Chrome Extension for contextual CV optimization.",
+      "fullDesc": "An intelligent career assistant integrated into the browser (Manifest V3). The extension analyzes the active job offer (LinkedIn, WTTJ) and rewrites the CV in real-time to maximize 'Matching'. It offers two generation engines: a 'Fast-Track' mode (Single-Shot) for rapid iteration, and a 'Deep-Work' mode (Sequential Pipeline) using reasoning models (o1-mini) for strategic rewriting (STAR Method, Action Verbs).",
+      "context": "Adapting your CV to each offer is essential but time-consuming. Generic candidates are filtered by ATS.",
+      "challenge": "Orchestrate a complex AI pipeline (Extraction -> Enrichment -> Transposition -> PDF Rendering) directly in the browser without blocking the interface.",
+      "solution": "Hybrid architecture with background.js state management. Injection of content scripts for scraping and client-side PDF generation via html2pdf."
+    },
+    "ezlod": {
+      "title": "EZLOD (E-commerce Automation)",
+      "shortDesc": "E-commerce automation suite: StockX to Vinted pipeline.",
+      "fullDesc": "A complete software solution for sneaker resale automation. The system connects StockX market intelligence (Price, 360° Images) to the Vinted platform via a complex ETL pipeline. It transforms a simple product code (SKU) into a professional and optimized sales listing, ready to be published.",
+      "context": "Creating quality listings for sneaker resale is a repetitive and slow manual process (photos, description, pricing).",
+      "challenge": "Orchestrate the recovery of protected data (StockX GraphQL/360° Images) and automate publication on a closed platform (Vinted) without triggering security measures.",
+      "solution": "Hybrid Approach: API Scraping (GraphQL/HAR Analysis) for Data + Selenium/Requests for Vinted automation. Image processing engine (Pillow) to generate unique studio views."
+    },
+    "seo-audit": {
+      "title": "SEO Auto-Audit",
+      "shortDesc": "Bot for technical and structural analysis of websites.",
+      "fullDesc": "An autonomous digital auditor capable of mapping the complete architecture of a site. It simulates the behavior of search engines to identify invisible technical debts that penalize referencing.",
+      "context": "Manual audits cannot cover the exhaustiveness of thousands of pages of a modern site.",
+      "challenge": "Efficiently crawl dynamic web applications (SPA) without being blocked or impacting target server performance.",
+      "solution": "Respectful Asynchronous Crawler (Polite Crawler) with headless JS rendering and graph analysis."
+    },
+    "tcg-collector": {
+      "title": "Next.js TCG Collector",
+      "shortDesc": "Card collection management application with intelligent OCR scanner.",
+      "fullDesc": "A complete platform for card collectors (TCG) combining collection management and image recognition. The application allows users to digitize their physical cards via a photo, automatically extract metadata (HP, Rarity, Set) thanks to AI, and track their collection progress with detailed statistics.",
+      "context": "Manual management of thousands of physical cards is tedious and prone to entry errors.",
+      "challenge": "Precisely identify a card among thousands of visually similar variants (Reverse Holo, Full Art) from a simple smartphone photo.",
+      "solution": "Hybrid computer vision pipeline: Azure Cognitive Services for textual OCR + Perceptual hashing algorithm for exact image matching."
+    }
+  },
+  "roi": {
+    "title": "ROI Calculator",
+    "subtitle": "How much can automation save you?",
+    "hours_label": "Manual hours / week",
+    "hours_hint": "Data entry, reporting, copy-pasting...",
+    "rate_label": "Average hourly cost",
+    "annual_savings": "Annual Savings",
+    "potential_gain": "Direct potential gain",
+    "reading_time": "Reading for {{seconds}}s",
+    "bot_work": "Meanwhile, my bots would have processed:"
+  },
+  "not_found": {
+    "title": "Page Not Found",
+    "description": "Oops! The page you are looking for doesn't exist. It might have been moved or deleted.",
+    "back_home": "Back to Home"
+  }
+}

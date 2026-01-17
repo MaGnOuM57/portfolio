@@ -1,0 +1,366 @@
+{
+  "nodes": [
+    {
+      "id": "AAPL",
+      "group": "Tech"
+    },
+    {
+      "id": "ABBV",
+      "group": "Health"
+    },
+    {
+      "id": "AMD",
+      "group": "Tech"
+    },
+    {
+      "id": "AMZN",
+      "group": "Consumer"
+    },
+    {
+      "id": "BAC",
+      "group": "Finance"
+    },
+    {
+      "id": "BLK",
+      "group": "Finance"
+    },
+    {
+      "id": "BTC",
+      "group": "Crypto"
+    },
+    {
+      "id": "COIN",
+      "group": "Crypto"
+    },
+    {
+      "id": "COP",
+      "group": "Energy"
+    },
+    {
+      "id": "COST",
+      "group": "Consumer"
+    },
+    {
+      "id": "CVX",
+      "group": "Energy"
+    },
+    {
+      "id": "DKNG",
+      "group": "Consumer"
+    },
+    {
+      "id": "ETH",
+      "group": "Crypto"
+    },
+    {
+      "id": "GOOGL",
+      "group": "Tech"
+    },
+    {
+      "id": "GS",
+      "group": "Finance"
+    },
+    {
+      "id": "JNJ",
+      "group": "Health"
+    },
+    {
+      "id": "JPM",
+      "group": "Finance"
+    },
+    {
+      "id": "KO",
+      "group": "Consumer"
+    },
+    {
+      "id": "LLY",
+      "group": "Health"
+    },
+    {
+      "id": "MA",
+      "group": "Finance"
+    },
+    {
+      "id": "MARA",
+      "group": "Crypto"
+    },
+    {
+      "id": "META",
+      "group": "Tech"
+    },
+    {
+      "id": "MRK",
+      "group": "Health"
+    },
+    {
+      "id": "MSFT",
+      "group": "Tech"
+    },
+    {
+      "id": "MSTR",
+      "group": "Crypto"
+    },
+    {
+      "id": "NVDA",
+      "group": "Tech"
+    },
+    {
+      "id": "PEP",
+      "group": "Consumer"
+    },
+    {
+      "id": "PFE",
+      "group": "Health"
+    },
+    {
+      "id": "PLTR",
+      "group": "Tech"
+    },
+    {
+      "id": "RIOT",
+      "group": "Crypto"
+    },
+    {
+      "id": "SOL",
+      "group": "Crypto"
+    },
+    {
+      "id": "TSLA",
+      "group": "Consumer"
+    },
+    {
+      "id": "UNH",
+      "group": "Health"
+    },
+    {
+      "id": "V",
+      "group": "Finance"
+    },
+    {
+      "id": "WMT",
+      "group": "Consumer"
+    },
+    {
+      "id": "XOM",
+      "group": "Energy"
+    }
+  ],
+  "links": [
+    {
+      "source": "ABBV",
+      "target": "MRK",
+      "value": 0.61,
+      "isPositive": true
+    },
+    {
+      "source": "ABBV",
+      "target": "PFE",
+      "value": 0.57,
+      "isPositive": true
+    },
+    {
+      "source": "AMD",
+      "target": "NVDA",
+      "value": 0.55,
+      "isPositive": true
+    },
+    {
+      "source": "BAC",
+      "target": "BLK",
+      "value": 0.58,
+      "isPositive": true
+    },
+    {
+      "source": "BAC",
+      "target": "GS",
+      "value": 0.56,
+      "isPositive": true
+    },
+    {
+      "source": "BAC",
+      "target": "JPM",
+      "value": 0.67,
+      "isPositive": true
+    },
+    {
+      "source": "BLK",
+      "target": "GS",
+      "value": 0.58,
+      "isPositive": true
+    },
+    {
+      "source": "BTC",
+      "target": "COIN",
+      "value": 0.56,
+      "isPositive": true
+    },
+    {
+      "source": "BTC",
+      "target": "ETH",
+      "value": 0.81,
+      "isPositive": true
+    },
+    {
+      "source": "BTC",
+      "target": "MARA",
+      "value": 0.62,
+      "isPositive": true
+    },
+    {
+      "source": "BTC",
+      "target": "MSTR",
+      "value": 0.73,
+      "isPositive": true
+    },
+    {
+      "source": "BTC",
+      "target": "SOL",
+      "value": 0.8,
+      "isPositive": true
+    },
+    {
+      "source": "COIN",
+      "target": "ETH",
+      "value": 0.58,
+      "isPositive": true
+    },
+    {
+      "source": "COIN",
+      "target": "MARA",
+      "value": 0.52,
+      "isPositive": true
+    },
+    {
+      "source": "COIN",
+      "target": "MSTR",
+      "value": 0.65,
+      "isPositive": true
+    },
+    {
+      "source": "COIN",
+      "target": "NVDA",
+      "value": 0.51,
+      "isPositive": true
+    },
+    {
+      "source": "COIN",
+      "target": "RIOT",
+      "value": 0.63,
+      "isPositive": true
+    },
+    {
+      "source": "COIN",
+      "target": "SOL",
+      "value": 0.5,
+      "isPositive": true
+    },
+    {
+      "source": "COP",
+      "target": "CVX",
+      "value": 0.77,
+      "isPositive": true
+    },
+    {
+      "source": "COP",
+      "target": "XOM",
+      "value": 0.77,
+      "isPositive": true
+    },
+    {
+      "source": "COST",
+      "target": "WMT",
+      "value": 0.53,
+      "isPositive": true
+    },
+    {
+      "source": "CVX",
+      "target": "XOM",
+      "value": 0.76,
+      "isPositive": true
+    },
+    {
+      "source": "ETH",
+      "target": "MARA",
+      "value": 0.61,
+      "isPositive": true
+    },
+    {
+      "source": "ETH",
+      "target": "MSTR",
+      "value": 0.71,
+      "isPositive": true
+    },
+    {
+      "source": "ETH",
+      "target": "RIOT",
+      "value": 0.51,
+      "isPositive": true
+    },
+    {
+      "source": "ETH",
+      "target": "SOL",
+      "value": 0.86,
+      "isPositive": true
+    },
+    {
+      "source": "GS",
+      "target": "JPM",
+      "value": 0.69,
+      "isPositive": true
+    },
+    {
+      "source": "MA",
+      "target": "V",
+      "value": 0.88,
+      "isPositive": true
+    },
+    {
+      "source": "MARA",
+      "target": "MSTR",
+      "value": 0.67,
+      "isPositive": true
+    },
+    {
+      "source": "MARA",
+      "target": "RIOT",
+      "value": 0.64,
+      "isPositive": true
+    },
+    {
+      "source": "MARA",
+      "target": "SOL",
+      "value": 0.63,
+      "isPositive": true
+    },
+    {
+      "source": "META",
+      "target": "MSFT",
+      "value": 0.54,
+      "isPositive": true
+    },
+    {
+      "source": "MRK",
+      "target": "PFE",
+      "value": 0.77,
+      "isPositive": true
+    },
+    {
+      "source": "MSTR",
+      "target": "SOL",
+      "value": 0.69,
+      "isPositive": true
+    },
+    {
+      "source": "NVDA",
+      "target": "PLTR",
+      "value": 0.5,
+      "isPositive": true
+    },
+    {
+      "source": "RIOT",
+      "target": "SOL",
+      "value": 0.52,
+      "isPositive": true
+    }
+  ]
+}

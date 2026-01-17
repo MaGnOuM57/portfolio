@@ -1,0 +1,547 @@
+{
+  "months": {
+    "jan": "Jan",
+    "feb": "Fév",
+    "mar": "Mar",
+    "apr": "Avr",
+    "may": "Mai",
+    "jun": "Juin",
+    "jul": "Juil",
+    "aug": "Août",
+    "sep": "Sep",
+    "oct": "Oct",
+    "nov": "Nov",
+    "dec": "Déc"
+  },
+  "navbar": {
+    "resume": "Resume",
+    "projects": "Projets",
+    "tokenization": "Tokenisation (POC)",
+    "trading": "Trading",
+    "jobs": "Jobs",
+    "dashboards": "Dashboards"
+  },
+  "trading": {
+    "title": "Portefeuille Algorithmique",
+    "header": {
+      "title": "Portefeuille Trading",
+      "live_feed": "Flux Direct",
+      "paused": "Replay",
+      "realtime_desc": "Connexion WebSocket en temps réel via Alpaca Markets.",
+      "simulation_desc": "Visionnage de l'historique enregistré (Mode Déconnecté)."
+    },
+    "charts": {
+      "performance": "Performance Cumulée"
+    },
+    "kpi": {
+      "total_value": "Valeur Totale",
+      "pnl": "Journée en cours",
+      "daily_change": "Variation Jour",
+      "return_global": "Total",
+      "today": "Aujourd'hui",
+      "ytd_growth": "Objectif Annuel",
+      "on_track": "En bonne voie",
+      "sharpe_ratio": "Alpha vs S&P 500",
+      "excellent": "Excellent"
+    }
+  },
+  "resume": {
+    "role": "Fondateur de KPeye - Consultant Data et Performance",
+    "intro": "Ancien athlète de haut niveau dans le domaine de l'athlétisme, je dédie ma vie au challenge et à la performance ! Expert en <1>Business Intelligence</1>, <2>Automatisation</2> et <3>Stratégie Data</3>.",
+    "location": "Monde entier",
+    "cta_trading": "Voir mon Portfolio Trading",
+    "cta_job_monitor": "Job Monitor",
+    "cta_download_cv": "Télécharger CV",
+    "experience_title": "Expérience Professionnelle",
+    "education_title": "Formation",
+    "skills_title": "Compétences & Expertise",
+    "languages_title": "Langues",
+    "interests_title": "Centres d'intérêt",
+    "testimonials_title": "Recommandations",
+    "testimonials_subtitle": "Ce que mes collaborateurs disent de moi (Extraits LinkedIn)",
+    "contact_title": "Me Contacter",
+    "contact_subtitle": "Un projet ? Une idée ? Discutons-en.",
+    "contact_automation_title": "Mode Fast-Track (Automation)",
+    "contact_automation_subtitle": "Ne perdez pas de temps à rédiger. Remplissez, cliquez, c'est envoyé.",
+    "form_name": "Votre Nom",
+    "form_company": "Votre Entreprise",
+    "form_email": "Votre Email",
+    "form_message": "Votre Message",
+    "form_send": "Envoyer le message",
+    "form_auto_button": "Générer la demande de contact",
+    "projects_autos": "Projets & Autos",
+    "see_all": "Voir tout",
+    "key_skills": "Compétences Clés",
+    "certifications": "Certifications",
+    "see_details": "Voir les détails",
+    "experiences": {
+      "sgss": {
+        "role": "Business Process and Data Analyst",
+        "company": "Societe Generale Securities Services - SGSS",
+        "period": "juillet 2025 - Présent",
+        "location": "Esch-sur-Alzette, Luxembourg",
+        "details": [
+          "Audit interne et automatisation complète de process métier.",
+          "Développement d’un modèle LLM spécifique au secteur bancaire.",
+          "Création d’une « tool-box » pour automatiser les taches quotidiennes.",
+          "Mise en place d’une scorecard de performance pour la direction."
+        ]
+      },
+      "kpeye": {
+        "role": "Fondateur – Consultant en data & performance",
+        "company": "KPeye",
+        "period": "avril 2025 - Présent",
+        "location": "Metz, France",
+        "details": [
+          "Création et développement de KPeye, structure indépendante spécialisée en data analytics.",
+          "Réalisation d’audits de performance (web, ventes, opérations).",
+          "Conception de tableaux de bord (Power BI, Looker Studio, Excel).",
+          "Optimisation de processus métiers via l’automatisation de flux.",
+          "Accompagnement stratégique à la prise de décision basée sur la donnée."
+        ]
+      },
+      "arcelor": {
+        "role": "Ingénieur Data Analyst",
+        "company": "ArcelorMittal France",
+        "period": "mai 2024 - novembre 2024",
+        "location": "Florange, France",
+        "details": [
+          "Data analyste pour la direction (transformation digitale).",
+          "Présentation mensuelle des résultats aux 5 sous-départements.",
+          "Consolidation de plus de 10 sources de données (SQL, ETL, SharePoint).",
+          "Assistance continue auprès de 70+ utilisateurs métiers sur Power BI.",
+          "Création de 20+ reporting axés RH, Finance, Sécurité, Projet, Scorecard."
+        ]
+      },
+      "pumpup": {
+        "role": "Consultant en analyses Web",
+        "company": "PumpUp",
+        "period": "avril 2023 - septembre 2023",
+        "location": "Grenoble, France",
+        "details": [
+          "Maitrise de Google Analytics 4, Tag manager, Data Studio, Google ADS.",
+          "Création de script en JavaScript ou Python.",
+          "Gestion en autonomie d'un portefeuille client (20aine).",
+          "Développement d'outils de gestion de projet (Notion, Make automation)."
+        ]
+      },
+      "interdit": {
+        "role": "Chargé de production",
+        "company": "interditaupublic.com",
+        "period": "janvier 2022 - juillet 2022",
+        "location": "Barcelone, Espagne",
+        "details": [
+          "Maitrise de Store Commander et Prestashop.",
+          "Maîtrise des outils d'analyses (SQL, Google Analytics).",
+          "Adaptation à un système en flux tendu.",
+          "Maîtrise de l'extraction de données et retranscription des résultats."
+        ]
+      }
+    }
+  },
+  "pedagogy": {
+    "title": "Pourquoi Tokeniser ?",
+    "subtitle": "La finance traditionnelle est lente et coûteuse. La tokenisation est l'avenir.",
+    "traditional": "ANCIEN MONDE",
+    "banking_maze": "Le Labyrinthe Bancaire",
+    "you_investor": "Vous (Investisseur)",
+    "you_want_buy": "Vous voulez acheter 1 part de fonds.",
+    "intermediaries": "Intermédiaires Obligatoires",
+    "broker": "Courtier",
+    "bank": "Banque",
+    "clearing_house": "Chambre de Compensation",
+    "custodian": "Dépositaire",
+    "delay": "Délai T+3 Jours",
+    "high_fees": "Frais Élevés",
+    "asset_company": "Société de Gestion",
+    "share_delivered": "La part est livrée.",
+    "tokenization": "NOUVEAU MONDE",
+    "digital_highway": "L'Autoroute Numérique",
+    "you": "Vous",
+    "smart_contract": "Smart Contract",
+    "smart_contract_desc": "Code informatique qui remplace les intermédiaires.",
+    "instant_settlement": "Règlement Instantané",
+    "near_zero_fees": "Frais quasi nuls",
+    "asset": "Actif Tokenisé",
+    "what_is_token": "C'est quoi un Token ?",
+    "token_desc": "Imaginez un jeton de casino numérique, mais infalsifiable. Il représente votre titre de propriété. Au lieu d'un papier chez le notaire, vous avez ce jeton dans votre téléphone.",
+    "what_is_blockchain": "La Blockchain ?",
+    "blockchain_desc": "C'est un grand cahier partagé que tout le monde peut lire mais personne ne peut effacer. C'est la confiance par la technologie, plus besoin de faire confiance à une banque centrale.",
+    "what_is_smart_contract": "Smart Contract ?",
+    "smart_contract_def": "Un notaire-robot qui exécute automatiquement les règles (paiements, dividendes) sans intervention humaine.",
+    "business_model_title": "Si on supprime les frais, comment la Banque gagne-t-elle de l'argent ?",
+    "volume_effect": "L'Effet Volume",
+    "volume_desc": "Aujourd'hui, vendre un fonds à 100€ coûte trop cher. Demain, la banque peut vendre des millions de parts à 100€.",
+    "volume_highlight": "Moins de marge par client, mais 100x plus de clients.",
+    "new_tech_jobs": "Nouveaux Métiers Tech",
+    "tech_jobs_desc": "Les métiers manuels disparaissent au profit de métiers à haute valeur ajoutée : Structuration, Custody, Audit de code.",
+    "improved_margin": "Marge Nette Améliorée",
+    "margin_desc": "Même si le chiffre d'affaires baisse légèrement, les coûts opérationnels s'effondrent (-40% à -60%).",
+    "margin_highlight": "Profit = Revenus (Stable) - Coûts (En baisse)",
+    "tech_comparison": "Comparatif : Ancien Monde vs Nouveau Monde",
+    "service_financial": "Service",
+    "model_trad": "Processus Traditionnel",
+    "model_token": "Processus Tokenisé",
+    "advantage": "Avantage",
+    "custody": "Custody (Conservation)",
+    "custody_trad": "Comptes multiples, réconciliation manuelle.",
+    "custody_token": "Actif natif on-chain. Registre unique.",
+    "custody_benefit": "Sécurité",
+    "compliance": "Vérification",
+    "verification_trad": "Vérification a posteriori (J+1). Risque d'erreur.",
+    "verification_token": "Contrôle 'On-chain' bloquant (Code is Law).",
+    "verification_benefit": "Temps Réel",
+    "registry": "Tenue de Registre",
+    "registry_trad": "Base de données privée (SQL). Mise à jour J+3.",
+    "registry_token": "Ledger immuable et transparent. Mise à jour T+0.",
+    "registry_benefit": "Transparence",
+    "settlement": "Règlement-Livraison",
+    "settlement_trad": "T+2 / T+3. Risque de contrepartie.",
+    "settlement_token": "Atomic Swap (DvP). Échange simultané.",
+    "settlement_benefit": "0 Risque",
+    "admin_costs": "Coûts Administratifs",
+    "costs_high": "$$$ (Élevés)",
+    "costs_low": "$ (Réduits)",
+    "profitability": "Rentabilité"
+  },
+  "tokenization": {
+    "page_title": "Plateforme de Tokenisation de Fonds",
+    "page_subtitle": "Prototype haute-fidélité démontrant la transformation de la gestion d'actifs via la Blockchain.",
+    "nav_pedagogy": "Comprendre",
+    "nav_investor": "Espace Investisseur",
+    "nav_fund": "Console Fonds",
+    "network_active": "Réseau Blockchain: Actif",
+    "modal_invest_title": "Investir",
+    "modal_sell_title": "Vendre",
+    "modal_invest_prompt": "Combien de parts souhaitez-vous acquérir ?",
+    "modal_sell_prompt": "Combien de parts souhaitez-vous céder ?",
+    "cancel": "Annuler",
+    "buy": "Acheter",
+    "sell_btn": "Vendre",
+    "log_gen_report": "Génération du rapport d'audit en cours...",
+    "log_report_done": "Rapport d'audit généré et téléchargé (Hash: 0xReport...7721)",
+    "alert_report_downloaded": "Le rapport d'audit complet a été téléchargé.",
+    "alert_vote_recorded": "Vote enregistré !",
+    "public": "PUBLIC",
+    "last_block": "Dernier Bloc",
+    "visible_by_all": "Visible par tous",
+    "waiting_tx": "En attente de transactions...",
+    "title": "Mon Portefeuille",
+    "welcome": "Bienvenue, Marc Dupont",
+    "kyc_validated": "KYC Validé",
+    "total_valuation": "Valorisation Totale",
+    "holdings": "Détention",
+    "shares": "Parts",
+    "nav_price": "Prix Part (NAV)",
+    "invest": "Investir",
+    "buy_action": "Achat",
+    "sell_action": "Vente",
+    "log_bought": "Investisseur a acheté {{amount}} parts.",
+    "log_sold": "Investisseur a vendu {{amount}} parts.",
+    "log_buy_success": "Ordre d'achat de {{amount}} parts exécuté sur la blockchain.",
+    "log_sell_success": "Ordre de vente de {{amount}} parts exécuté. Cash reçu.",
+    "log_new_tx": "Nouvelle Transaction : {{hash}}...",
+    "log_block_mined": "Bloc #{{block}} miné.",
+    "insufficient_funds": "Fonds insuffisants",
+    "sell": "Céder",
+    "vote": "Voter",
+    "transactions_title": "Dernières Transactions",
+    "tx_type": "Type",
+    "tx_hash": "Hash (Preuve)",
+    "tx_amount": "Montant",
+    "admin_title": "Console de Gestion (Back-Office)",
+    "role_admin": "Role: ADMIN",
+    "global_view": "Vue globale du Smart Contract",
+    "generate_report": "Générer Rapport Audit (T+0)",
+    "who_sees_what": "Qui voit quoi ?",
+    "admin_desc": "Cette vue simule l'interface de l'<strong>Administrateur du Fonds</strong> (Asset Manager).",
+    "public_data": "Données Publiques :",
+    "public_desc": "Le registre des transactions (Blockchain) est visible par tous.",
+    "private_actions": "Actions Privées :",
+    "private_desc": "La gestion des parts et la génération de rapports sont réservées aux personnes autorisées.",
+    "total_aum": "Total AUM",
+    "investors": "Investisseurs",
+    "circulating_shares": "Parts en circulation",
+    "portfolio_evolution": "Évolution du Portefeuille",
+    "time_1m": "1 Mois",
+    "time_6m": "6 Mois",
+    "time_1y": "1 An",
+    "regulatory_docs": "Documents Réglementaires",
+    "admin_only": "ADMIN ONLY",
+    "doc_esg": "Rapport Mensuel ESG",
+    "doc_esg_date": "Généré le 15/12/2025",
+    "doc_nav": "Reporting NAV (VL)",
+    "doc_nav_date": "Temps réel (Oracle)",
+    "sensitive_actions": "Actions Sensibles",
+    "pause_contract": "Pause Contract",
+    "whitelist": "Whitelist",
+    "live_ledger": "Registre Distribué (Live Feed)",
+    "visible_by_all": "VISIBLE PAR TOUS",
+    "waiting_tx": "[System] En attente de transactions...",
+    "last_block": "Dernier Bloc",
+    "public": "PUBLIC",
+    "transactions": {
+      "dividend": "Dividendes",
+      "sell": "Cession",
+      "buy": "Investissement",
+      "vote": "Vote"
+    }
+  },
+  "tags": {
+    "sql": "SQL",
+    "vba": "VBA",
+    "finance_de_marche": "Finance de Marché",
+    "finance": "Finance",
+    "agile": "Agile",
+    "python": "Python", 
+    "powerbi": "PowerBI",
+    "predictive_maint": "Maint. Prédictive",
+    "sap": "SAP",
+    "jira": "JIRA",
+    "scrum": "Scrum",
+    "cybersecurity": "Cybersécurité",
+    "prince2": "Prince2"
+  },
+  "footer": {
+    "description": "Expert en Business Intelligence et Automatisation. Je transforme les données complexes en décisions stratégiques claires.",
+    "navigation": "Navigation",
+    "home": "Accueil",
+    "projects": "Projets",
+    "dashboards": "Dashboards",
+    "trading": "Trading",
+    "contact": "Contact",
+    "location": "Metz, France",
+    "contact_me": "Me contacter",
+    "rights": "Tous droits réservés.",
+    "made_with": "Fait avec",
+    "and_react": "et React"
+  },
+  "projects": {
+    "title": "Mes <1>Projets</1>",
+    "subtitle": "Une sélection de mes travaux les plus ambitieux. De l'automatisation financière à l'intelligence artificielle appliquée.",
+    "filters": {
+      "all": "Tout",
+      "ai_automation": "IA & Automatisation",
+      "finance_data": "Finance & Data",
+      "web_data": "Web & Data"
+    },
+    "categories": {
+      "finance_blockchain": "Finance & Blockchain",
+      "ai_automation": "IA & Automatisation",
+      "web_data": "Web & Data"
+    },
+    "status": {
+      "poc": "POC",
+      "production": "Production",
+      "live_v2": "Live v2.0",
+      "prototype": "Prototype",
+      "beta": "Bêta",
+      "mvp": "MVP",
+      "tool": "Outil"
+    },
+    "read_more": "Lire Plus",
+    "read_less": "Lire Moins",
+    "demo": "Démo",
+    "challenge": "Challenge",
+    "solution": "Solution"
+  },
+  "dashboards": {
+    "title": "Dashboards <1>Exemples</1>",
+    "subtitle": "Une collection d'interfaces de visualisation de données démontrant mes compétences en Business Intelligence.",
+    "power_bi_title": "Laboratoire DAX & Modélisation Financière",
+    "power_bi_desc": "Face à l'impossibilité de partager mes dashboards confidentiels (NDA), j'ai recodé ici les logiques financières complexes que je mets en place en entreprise. Ce module démontre ma capacité à reproduire des mécanismes BI avancés : Bridge Analysis (Waterfall), Intelligence Temporelle (YTD/YoY) et Tableaux Matriçables.",
+    "demo_soon": "Technical Showcase (React Re-implementation)",
+    "analytics_title": "Contrôle de Gestion & Analyse d'Écarts",
+    "total_users": "Marge Brute",
+    "total_revenue": "Chiffre d'Affaires",
+    "active_sessions": "Coût Acquisition (CAC)",
+    "conversion_rate": "Panier Moyen (AOV)",
+    "revenue_overview": "Analyse CA vs Marge Nette (YTD)",
+    "user_activity": "Rentabilité par Business Unit",
+    "blockchain_title": "Traçabilité Supply Chain (Blockchain)",
+    "blockchain_desc": "Visualisation temps réel du parcours logistique. Auditabilité garantie par Smart Contract.",
+    "steps": {
+      "production": "Production Usine",
+      "quality": "Certification Qualité",
+      "shipping": "Transit International",
+      "delivery": "Réception Client"
+    },
+    "verified": "Certifié (Ledger Immuable)",
+    "contract": "Smart Contract Exécuté"
+  },
+  "job_monitor": {
+    "title": "Job Monitor",
+    "subtitle": "Flux en Direct • Moteur de Matching IA Actif",
+    "discord_banner": {
+        "title": "Démonstration Interactive",
+        "description": "Cette page est une simulation. Le véritable robot tourne en continu sur mon serveur Discord privé, scannant des milliers d'offres en temps réel.",
+        "button": "Rejoindre le Discord"
+    },
+    "filters": {
+      "all": "Tout",
+      "high_match": "Forte Correspondance (>90%)"
+    },
+    "stats": {
+      "scanned": "Offres Scannés Aujourd'hui",
+      "matches": "Correspondances de Haute Qualité",
+      "detection_time": "Temps de Détection Moyen"
+    },
+    "loading": "Chargement du flux...",
+    "card": {
+      "match": "Correspondance",
+      "ai_match_score": "Score de Matching IA",
+      "posted": "Publié",
+      "apply": "Postuler"
+    }
+  },
+  "trading": {
+    "title": "Portefeuille Trading",
+    "subtitle": "Données de Marché en Direct • Connecté à l'API Alpaca",
+    "header": {
+      "title": "Tableau de Bord de Trading Autonome",
+      "realtime_desc": "Données en temps réel depuis Alpaca Markets (Mode Lecture Seule)",
+      "simulation_desc": "Simulation en direct de stratégies de gestion d'actifs personnels.",
+      "live_feed": "FLUX EN DIRECT",
+      "paused": "EN PAUSE"
+    },
+    "kpi": {
+      "total_value": "Performance Globale",
+      "return_global": "Depuis le début",
+      "daily_change": "Variation Journalière",
+      "pnl": "P&L (Est.)",
+      "today": "Aujourd'hui",
+      "ytd_growth": "Croissance YTD / Cible",
+      "on_track": "En Bonne Voie",
+      "sharpe_ratio": "Alpha (vs S&P 500)",
+      "excellent": "Excellent"
+    },
+    "charts": {
+      "performance": "Performance",
+      "allocation": "Allocation d'Actifs"
+    },
+    "correlation": {
+      "title": "Carte de Corrélation du Marché",
+      "analyzing": "Analyse en cours...",
+      "computing": "Calcul des Corrélations en Temps Réel...",
+      "fetching": "Récupération de 30+ Paires d'Actifs"
+    },
+    "positions": {
+      "current": "Positions Actuelles",
+      "recent": "Transactions Récentes",
+      "refresh": "Actualiser",
+      "table": {
+        "asset": "Actif",
+        "type": "Type",
+        "price": "Prix",
+        "amount": "Montant",
+        "date": "Date"
+      }
+    }
+  },
+  "projects_list": {
+    "elliev": {
+      "title": "Elliev : La Tour de Contrôle E-Réputation",
+      "shortDesc": "Plateforme intelligente de surveillance multi-canal (Web, Réseaux Sociaux, Médias).",
+      "fullDesc": "Une plateforme de veille stratégique qui agit comme une extension de votre équipe marketing. Elliev surveille en permanence le web (Google News, Reddit, Twitter, TikTok) pour détecter les mentions de votre marque. Doté d'une IA d'analyse de sentiment, l'outil filtre le bruit, dédoublonne les informations et les trie par pertinence. Contrairement aux solutions invasives, il offre un contrôle total à l'utilisateur (mise à jour à la demande, nettoyage facile).",
+      "context": "Le volume d'information sur le web rend impossible la surveillance manuelle de sa réputation sans y passer des heures.",
+      "challenge": "Connecter des sources hétérogènes (APIs officielles, Scraping) tout en garantissant la stabilité, la discrétion (système anti-blocage) et la pertinence des résultats (filtrage IA).",
+      "solution": "Agrégateur multi-source avec proxy rotatifs, moteur d'analyse de sentiment (NLP) pour le tri qualitatif et interface Dashboard réactive."
+    },
+    "tokenization-platform": {
+      "title": "Plateforme de Tokenisation de Fonds (POC)",
+      "shortDesc": "Infrastructure de tokenisation d'actifs réels (RWA) sur Blockchain pour un règlement instantané (T+0).",
+      "fullDesc": "L'application est segmentée en trois interfaces distinctes pour adresser tous les acteurs de la chaîne de valeur : 'Comprendre' (Pédagogie & Onboarding), 'Espace Investisseur' (Expérience Utilisateur type néo-banque) et 'Console Fonds' (Back-Office / Admin). Ce POC valide que la technologie est mature pour réinventer l'expérience client et optimiser les opérations bancaires.",
+      "context": "Prouver qu'en remplaçant l'infrastructure bancaire traditionnelle (silos, délais T+3) par une infrastructure tokenisée, on obtient un système plus rapide, transparent et rentable.",
+      "challenge": "Délais de règlement (T+2 / T+3), Opacité & Silos de données, Coûts administratifs élevés et Barrière à l'entrée élevée.",
+      "solution": "Règlement Atomique (T+0), Registre Partagé (DLT) pour la transparence, Smart Contracts pour l'automatisation et Fractionnement pour l'accessibilité."
+    },
+    "job-monitor": {
+      "title": "Job Monitor IA",
+      "shortDesc": "Orchestrateur de bots Discord pour la veille d'emploi multi-plateformes 24/7.",
+      "fullDesc": "Une véritable 'usine à agents' intégrée à Discord. Le système permet à chaque utilisateur de déployer son propre worker autonome qui surveille le web en continu. L'outil intègre plus de 30 plateformes de recrutement couvrant l'Europe et le monde entier, agrégeant des sources disparates (APIs, Scraping, Sites Carrières) en un flux unique et propre.",
+      "context": "La fragmentation du marché de l'emploi oblige les candidats à surveiller manuellement des dizaines de sites, perdant un temps précieux.",
+      "challenge": "Industrialiser le scraping sur des sites protégés (LinkedIn, Indeed) tout en maintenant des sessions isolées pour chaque utilisateur.",
+      "solution": "Architecture Maître-Esclave générant des scripts Node.js dynamiques à la volée. Système de files d'attente intelligent et rotation de proxies pour l'indétectabilité."
+    },
+    "algo-trading": {
+      "title": "Algo Trading Bot",
+      "shortDesc": "Automate de trading quantitatif (Momentum) sur S&P 500 & Crypto avec gestion active du risque.",
+      "fullDesc": "Un gestionnaire de portefeuille autonome qui orchestre le cycle d'investissement complet. Il analyse l'univers S&P 500 et une sélection d'actifs à fort bêta pour construire un portefeuille diversifié. L'algorithme privilégie la force relative (Momentum) tout en filtrant mathématiquement les actifs trop corrélés pour minimiser le risque systémique.",
+      "context": "L'investissement manuel échoue souvent par manque de discipline émotionnelle face à la volatilité et aux retournements de tendance.",
+      "challenge": "Capturer l'explosivité des actifs de croissance (Tech/Crypto) tout en garantissant une sortie automatique et froide avant les krachs boursiers.",
+      "solution": "Pipeline 'Screener -> Filter -> Execute'. Utilisation de filtres de tendance (SMA), de matrices de corrélation pour la sélection, et d'ordres Trailing Stops serveurs pour sécuriser les profits (Let Winners Run)."
+    },
+    "tiktok-automation": {
+      "title": "Viral News Automation",
+      "shortDesc": "Pipeline 100% autonome : De la veille Tech à la publication TikTok virale.",
+      "fullDesc": "Un studio de production vidéo entièrement automatisé piloté par l'IA. Le système surveille l'actualité Tech, détecte les sujets à fort potentiel viral via OpenAI, et gère toute la chaîne de production : écriture du script, recherche de médias contextuels, synthèse vocale (TTS), montage dynamique et publication automatique sur TikTok.",
+      "context": "La création de contenu 'Short-Form' demande une régularité et une réactivité épuisantes pour un créateur humain.",
+      "challenge": "Automatiser le montage vidéo (habituellement manuel et créatif) tout en gardant une cohérence narrative et visuelle captivante.",
+      "solution": "Pipeline ETL créatif : Scraping -> Analyse LLM (Viral Score) -> Génération d'assets -> Montage programmatique (MoviePy) -> Upload API."
+    },
+    "auto-stream": {
+      "title": "Autoclip (Twitch Automation)",
+      "shortDesc": "Pipeline de détection de viralité et génération automatique de clips verticaux.",
+      "fullDesc": "Une solution logicielle complète de 'Content Automation' qui surveille des flux Twitch en direct pour en extraire les moments forts. Le système utilise une analyse comportementale avancée (audio/vidéo) pour détecter l'excitation et générer automatiquement des clips au format vertical (9:16) prêts pour TikTok/Reels, sans intervention humaine.",
+      "context": "Les éditeurs vidéo passent des heures à visionner des replays pour trouver 30 secondes intéressantes.",
+      "challenge": "Développer un 'cerveau' capable de comprendre objectivement ce qu'est un moment viral sans se baser uniquement sur le chat, en analysant l'énergie sonore et visuelle.",
+      "solution": "Pipeline séquentiel : Capture Streamlink -> Analyse Audio (Librosa) & Vision (OpenCV) -> Scoring Viral Composite -> Recadrage Intelligent FFmpeg."
+    },
+    "sports-arbitrage": {
+      "title": "Sports Arbitrage Bot",
+      "shortDesc": "Scanner d'opportunités d'arbitrage statistique en temps réel (Surebets).",
+      "fullDesc": "Un 'sniper' de marché conçu pour exploiter les inefficacités de cotation entre les bookmakers locaux et le marché international. Contrairement aux solutions classiques basées sur Selenium, ce bot utilise le Reverse Engineering d'API pour une vitesse d'exécution maximale, permettant de détecter les écarts mathématiques (Surebets) avant la correction du marché.",
+      "context": "Les bookmakers locaux ajustent parfois leurs cotes avec quelques secondes de retard sur le marché mondial (Pinnacle/Bet365).",
+      "challenge": "Le 'Smart Matching' : Réconcilier automatiquement des entités nommées différemment (ex: 'Man. City' vs 'Manchester City FC') à travers des sources de données hétérogènes.",
+      "solution": "Architecture modulaire Python : Scrapers API directs (Reverse Engineering) -> Moteur de Normalisation (Jaccard Similarity) -> Calculateur de probabilités implicites."
+    },
+    "smart-cv": {
+      "title": "Smart CV Extension",
+      "shortDesc": "Extension Chrome d'IA générative pour l'optimisation contextuelle de CVs.",
+      "fullDesc": "Un assistant de carrière intelligent intégré au navigateur (Manifest V3). L'extension analyse l'offre d'emploi active (LinkedIn, WTTJ) et réécrit le CV en temps réel pour maximiser le 'Matching'. Elle propose deux moteurs de génération : un mode 'Fast-Track' (Single-Shot) pour l'itération rapide, et un mode 'Deep-Work' (Pipeline Séquentiel) utilisant des modèles de raisonnement (o1-mini) pour une réécriture stratégique (Méthode STAR, Verbes d'action).",
+      "context": "Adapter son CV à chaque offre est indispensable mais chronophage. Les candidats génériques sont filtrés par les ATS.",
+      "challenge": "Orchestrer un pipeline d'IA complexe (Extraction -> Enrichissement -> Transposition -> Rendu PDF) directement dans le navigateur sans bloquer l'interface.",
+      "solution": "Architecture hybride avec gestion d'état background.js. Injection de scripts de contenu pour le scraping et génération PDF client-side via html2pdf."
+    },
+    "ezlod": {
+      "title": "EZLOD (E-commerce Automation)",
+      "shortDesc": "Suite d'automatisation E-commerce : Pipeline StockX vers Vinted.",
+      "fullDesc": "Une solution logicielle complète pour l'automatisation de la revente de sneakers. Le système connecte l'intelligence de marché de StockX (Prix, Images 360°) à la plateforme Vinted via un pipeline ETL complexe. Il transforme un simple code produit (SKU) en une annonce de vente professionnelle et optimisée, prête à être publiée.",
+      "context": "La création d'annonces de qualité pour la revente de sneakers est un processus manuel répétitif et lent (photos, description, pricing).",
+      "challenge": "Orchestrer la récupération de données protégées (StockX GraphQL/Images 360) et automatiser la publication sur une plateforme fermée (Vinted) sans déclencher les sécurités.",
+      "solution": "Approche Hybride : Scraping API (GraphQL/HAR Analysis) pour la Data + Selenium/Requests pour l'automatisation Vinted. Moteur de traitement d'image (Pillow) pour générer des vues studio uniques."
+    },
+    "seo-audit": {
+      "title": "SEO Auto-Audit",
+      "shortDesc": "Bot d'analyse technique et structurelle de sites web.",
+      "fullDesc": "Un auditeur numérique autonome capable de cartographier l'architecture complète d'un site. Il simule le comportement des moteurs de recherche pour identifier les dettes techniques invisibles qui pénalisent le référencement.",
+      "context": "Les audits manuels ne peuvent pas couvrir l'exhaustivité des milliers de pages d'un site moderne.",
+      "challenge": "Crawler efficacement des applications web dynamiques (SPA) sans être bloqué ni impacter les performances du serveur cible.",
+      "solution": "Crawler asynchrone respectueux (Polite Crawler) avec rendu JS headless et analyse de graphe."
+    },
+    "tcg-collector": {
+      "title": "Next.js TCG Collector",
+      "shortDesc": "Application de gestion de collection de cartes avec scanner OCR intelligent.",
+      "fullDesc": "Une plateforme complète pour les collectionneurs de cartes (TCG) alliant gestion de collection et reconnaissance d'image. L'application permet aux utilisateurs de numériser leurs cartes physiques via une photo, d'extraire automatiquement les métadonnées (PV, Rareté, Set) grâce à l'IA, et de suivre leur progression de collection avec des statistiques détaillées.",
+      "context": "La gestion manuelle de milliers de cartes physiques est fastidieuse et sujette aux erreurs de saisie.",
+      "challenge": "Identifier précisément une carte parmi des milliers de variantes visuellement proches (Reverse Holo, Full Art) à partir d'une simple photo smartphone.",
+      "solution": "Pipeline de vision par ordinateur hybride : Azure Cognitive Services pour l'OCR textuel + Algorithme de hachage perceptuel pour la correspondance d'image exacte."
+    }
+  },
+  "roi": {
+    "title": "Calculateur de ROI",
+    "subtitle": "Combien l'automatisation peut-elle vous rapporter ?",
+    "hours_label": "Heures manuelles / semaine",
+    "hours_hint": "Saisie de données, reporting, copier-coller...",
+    "rate_label": "Coût horaire moyen",
+    "annual_savings": "Économies Annuelles",
+    "potential_gain": "Gain potentiel direct",
+    "reading_time": "Vous lisez depuis {{seconds}}s",
+    "bot_work": "Pendant ce temps, mes bots auraient traité :"
+  },
+  "not_found": {
+    "title": "Page Introuvable",
+    "description": "Oups ! La page que vous recherchez n'existe pas. Elle a peut-être été déplacée ou supprimée.",
+    "back_home": "Retour à l'accueil"
+  }
+}

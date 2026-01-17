@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-cyber-cyan: #06b6d4;
+  --color-cyber-emerald: #10b981;
+  --color-cyber-violet: #8b5cf6;
+  --color-dark-bg: #0f172a;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+body {
+  @apply bg-slate-950 text-slate-300 font-sans antialiased;
+  overflow-x: hidden;
+  background: radial-gradient(circle at top center, #0f172a 0%, #020617 100%);
+}
+
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+
+.glass-card {
+  @apply bg-slate-900/40 backdrop-blur-md border border-white/5 shadow-xl rounded-2xl transition-all duration-300;
+}
+
+.glass-card:hover {
+  @apply border-emerald-500/30 bg-slate-900/60 shadow-emerald-900/20 shadow-2xl transform -translate-y-1;
+}
+
+.glass-nav {
+  @apply backdrop-blur-xl bg-slate-950/70 border-b border-white/5 supports-[backdrop-filter]:bg-slate-950/50;
+}
+
+/* Animations */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 10s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-emerald-400 to-violet-500;
+}
+
+.glass-nav {
+  @apply backdrop-blur-md bg-slate-900/70 border-b border-slate-800;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-emerald-400 to-violet-500;
+}
