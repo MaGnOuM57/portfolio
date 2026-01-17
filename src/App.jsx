@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Globe, ChevronDown, Loader2 } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 import Footer from "./components/Footer";
+import Logo from "./components/Logo";
 import ScrollToTop from "./components/ScrollToTop";
 
 // Lazy Loading Pages
@@ -98,8 +99,8 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled || isMobileMenuOpen ? "glass-nav py-3 shadow-lg shadow-emerald-900/5" : "bg-transparent py-6"}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2 font-sans text-lg font-bold tracking-tight group z-50 relative">
-          <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-lg flex items-center justify-center text-white font-bold shadow-lg shadow-emerald-900/20 group-hover:scale-110 transition-transform">J</div>
+        <Link to="/" className="flex items-center gap-3 font-sans text-lg font-bold tracking-tight group z-50 relative">
+          <Logo className="w-10 h-10 md:w-12 md:h-12" />
           <span className="text-white group-hover:text-emerald-400 transition-colors">Jordan<span className="text-slate-500 group-hover:text-slate-400">.Fausta</span></span>
         </Link>
         

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import Logo from './Logo';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -17,8 +18,8 @@ const Footer = () => {
           
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="flex items-center gap-2 font-sans text-xl font-bold tracking-tight mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-lg flex items-center justify-center text-white font-bold shadow-lg shadow-emerald-900/20">J</div>
+            <Link to="/" className="flex items-center gap-3 font-sans text-xl font-bold tracking-tight mb-4">
+              <Logo className="w-10 h-10" />
               <span className="text-white">Jordan<span className="text-slate-500">.Fausta</span></span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm mb-6">
