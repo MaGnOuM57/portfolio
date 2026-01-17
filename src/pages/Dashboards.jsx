@@ -92,8 +92,8 @@ const AdvancedAnalyticsShowcase = () => {
     <div className="w-full bg-[#FAFAFA] rounded-xl shadow-2xl overflow-hidden text-slate-900 font-sans border border-slate-300">
         
         {/* Fake Power BI Toolbar - Pro Level */}
-        <div className="bg-[#F3F2F1] border-b border-slate-300 px-4 py-2 flex items-center justify-between text-xs select-none">
-            <div className="flex gap-4">
+        <div className="bg-[#F3F2F1] border-b border-slate-300 px-4 py-2 flex flex-wrap gap-y-2 items-center justify-between text-xs select-none">
+            <div className="flex gap-4 overflow-x-auto no-scrollbar">
                 <span className={navClass('report')} onClick={() => setActiveView('report')}>Report View</span>
                 <span className={navClass('semantic')} onClick={() => setActiveView('semantic')}>Semantic Model</span>
                 <span className={navClass('dax')} onClick={() => setActiveView('dax')}>DAX Query View</span>
@@ -234,8 +234,8 @@ const AdvancedAnalyticsShowcase = () => {
 
              {/* SEMANTIC MODEL VIEW */}
              {activeView === 'semantic' && (
-                 <div className="flex-1 bg-slate-50 p-0 overflow-auto flex items-center justify-center">
-                    <div className="relative w-[800px] h-[600px] bg-slate-50 shadow-sm border border-slate-200 rounded-lg overflow-hidden shrink-0 scale-90 origin-center transition-all">
+                 <div className="flex-1 bg-slate-50 p-0 overflow-auto flex items-center justify-center min-h-[500px]">
+                    <div className="relative w-[800px] h-[600px] bg-slate-50 shadow-sm border border-slate-200 rounded-lg overflow-hidden shrink-0 scale-[0.6] md:scale-90 origin-center transition-all">
                         
                         <div className="absolute top-4 left-4 text-xs font-bold text-slate-400 uppercase tracking-widest z-0">Model View • Star Schema</div>
 

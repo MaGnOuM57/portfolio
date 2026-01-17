@@ -12,7 +12,6 @@ const Resume = React.lazy(() => import("./pages/Resume"));
 const TradingPortfolio = React.lazy(() => import("./pages/TradingPortfolio"));
 const JobMonitor = React.lazy(() => import("./pages/JobMonitor"));
 const Projects = React.lazy(() => import("./pages/Projects"));
-// const Dashboards = React.lazy(() => import("./pages/Dashboards")); // Removed temporarily
 const Tokenization = React.lazy(() => import("./pages/Tokenization"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 
@@ -91,7 +90,6 @@ const Navbar = () => {
         { path: '/tokenization', label: t('navbar.tokenization') },
         { path: '/trading', label: t('navbar.trading') },
         { path: '/jobs', label: t('navbar.jobs') },
-        // { path: '/dashboards', label: t('navbar.dashboards') },
       ]
     },
   ];

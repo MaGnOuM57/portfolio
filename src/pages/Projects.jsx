@@ -42,7 +42,7 @@ const ProjectCard = ({ project, index, isHighlighted }) => {
       {/* Gradient Overlay */}
       <div className={`absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-${project.theme}-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
       
-      <div className="p-8 relative z-10 flex flex-col h-full">
+      <div className="p-5 md:p-8 relative z-10 flex flex-col h-full">
         {/* Header */}
         <div className="flex justify-between items-start mb-6">
           <div className={`p-3 rounded-xl ${styles.bg} ${styles.text} ring-1 ring-white/5`}>

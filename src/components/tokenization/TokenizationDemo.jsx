@@ -143,20 +143,25 @@ const TokenizationDemo = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-[800px] bg-slate-900/50 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/10 text-slate-200 font-sans shadow-2xl relative">
+    <div className="flex flex-col lg:flex-row min-h-[auto] lg:min-h-[800px] bg-slate-900/50 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/10 text-slate-200 font-sans shadow-2xl relative">
       
       {/* SIDEBAR */}
-      <aside className="w-full lg:w-64 bg-slate-950/50 border-r border-white/5 flex flex-col shrink-0 z-20">
-        <div className="p-6 border-b border-white/5">
+      <aside className="w-full lg:w-64 bg-slate-950/50 border-b lg:border-b-0 lg:border-r border-white/5 flex flex-col shrink-0 z-20">
+        <div className="p-4 lg:p-6 border-b border-white/5 flex justify-between lg:block items-center">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-lg flex items-center justify-center text-white shadow-lg shadow-emerald-900/20">
               <ShieldCheck size={18} />
             </div>
             <span className="font-extrabold text-white tracking-tight text-lg">TokenFund</span>
           </div>
+          {/* Mobile Status Indicator (moved from bottom) */}
+          <div className="lg:hidden bg-emerald-900/20 p-2 rounded-lg border border-emerald-500/20 flex items-center gap-2">
+            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+            <span className="text-[10px] font-bold text-emerald-400">{t('tokenization.network_active')}</span>
+          </div>
         </div>
 
-        <nav className="flex-1 p-4 space-y-2">
+        <nav className="p-2 lg:p-4 grid grid-cols-3 lg:flex lg:flex-col gap-2 lg:gap-2 lg:space-y-2 overflow-x-auto">
           <NavButton 
             active={activeView === 'pedagogy'} 
             onClick={() => setActiveView('pedagogy')} 
@@ -177,7 +182,7 @@ const TokenizationDemo = () => {
           />
         </nav>
 
-        <div className="p-4 border-t border-white/5">
+        <div className="hidden lg:block p-4 border-t border-white/5 mt-auto">
           <div className="bg-emerald-900/20 p-3 rounded-lg border border-emerald-500/20 flex items-center gap-3">
             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
             <span className="text-xs font-bold text-emerald-400">{t('tokenization.network_active')}</span>
@@ -260,13 +265,13 @@ const TokenizationDemo = () => {
 const NavButton = ({ active, onClick, icon, label }) => (
   <button 
     onClick={onClick} 
-    className={`w-full text-left px-4 py-3 rounded-xl font-bold transition-all duration-300 flex items-center gap-3 ${
+    className={`w-full text-center lg:text-left px-2 lg:px-4 py-2 lg:py-3 rounded-xl font-bold transition-all duration-300 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-1 lg:gap-3 text-[10px] lg:text-base ${
       active 
         ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-900/20' 
         : 'text-slate-400 hover:bg-slate-800 hover:text-white'
     }`}
   >
-    {icon} {label}
+    {icon} <span className="truncate w-full lg:w-auto">{label}</span>
   </button>
 );
 
@@ -289,9 +294,9 @@ const PedagogyView = () => {
     {/* COMPARISON */}
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
       {/* OLD WORLD */}
-      <div className="bg-slate-900/50 p-8 rounded-2xl border-l-4 border-l-slate-600 border-y border-r border-white/5 shadow-lg relative overflow-hidden group hover:border-slate-500/50 transition-all">
+      <div className="bg-slate-900/50 p-5 md:p-8 rounded-2xl border-l-4 border-l-slate-600 border-y border-r border-white/5 shadow-lg relative overflow-hidden group hover:border-slate-500/50 transition-all">
         <div className="absolute top-0 right-0 bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">{t('pedagogy.traditional')}</div>
-        <h3 className="text-2xl font-bold text-slate-200 mb-8 flex items-center gap-3">
+        <h3 className="text-xl md:text-2xl font-bold text-slate-200 mb-8 flex items-center gap-3">
           <Landmark className="text-slate-500" size={28} /> {t('pedagogy.banking_maze')}
         </h3>
         
@@ -333,9 +338,9 @@ const PedagogyView = () => {
       </div>
 
       {/* NEW WORLD */}
-      <div className="bg-emerald-900/10 p-8 rounded-2xl border-l-4 border-l-emerald-500 border-y border-r border-emerald-500/20 shadow-lg relative overflow-hidden group hover:shadow-emerald-900/20 transition-all">
+      <div className="bg-emerald-900/10 p-5 md:p-8 rounded-2xl border-l-4 border-l-emerald-500 border-y border-r border-emerald-500/20 shadow-lg relative overflow-hidden group hover:shadow-emerald-900/20 transition-all">
         <div className="absolute top-0 right-0 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">{t('pedagogy.tokenization')}</div>
-        <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+        <h3 className="text-xl md:text-2xl font-bold text-white mb-8 flex items-center gap-3">
           <ShieldCheck className="text-emerald-400" size={28} /> {t('pedagogy.digital_highway')}
         </h3>
         
@@ -430,7 +435,7 @@ const PedagogyView = () => {
         <h3 className="text-xl font-bold text-white">{t('pedagogy.tech_comparison')}</h3>
       </div>
       <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse">
+        <table className="w-full text-left border-collapse min-w-[700px]">
           <thead>
             <tr className="bg-slate-950/50 border-b border-white/5 text-xs uppercase tracking-wider text-slate-500">
               <th className="p-4 font-bold w-1/4">{t('pedagogy.service_financial')}</th>
@@ -498,12 +503,12 @@ const InvestorView = ({ navPrice, priceHistory, userHoldings, transactions, open
     className="max-w-7xl mx-auto flex flex-col gap-6"
   >
     {/* HEADER */}
-    <div className="flex justify-between items-end">
+    <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
       <div>
         <h2 className="text-2xl font-extrabold text-white">{t('tokenization.title')}</h2>
         <p className="text-slate-500">{t('tokenization.welcome')}</p>
       </div>
-      <div className="text-right">
+      <div className="text-right self-end md:self-auto">
         <span className="bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-bold border border-emerald-500/20 flex items-center gap-2">
           <Check size={12} /> {t('tokenization.kyc_validated')}
         </span>
@@ -591,7 +596,7 @@ const InvestorView = ({ navPrice, priceHistory, userHoldings, transactions, open
         <h3 className="font-bold text-slate-300">{t('tokenization.transactions_title')}</h3>
       </div>
       <div className="overflow-auto max-h-64">
-        <table className="w-full text-left text-sm">
+        <table className="w-full text-left text-sm min-w-[500px]">
           <thead className="bg-slate-950/50 text-slate-500 uppercase text-xs font-bold sticky top-0">
             <tr>
               <th className="p-4">{t('tokenization.tx_type')}</th>

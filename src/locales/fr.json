@@ -18,8 +18,7 @@
     "projects": "Projets",
     "tokenization": "Tokenisation (POC)",
     "trading": "Trading",
-    "jobs": "Jobs",
-    "dashboards": "Dashboards"
+    "jobs": "Jobs"
   },
   "trading": {
     "title": "Portefeuille Algorithmique",
@@ -46,7 +45,7 @@
     }
   },
   "resume": {
-    "role": "Fondateur de KPeye - Consultant Data et Performance",
+    "role": "Consultant Data & Performance",
     "intro": "Ancien athlète de haut niveau dans le domaine de l'athlétisme, je dédie ma vie au challenge et à la performance ! Expert en <1>Business Intelligence</1>, <2>Automatisation</2> et <3>Stratégie Data</3>.",
     "location": "Monde entier",
     "cta_trading": "Voir mon Portfolio Trading",
@@ -70,10 +69,53 @@
     "form_send": "Envoyer le message",
     "form_auto_button": "Générer la demande de contact",
     "projects_autos": "Projets & Autos",
-    "see_all": "Voir tout",
+    "see_all": "Voir tous les projets",
+    "scroll_text": "Découvrir mon parcours",
+    "metrics": {
+      "title": "Systèmes en Temps Réel",
+      "trading_active": "Algorithme Actif",
+      "market_open": "Marchés Ouverts",
+      "market_closed": "Marchés Fermés",
+      "visitor_loc": "Zone Visiteur",
+      "system_status": "Systèmes Opérationnels",
+      "latency": "Latence API",
+      "market_us": "Marché US",
+      "open": "OUVERT",
+      "closed": "FERMÉ",
+      "daily_pnl": "Perf. Journalière"
+    },
     "key_skills": "Compétences Clés",
-    "certifications": "Certifications",
-    "see_details": "Voir les détails",
+    "certifications": "Certifications",    "email_client_opening": "Ouverture de votre client mail en cours...",
+    "certifications_list": [
+      "Microsoft Certified : Azure AI Fundamentals",
+      "Analyse d'entreprise et gestion des processus",
+      "SEO & Traffic Growth",
+      "Web Dev (HTML/CSS)"
+    ],
+    "education_list": [
+      {
+        "school": "KEDGE Business School",
+        "degree": "MSC - Data Analyst, Recherche en marketing",
+        "year": "2022 - 2024"
+      },
+      {
+        "school": "ICN Business School",
+        "degree": "Bachelor of Commerce - BCom, Commerce international",
+        "year": "2019 - 2022"
+      },
+      {
+        "school": "Lycée Fabert",
+        "degree": "Baccalauréat, Géologie / sciences de la Terre",
+        "year": "2017 - 2019"
+      }
+    ],
+    "testimonials_list": [
+      {
+        "name": "Valentin Melchior",
+        "role": "Performance Management Officer @ ArcelorMittal France",
+        "text": "Jordan est engagé dans son travail et fait preuve d'une grande faculté d'adaptation. Il a su mettre à profit ses qualités humaines et techniques durant son stage de fin d'étude pour répondre à des problématiques très diverses, sur un poste de pilotage transverse avec de nombreux interlocuteurs différents."
+      }
+    ],    "see_details": "Voir les détails",
     "experiences": {
       "sgss": {
         "role": "Business Process and Data Analyst",
@@ -241,7 +283,7 @@
     "log_buy_success": "Ordre d'achat de {{amount}} parts exécuté sur la blockchain.",
     "log_sell_success": "Ordre de vente de {{amount}} parts exécuté. Cash reçu.",
     "log_new_tx": "Nouvelle Transaction : {{hash}}...",
-    "log_block_mined": "Bloc #{{block}} miné.",
+    "log_block_mined": "Bloc #{{block}} validé.",
     "insufficient_funds": "Fonds insuffisants",
     "sell": "Céder",
     "vote": "Voter",

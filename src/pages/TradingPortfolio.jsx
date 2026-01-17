@@ -66,20 +66,7 @@ const TradingPortfolio = () => {
   };
 
   // Mock Data for Fallback
-  const mockChartData = [
-    { date: 'Jan', value: 100000, market: 100000 },
-    { date: 'Feb', value: 125000, market: 102000 },
-    { date: 'Mar', value: 118000, market: 105000 },
-    { date: 'Apr', value: 142000, market: 103000 },
-    { date: 'May', value: 139000, market: 108000 },
-    { date: 'Jun', value: 165000, market: 112000 },
-    { date: 'Jul', value: 182000, market: 115000 },
-    { date: 'Aug', value: 178000, market: 114000 },
-    { date: 'Sep', value: 210000, market: 116000 },
-    { date: 'Oct', value: 245000, market: 113000 },
-    { date: 'Nov', value: 238000, market: 118000 },
-    { date: 'Dec', value: 284000, market: 121000 },
-  ];
+  const mockChartData = [];
 
   // Fetch Alpaca Data
   useEffect(() => {
@@ -279,27 +266,6 @@ const TradingPortfolio = () => {
             setChartData(mergedData);
           }
 
-        } else {
-             // Fallback to Mock
-            const MOCK_START_VALUE = 100000;
-            const MOCK_CURRENT_VALUE = 128400.00;
-            
-            // Mock Percentages
-            const totalReturn = ((MOCK_CURRENT_VALUE - MOCK_START_VALUE) / MOCK_START_VALUE) * 100;
-            
-            setPortfolioValue(totalReturn); // %
-            setEquityValue(MOCK_CURRENT_VALUE);
-            setMonthlyPnL(1.2); // Mock Daily %
-            
-            const normalizedMock = mockChartData.map(d => ({
-                ...d,
-                value: ((d.value - 100000)/100000) * 100, // assuming mock starts at 100k
-                market: ((d.market - 100000)/100000) * 100
-            }));
-
-            setChartData(normalizedMock);
-            setAnnualPerformance(totalReturn);
-            setSharpeRatio(5.4); // Mock Alpha
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -394,17 +360,14 @@ const TradingPortfolio = () => {
               Le système analyse les marchés en temps réel, exécute des stratégies basées sur l'analyse technique et fondamentale, 
               et gère le risque automatiquement via l'API Alpaca. Aucune intervention humaine n'est requise pour l'exécution des ordres affichés ici.
             </p>
-            <p className="text-slate-500 text-xs mt-4 italic border-t border-slate-800 pt-2">
-              * Pour des raisons de confidentialité et de propriété intellectuelle, les noms des actifs et les secteurs d'activité ont été anonymisés (Action 01, Sector A, etc.). Les données de performance restent cependant fidèles à la réalité.
-            </p>
           </div>
         </motion.div>
 
 
         {/* KPI Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8">
           <KpiCard 
-            title={t('trading.kpi.total_value')} 
+            title={t('trading.kpi.total_value')}  
             value={(portfolioValue > 0 ? "+" : "") + portfolioValue.toFixed(2) + "%"} 
             change={t('trading.kpi.return_global')} 
             isPositive={portfolioValue >= 0} 

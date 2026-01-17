@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation, Trans } from 'react-i18next';
 import ROICalculator from '../components/ROICalculator';
+import { getAccount } from '../services/alpaca';
 import { 
   Briefcase, 
   GraduationCap, 
@@ -25,10 +26,90 @@ import {
   Quote,
   User,
   Send,
-  Zap
+  Zap,
+  Globe,
+  Wifi
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
+
+const LiveStatusBadge = () => {
+    const { t } = useTranslation();
+    const [account, setAccount] = useState(null);
+    const [performance, setPerformance] = useState(0);
+    const [latency, setLatency] = useState(0);
+
+    useEffect(() => {
+        const fetchStatus = async () => {
+            const start = window.performance.now();
+            const data = await getAccount();
+            const end = window.performance.now();
+            setLatency(Math.round(end - start));
+
+            if (data) {
+                setAccount(data);
+                if (data.equity && data.last_equity) {
+                   const perf = ((parseFloat(data.equity) - parseFloat(data.last_equity)) / parseFloat(data.last_equity)) * 100;
+                   setPerformance(perf);
+                }
+            }
+        };
+        fetchStatus();
+    }, []);
+
+    const isMarketOpen = account?.clock?.is_open || false;
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    return (
+        <div className="w-full max-w-4xl px-4 mt-8 md:mt-16 mx-auto">
+            <div className="bg-slate-900/60 border border-emerald-500/20 rounded-3xl md:rounded-full py-6 md:py-4 px-6 md:px-10 grid grid-cols-2 md:flex items-center justify-between gap-6 md:gap-x-10 backdrop-blur-md shadow-2xl shadow-emerald-900/20">
+                
+                {/* 1. Latency (Tech Proof) */}
+                <div className="flex flex-col md:flex-row items-center md:gap-2.5 text-center md:text-left">
+                    <div className="flex items-center gap-2 mb-1 md:mb-0">
+                        <Wifi size={16} className={latency < 100 ? "text-emerald-400" : "text-yellow-400"} />
+                        <span className="uppercase tracking-wider opacity-70 text-[10px] md:text-xs text-slate-400">{t('resume.metrics.latency')}:</span>
+                    </div>
+                    <span className="text-white font-mono font-bold text-sm md:text-base">{latency > 0 ? `${latency}ms` : '...'}</span>
+                </div>
+
+                <div className="h-4 w-px bg-white/10 hidden md:block"></div>
+
+                {/* 2. Market Status (Context) */}
+                <div className="flex flex-col md:flex-row items-center md:gap-2.5 text-center md:text-left">
+                    <div className="flex items-center gap-2 mb-1 md:mb-0">
+                        <Briefcase size={16} className={isMarketOpen ? "text-emerald-400" : "text-slate-500"} />
+                        <span className="uppercase tracking-wider opacity-70 text-[10px] md:text-xs text-slate-400">{t('resume.metrics.market_us')}:</span>
+                    </div>
+                    <span className={`font-bold text-sm md:text-base ${isMarketOpen ? "text-emerald-400" : "text-slate-500"}`}>{isMarketOpen ? t('resume.metrics.open') : t('resume.metrics.closed')}</span>
+                </div>
+
+                <div className="h-4 w-px bg-white/10 hidden md:block"></div>
+
+                {/* 3. Daily Performance (Results) */}
+                <div className="flex flex-col md:flex-row items-center md:gap-2.5 text-center md:text-left">
+                    <div className="flex items-center gap-2 mb-1 md:mb-0">
+                        <Activity size={16} className={performance >= 0 ? "text-emerald-400" : "text-red-400"} />
+                        <span className="uppercase tracking-wider opacity-70 text-[10px] md:text-xs text-slate-400">{t('resume.metrics.daily_pnl')}:</span>
+                    </div>
+                    <span className={`font-mono font-bold text-sm md:text-base ${performance >= 0 ? "text-emerald-400" : "text-red-400"}`}>{performance > 0 ? '+' : ''}{performance.toFixed(2)}%</span>
+                </div>
+
+                <div className="h-4 w-px bg-white/10 hidden md:block"></div>
+
+                {/* 4. Visitor Zone (Personalization) */}
+                <div className="flex flex-col md:flex-row items-center md:gap-2.5 text-center md:text-left">
+                    <div className="flex items-center gap-2 mb-1 md:mb-0">
+                        <Globe size={14} className="text-blue-400" />
+                        <span className="uppercase tracking-wider opacity-80 text-[10px] md:text-xs text-slate-400">Zone:</span>
+                    </div>
+                    <span className="text-emerald-50 text-sm md:text-base">{timezone.split('/')[1] || timezone}</span>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -55,15 +136,11 @@ const Resume = () => {
     
     const mailtoUrl = `mailto:jordanfaupro@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
-    // Create a temporary link and click it (more robust than window.location)
-    const link = document.createElement('a');
-    link.href = mailtoUrl;
-    link.style.display = 'none';
-    document.body.appendChild(link);
-    link.click();
-    setTimeout(() => {
-      document.body.removeChild(link);
-    }, 100);
+    // Tentative d'ouverture du client mail
+    window.location.href = mailtoUrl;
+
+    // Feedback visuel pour l'utilisateur
+    alert(t('resume.email_client_opening') || "Ouverture de votre client mail en cours...");
   };
 
   return (
@@ -86,7 +163,7 @@ const Resume = () => {
         
         {/* Header / Contact Info */}
         <motion.header 
-          className="min-h-[calc(100vh-100px)] flex flex-col justify-center items-center text-center mb-24 relative" 
+          className="min-h-[calc(100vh-100px)] flex flex-col justify-center items-center text-center mb-12 md:mb-24 relative pt-8 md:pt-0" 
           variants={itemVariants}
         >
           <motion.div
@@ -94,72 +171,116 @@ const Resume = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 mb-6 tracking-tight">
+            <h1 className="text-4xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 mb-4 md:mb-6 tracking-tight">
               Jordan Fausta
             </h1>
           </motion.div>
           
           <motion.h2 
-            className="text-2xl text-emerald-400 font-medium mb-8 flex items-center justify-center gap-3"
+            className="text-xl md:text-3xl text-emerald-400 font-medium mb-6 md:mb-10 flex items-center justify-center gap-2 md:gap-3 tracking-wide"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <span className="w-12 h-[2px] bg-emerald-500 inline-block"></span>
             {t('resume.role')}
-            <span className="w-12 h-[2px] bg-emerald-500 inline-block"></span>
           </motion.h2>
           
-          <p className="text-slate-400 max-w-3xl mx-auto leading-relaxed text-lg font-light mb-10">
+          <p className="text-slate-300 max-w-2xl mx-auto leading-relaxed md:leading-loose text-base md:text-xl font-light mb-8 md:mb-12 px-4">
             <Trans 
               i18nKey="resume.intro"
               components={{ 
-                1: <span className="text-slate-200 font-medium" />,
-                2: <span className="text-slate-200 font-medium" />,
-                3: <span className="text-slate-200 font-medium" />
+                1: <span className="text-white font-medium" />,
+                2: <span className="text-white font-medium" />,
+                3: <span className="text-white font-medium" />
               }}
             />
           </p>
 
-          <div className="flex flex-wrap justify-center gap-6 mb-12">
-            <a href="mailto:jordanfaupro@gmail.com" className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors px-4 py-2 rounded-full bg-slate-900/50 border border-white/5 hover:border-emerald-500/30">
-              <Mail size={18} />
-              <span>jordanfaupro@gmail.com</span>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-10 md:mb-16">
+            <a href="mailto:jordanfaupro@gmail.com" className="flex items-center gap-2 md:gap-3 text-slate-300 hover:text-emerald-400 transition-colors px-4 py-2 md:px-6 md:py-3 rounded-full bg-slate-900/50 border border-white/5 hover:border-emerald-500/30 backdrop-blur-sm">
+              <Mail size={16} className="md:w-5 md:h-5" />
+              <span className="text-sm font-medium">jordanfaupro@gmail.com</span>
             </a>
-            <a href="https://www.linkedin.com/in/jordan-fausta" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors px-4 py-2 rounded-full bg-slate-900/50 border border-white/5 hover:border-emerald-500/30">
-              <Linkedin size={18} />
-              <span>linkedin.com/in/jordan-fausta</span>
+            <a href="https://www.linkedin.com/in/jordan-fausta" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 md:gap-3 text-slate-300 hover:text-emerald-400 transition-colors px-4 py-2 md:px-6 md:py-3 rounded-full bg-slate-900/50 border border-white/5 hover:border-emerald-500/30 backdrop-blur-sm">
+              <Linkedin size={16} className="md:w-5 md:h-5" />
+              <span className="text-sm font-medium">LinkedIn</span>
             </a>
-            <div className="flex items-center gap-2 text-slate-400 px-4 py-2 rounded-full bg-slate-900/50 border border-white/5">
-              <MapPin size={18} />
-              <span>{t('resume.location')}</span>
+            <div className="flex items-center gap-2 md:gap-3 text-slate-300 px-4 py-2 md:px-6 md:py-3 rounded-full bg-slate-900/50 border border-white/5 backdrop-blur-sm">
+              <MapPin size={16} className="md:w-5 md:h-5" />
+              <span className="text-sm font-medium">{t('resume.location')}</span>
             </div>
           </div>
           
-          <motion.button 
-            className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-500/10 text-emerald-400 rounded-full hover:bg-emerald-500/20 transition-all border border-emerald-500/30 text-base font-medium shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:shadow-[0_0_30px_rgba(16,185,129,0.25)]"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}            onClick={() => window.print()}          >
-            <Download size={20} /> {t('resume.cta_download_cv')}
-          </motion.button>
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 mb-12 md:mb-20">
+            <motion.button 
+              className="inline-flex items-center gap-2 md:gap-3 px-8 py-4 md:px-10 md:py-5 bg-emerald-500/10 text-emerald-400 rounded-full hover:bg-emerald-500/20 transition-all border border-emerald-500/30 text-base md:text-lg font-medium shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:shadow-[0_0_30px_rgba(16,185,129,0.25)]"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.print()}
+            >
+              <Download size={20} className="md:w-[22px] md:h-[22px]" /> {t('resume.cta_download_cv')}
+            </motion.button>
+            
+            <Link to="/projects" className="group flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-base md:text-lg">
+              <span className="border-b border-transparent group-hover:border-emerald-500 transition-all">{t('resume.see_all')}</span>
+              <ChevronRight size={18} className="md:w-5 md:h-5 group-hover:translate-x-1 transition-transform text-emerald-500" />
+            </Link>
+          </div>
 
-          <motion.div 
-            className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer hover:text-emerald-400 transition-colors group"
+          {/* Quick Access Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl w-full px-4 mb-8">
+            <Link to="/trading" className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-emerald-500/40 transition-all text-left backdrop-blur-sm">
+              <div className="flex items-center justify-between mb-3 md:mb-4">
+                <div className="p-2 md:p-3 bg-emerald-500/10 text-emerald-400 rounded-lg md:rounded-xl group-hover:bg-emerald-500 group-hover:text-white transition-colors shadow-lg shadow-emerald-900/20">
+                  <Activity size={20} className="md:w-6 md:h-6" />
+                </div>
+                <span className="text-[10px] md:text-[11px] font-bold font-mono text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-2 md:px-3 py-1 rounded-full border border-emerald-500/20">Live Demo</span>
+              </div>
+              <h3 className="text-white text-base md:text-lg font-bold mb-1 md:mb-2 group-hover:text-emerald-300 transition-colors">Algo Trading</h3>
+              <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Bot de trading autonome connecté à l'API Alpaca.</p>
+            </Link>
+
+            <Link to="/tokenization" className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-blue-500/40 transition-all text-left backdrop-blur-sm">
+              <div className="flex items-center justify-between mb-3 md:mb-4">
+                <div className="p-2 md:p-3 bg-blue-500/10 text-blue-400 rounded-lg md:rounded-xl group-hover:bg-blue-500 group-hover:text-white transition-colors shadow-lg shadow-blue-900/20">
+                  <Code size={20} className="md:w-6 md:h-6" />
+                </div>
+                <span className="text-[10px] md:text-[11px] font-bold font-mono text-blue-400 uppercase tracking-widest bg-blue-500/10 px-2 md:px-3 py-1 rounded-full border border-blue-500/20">POC</span>
+              </div>
+              <h3 className="text-white text-base md:text-lg font-bold mb-1 md:mb-2 group-hover:text-blue-300 transition-colors">RWA Tokenization</h3>
+              <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Plateforme d'investissement immobilier sur Blockchain.</p>
+            </Link>
+
+            <Link to="/jobs" className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-purple-500/40 transition-all text-left backdrop-blur-sm">
+              <div className="flex items-center justify-between mb-3 md:mb-4">
+                <div className="p-2 md:p-3 bg-purple-500/10 text-purple-400 rounded-lg md:rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors shadow-lg shadow-purple-900/20">
+                  <Briefcase size={20} className="md:w-6 md:h-6" />
+                </div>
+                <span className="text-[10px] md:text-[11px] font-bold font-mono text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2 md:px-3 py-1 rounded-full border border-purple-500/20">AI Tool</span>
+              </div>
+              <h3 className="text-white text-base md:text-lg font-bold mb-1 md:mb-2 group-hover:text-purple-300 transition-colors">Job Monitor</h3>
+              <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Agrégateur d'offres d'emploi avec scoring IA.</p>
+            </Link>
+          </div>
+
+          <LiveStatusBadge />
+
+          <motion.button 
+            className="flex flex-col items-center gap-3 mt-12 md:mt-20 cursor-pointer group z-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
             onClick={() => document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })}
           >
-            <span className="text-xs text-slate-600 font-mono tracking-widest uppercase group-hover:text-emerald-400 transition-colors">Scroll</span>
+            <span className="text-[10px] md:text-xs font-bold text-slate-500 font-mono tracking-[0.2em] uppercase group-hover:text-emerald-400 transition-colors duration-300">{t('resume.scroll_text')}</span>
             <motion.div
-              animate={{ y: [0, 5, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="text-slate-600 group-hover:text-emerald-400 transition-colors"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              className="p-2 md:p-3 rounded-full bg-slate-800/50 border border-white/5 group-hover:border-emerald-500/50 group-hover:bg-slate-800 group-hover:text-emerald-400 text-slate-500 transition-all duration-300 shadow-lg"
             >
-              <ChevronDown size={24} />
+              <ChevronDown size={24} className="md:w-7 md:h-7" />
             </motion.div>
-            <div className="w-[1px] h-12 bg-gradient-to-b from-slate-800 to-transparent group-hover:from-emerald-500/50 transition-colors"></div>
-          </motion.div>
+          </motion.button>
         </motion.header>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -253,21 +374,14 @@ const Resume = () => {
               </h3>
 
               <div className="space-y-8">
-                <EducationItem 
-                  school="KEDGE Business School"
-                  degree="MSC - Data analyst, Recherche en marketing"
-                  year="2022 - 2024"
-                />
-                <EducationItem 
-                  school="ICN Business School"
-                  degree="Bachelor of Commerce - BCom, Commerce international"
-                  year="2019 - 2022"
-                />
-                <EducationItem 
-                  school="Lycée Fabert"
-                  degree="Baccalauréat, Géologie / sciences de la Terre"
-                  year="2017 - 2019"
-                />
+                {(t('resume.education_list', { returnObjects: true }) || []).map((edu, index) => (
+                  <EducationItem 
+                    key={index}
+                    school={edu.school}
+                    degree={edu.degree}
+                    year={edu.year}
+                  />
+                ))}
               </div>
             </motion.section>
 
@@ -288,13 +402,7 @@ const Resume = () => {
               </h3>
 
               <div className="grid grid-cols-1 gap-6 pl-8">
-                {[
-                  { 
-                    name: "Valentin Melchior", 
-                    role: "Performance Management Officer @ ArcelorMittal France", 
-                    text: "Jordan is committed to his work and highly adaptable. He was able to apply his social and technical skills during his end-of-study internship to tackle a wide range of issues, in a cross-functional management position with many different contacts." 
-                  }
-                ].map((item, i) => (
+                {(t('resume.testimonials_list', { returnObjects: true }) || []).map((item, i) => (
                   <div key={i} className="glass-card p-8 relative group hover:-translate-y-1 transition-transform duration-300">
                     <Quote className="absolute top-6 right-6 text-emerald-500/10 group-hover:text-emerald-500/20 transition-colors" size={40} />
                     <p className="text-slate-300 italic mb-6 relative z-10 leading-relaxed">"{item.text}"</p>
@@ -415,12 +523,7 @@ const Resume = () => {
                 <Award className="text-emerald-400" size={18} /> {t('resume.certifications')}
               </h4>
               <ul className="space-y-4 relative z-10">
-                {[
-                  'Microsoft Certified : Azure AI Fundamentals',
-                  'Analyse d\'entreprise et gestion des processus',
-                  'SEO & Traffic Growth',
-                  'Web Dev (HTML/CSS)'
-                ].map((cert, i) => (
+                {(t('resume.certifications_list', { returnObjects: true }) || []).map((cert, i) => (
                   <li key={i} className="flex items-start gap-3 text-xs font-medium text-slate-300 group/cert hover:text-white transition-colors">
                     <div className="mt-1 p-1 rounded-full bg-emerald-500/10 text-emerald-400 group-hover/cert:bg-emerald-500 group-hover/cert:text-white transition-colors">
                       <Award size={12} />
