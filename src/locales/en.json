@@ -377,19 +377,59 @@
       "web_data": "Web & Data"
     },
     "status": {
-      "poc": "POC",
       "production": "Production",
-      "live_v2": "Live v2.0",
       "prototype": "Prototype",
-      "beta": "Beta",
-      "mvp": "MVP",
-      "tool": "Tool"
+      "development": "In Development"
     },
     "read_more": "Read More",
     "read_less": "Read Less",
     "demo": "Demo",
     "challenge": "Challenge",
     "solution": "Solution"
+  },
+  "projects_list": {
+    "elliev": {
+      "title": "Public Opinion Scanner",
+      "context": "\"Companies make decisions based on feelings, not facts.\"",
+      "challenge": "Digital Noise",
+      "solution": "Sentiment Analysis AI",
+      "fullDesc": "The problem today isn't finding information, it's filtering it. Ellie V doesn't just search specifically for keywords on Twitter or TikTok. It reads, understands, and scores the emotion behind every post to tell a brand: 'Warning, a crisis is brewing' or 'Your product is loved'."
+    },
+    "tokenization-platform": {
+      "title": "Real Estate 2.0 (Blockchain)",
+      "context": "\"Why does it take 3 months to buy an apartment and 3 seconds to buy Apple stock?\"",
+      "challenge": "Illiquidity & Slowness",
+      "solution": "RWA Tokenization",
+      "fullDesc": "This prototype demonstrates how to cut out middlemen (banks, notaries) in real estate fund management. By transforming fund shares into 'Tokens', we enable 24/7 trading, total transparency, and fees divided by ten."
+    },
+    "job-monitor": {
+      "title": "AI Job Hunter",
+      "context": "\"Spending 2 hours a day scrolling LinkedIn is not a career strategy.\"",
+      "challenge": "Wasted Time",
+      "solution": "Smart Aggregator",
+      "fullDesc": "Instead of me looking for jobs, jobs come to me. This bot scans multiple platforms, filters out 'fake' listings, and sends only those that are a 95% match for my profile directly to Discord."
+    },
+    "algo-trading": {
+      "title": "Stock Market Autopilot",
+      "context": "\"Emotion is the investor's number one enemy.\"",
+      "challenge": "Cognitive Bias",
+      "solution": "Algorithmic Trading",
+      "fullDesc": "A system that manages a US portfolio completely autonomously. It analyzes trends, takes positions in the morning, and closes in the evening. No fatigue, no panic, just cold, disciplined execution of a mathematical strategy."
+    },
+    "tiktok-automation": {
+      "title": "Automated Video Producer",
+      "context": "\"Content creation is repetitive and time-consuming.\"",
+      "challenge": "Scalability",
+      "solution": "AI Content Generation",
+      "fullDesc": "A Python script that acts like a mini-production agency: it finds a trending topic on Reddit, writes a script, generates a voiceover, edits the video with background gameplay, and publishes to TikTok. 0 human intervention."
+    },
+    "kpeye-dashboard": {
+      "title": "Financial Cockpit",
+      "context": "\"An unreadable dashboard is as useless as a car without a windshield.\"",
+      "challenge": "Visibility",
+      "solution": "Decision Dashboard",
+      "fullDesc": "Ultra-clean management interface for executives. Transforms indigestible Excel sheets into 4 key indicators that let you know in 30 seconds if the company is doing well or not."
+    }
   },
   "dashboards": {
     "title": "Dashboards <1>Examples</1>",
@@ -481,89 +521,89 @@
   },
   "projects_list": {
     "elliev": {
-      "title": "Elliev: E-Reputation Control Tower",
-      "shortDesc": "Strategic monitoring platform equipped with sentiment analysis AI.",
-      "fullDesc": "A strategic monitoring platform acting as an extension of your marketing team. Elliev continuously monitors the web (Google News, Reddit, Twitter, TikTok) to detect brand mentions. Equipped with sentiment analysis AI, the tool filters noise, deduplicates information, and sorts by relevance. Unlike invasive solutions, it offers full user control (on-demand updates, easy cleaning).",
+      "title": "Sentiment Analyzer",
+      "shortDesc": "An AI that listens to social networks to tell you what people really think of your brand.",
+      "fullDesc": "Imagine a digital ear capable of listening to Twitter, Reddit, and Google News simultaneously. This system captures every mention of your company, analyzes the emotion behind the words (positive/negative) using AI, and alerts you only when it matters. It's the ultimate tool to master your reputation without spending your days on it.",
       "context": "Brands drown in noise. Missing a bad buzz or a key trend can be fatal.",
       "challenge": "Aggregating highly unstable disparate sources (Social Media APIs) while ensuring a clean and relevant feed without duplicates.",
       "solution": "Multi-Source Aggregator Architecture + NLP Filtering Pipeline."
     },
     "tokenization-platform": {
-      "title": "Fund Tokenization Platform (POC)",
-      "shortDesc": "Real World Asset (RWA) tokenization infrastructure on Blockchain for instant settlement (T+0).",
-      "fullDesc": "The application is segmented into three distinct interfaces to address all value chain actors: 'Understand' (Education & Onboarding), 'Investor Area' (Neo-bank like UX), and 'Fund Console' (Back-Office / Admin). This POC validates that the technology is mature to reinvent customer experience and optimize banking operations.",
+      "title": "Fractional Investment",
+      "shortDesc": "Platform allowing investment in real estate or art starting from €10, simply and instantly.",
+      "fullDesc": "This platform democratizes investment by splitting expensive assets (buildings, works of art) into digital shares accessible to all. Thanks to Blockchain, transactions are instant (T+0) and secure, eliminating the usual 3-day banking delays and administrative paperwork.",
       "context": "To prove that replacing traditional banking infrastructure (silos, T+3 delays) with tokenized infrastructure results in a faster, transparent, and profitable system.",
       "challenge": "Settlement delays (T+2 / T+3), Opacity & Data Silos, High administrative costs, and High entry barriers.",
       "solution": "Atomic Settlement (T+0), Shared Ledger (DLT) for transparency, Smart Contracts for automation, and Fractionalization for accessibility."
     },
     "job-monitor": {
-      "title": "Job Monitor AI",
-      "shortDesc": "Discord bot orchestrator for 24/7 multi-platform job monitoring.",
-      "fullDesc": "A true 'agent factory' integrated into Discord. The system allows each user to deploy their own autonomous worker that monitors the web continuously. The tool integrates over 30 recruitment platforms covering Europe and the world, aggregating disparate sources (APIs, Scraping, Career Sites) into a single, clean feed.",
+      "title": "24/7 Headhunter",
+      "shortDesc": "A personal assistant that scans the job market for you day and night.",
+      "fullDesc": "Never miss your dream job again. This bot continuously monitors over 30 job sites (LinkedIn, Indeed, etc.) and notifies you instantly on Discord as soon as an opportunity matches your criteria. It's like having a team of recruiters working for you 24/7.",
       "context": "The fragmentation of the job market forces candidates to manually monitor dozens of sites, wasting precious time.",
       "challenge": "Industrialize scraping on protected sites (LinkedIn, Indeed) while maintaining isolated sessions for each user.",
       "solution": "Master-Slave architecture generating dynamic Node.js scripts on the fly. Intelligent queue system and proxy rotation for undetectability."
     },
     "algo-trading": {
-      "title": "Algo Trading Bot",
-      "shortDesc": "Quantitative trading bot (Momentum) on S&P 500 & Crypto with active risk management.",
-      "fullDesc": "An autonomous portfolio manager that orchestrates the complete investment cycle. It analyzes the S&P 500 universe and a selection of high-beta assets to build a diversified portfolio. The algorithm favors relative strength (Momentum) while mathematically filtering out overly correlated assets to minimize systemic risk.",
+      "title": "Automated Trading",
+      "shortDesc": "An algorithm that manages your investments with the cold discipline of a machine.",
+      "fullDesc": "This trading robot manages your money following a rigorous mathematical strategy. It buys when the trend is strong and automatically sells before the market collapses. It removes the emotional factor (fear/greed) to secure stable long-term performance.",
       "context": "Manual investment often fails due to lack of emotional discipline in the face of volatility and trend reversals.",
       "challenge": "Capture the explosiveness of growth assets (Tech/Crypto) while guaranteeing an automatic and cold exit before stock market crashes.",
       "solution": "Pipeline 'Screener -> Filter -> Execute'. Use of trend filters (SMA), correlation matrices for selection, and server-side Trailing Stops orders to secure profits (Let Winners Run)."
     },
     "tiktok-automation": {
-      "title": "Viral News Automation",
-      "shortDesc": "100% autonomous pipeline: From Tech watch to viral TikTok publication.",
-      "fullDesc": "A fully automated video production studio driven by AI. The system monitors Tech news, detects subjects with high viral potential via OpenAI, and manages the entire production chain: script writing, contextual media search, speech synthesis (TTS), dynamic editing, and automatic publication on TikTok.",
+      "title": "Viral Content Creator",
+      "shortDesc": "An autonomous production studio that turns news into TikTok videos.",
+      "fullDesc": "Why spend hours editing? This system spots tech news, writes an engaging script, generates a voiceover, finds images, edits the video, and publishes it to TikTok. All without a single human click. It is total content creation automation.",
       "context": "Creating 'Short-Form' content requires exhausting regularity and responsiveness for a human creator.",
       "challenge": "Automate video editing (usually manual and creative) while keeping a captivating narrative and visual consistency.",
       "solution": "Creative ETL Pipeline: Scraping -> LLM Analysis (Viral Score) -> Asset Generation -> Programmatic Editing (MoviePy) -> Upload API."
     },
     "auto-stream": {
-      "title": "Autoclip (Twitch Automation)",
-      "shortDesc": "Viral detection pipeline and automatic vertical clip generation.",
-      "fullDesc": "A complete 'Content Automation' software solution that monitors live Twitch streams to extract highlights. The system uses advanced behavioral analysis (audio/video) to detect excitement and automatically generate clips in vertical format (9:16) ready for TikTok/Reels, without human intervention.",
+      "title": "Smart Video Editor",
+      "shortDesc": "An AI that watches Twitch for you and extracts the best moments in one click.",
+      "fullDesc": "No more watching 5 hours of replay to find a nugget. This AI analyzes the audio and video of Twitch streams to detect moments of excitement (laughter, shouting, action). It automatically cuts these moments and formats them into vertical video for social networks.",
       "context": "Video editors spend hours watching replays to find 30 interesting seconds.",
       "challenge": "Develop a 'brain' capable of objectively understanding what a viral moment is without relying solely on chat, by analyzing sound and visual energy.",
       "solution": "Sequential Pipeline: Streamlink Capture -> Audio Analysis (Librosa) & Vision (OpenCV) -> Viral Composite Scoring -> Intelligent FFmpeg Cropping."
     },
     "sports-arbitrage": {
-      "title": "Sports Arbitrage Bot",
-      "shortDesc": "Real-time statistical arbitrage opportunity scanner (Surebets).",
-      "fullDesc": "A market 'sniper' designed to exploit pricing inefficiencies between local bookmakers and the international market. Unlike classic solutions based on Selenium, this bot uses API Reverse Engineering for maximum execution speed, allowing detection of mathematical discrepancies (Surebets) before market correction.",
+      "title": "Opportunity Scanner",
+      "shortDesc": "A tool that spots bookmaker price errors for guaranteed wins.",
+      "fullDesc": "This scanner compares sports betting odds at lightning speed to find mathematical anomalies (Surebets). It identifies when bookmakers disagree on a match result, allowing you to bet on all outcomes to make a profit regardless of the winner.",
       "context": "Local bookmakers sometimes adjust their odds with a few seconds delay on the global market (Pinnacle/Bet365).",
       "challenge": "The 'Smart Matching': Automatically reconcile entities named differently (e.g., 'Man. City' vs 'Manchester City FC') across heterogeneous data sources.",
       "solution": "Modular Python Architecture: Direct API Scrapers (Reverse Engineering) -> Normalization Engine (Jaccard Similarity) -> Implied Probability Calculator."
     },
     "smart-cv": {
-      "title": "Smart CV Extension",
-      "shortDesc": "Generative AI Chrome Extension for contextual CV optimization.",
-      "fullDesc": "An intelligent career assistant integrated into the browser (Manifest V3). The extension analyzes the active job offer (LinkedIn, WTTJ) and rewrites the CV in real-time to maximize 'Matching'. It offers two generation engines: a 'Fast-Track' mode (Single-Shot) for rapid iteration, and a 'Deep-Work' mode (Sequential Pipeline) using reasoning models (o1-mini) for strategic rewriting (STAR Method, Action Verbs).",
+      "title": "Career Optimizer",
+      "shortDesc": "Your CV rewrites itself to please recruiters and robots.",
+      "fullDesc": "A browser extension that acts like a personal career coach. Viewing a job offer? In one click, it analyzes the keywords of the ad and rewrites your CV to highlight your most relevant experiences. It is the ultimate weapon to pass automatic HR filters.",
       "context": "Adapting your CV to each offer is essential but time-consuming. Generic candidates are filtered by ATS.",
       "challenge": "Orchestrate a complex AI pipeline (Extraction -> Enrichment -> Transposition -> PDF Rendering) directly in the browser without blocking the interface.",
       "solution": "Hybrid architecture with background.js state management. Injection of content scripts for scraping and client-side PDF generation via html2pdf."
     },
     "ezlod": {
-      "title": "EZLOD (E-commerce Automation)",
-      "shortDesc": "E-commerce automation suite: StockX to Vinted pipeline.",
-      "fullDesc": "A complete software solution for sneaker resale automation. The system connects StockX market intelligence (Price, 360° Images) to the Vinted platform via a complex ETL pipeline. It transforms a simple product code (SKU) into a professional and optimized sales listing, ready to be published.",
+      "title": "Automated E-commerce Seller",
+      "shortDesc": "Convert raw data into professional sales listings.",
+      "fullDesc": "This system automates the tedious work of resellers. It retrieves official photos and market prices (StockX), and automatically creates a perfect listing on Vinted. You go from receiving the product to listing it for sale in seconds.",
       "context": "Creating quality listings for sneaker resale is a repetitive and slow manual process (photos, description, pricing).",
       "challenge": "Orchestrate the recovery of protected data (StockX GraphQL/360° Images) and automate publication on a closed platform (Vinted) without triggering security measures.",
       "solution": "Hybrid Approach: API Scraping (GraphQL/HAR Analysis) for Data + Selenium/Requests for Vinted automation. Image processing engine (Pillow) to generate unique studio views."
     },
     "seo-audit": {
-      "title": "SEO Auto-Audit",
-      "shortDesc": "Bot for technical and structural analysis of websites.",
-      "fullDesc": "An autonomous digital auditor capable of mapping the complete architecture of a site. It simulates the behavior of search engines to identify invisible technical debts that penalize referencing.",
+      "title": "Virtual SEO Expert",
+      "shortDesc": "A complete diagnosis of your website to please Google.",
+      "fullDesc": "This robot explores your site like Google does. It checks every page, every link, and every image to identify what is stopping your site from being first in search results. It delivers a detailed technical report to fix your errors.",
       "context": "Manual audits cannot cover the exhaustiveness of thousands of pages of a modern site.",
       "challenge": "Efficiently crawl dynamic web applications (SPA) without being blocked or impacting target server performance.",
       "solution": "Respectful Asynchronous Crawler (Polite Crawler) with headless JS rendering and graph analysis."
     },
     "tcg-collector": {
-      "title": "Next.js TCG Collector",
-      "shortDesc": "Card collection management application with intelligent OCR scanner.",
-      "fullDesc": "A complete platform for card collectors (TCG) combining collection management and image recognition. The application allows users to digitize their physical cards via a photo, automatically extract metadata (HP, Rarity, Set) thanks to AI, and track their collection progress with detailed statistics.",
+      "title": "Collection Manager",
+      "shortDesc": "Scan your cards, AI recognizes them and gives you their price.",
+      "fullDesc": "No more manual searching for the price of your Pokémon or Magic cards. Take a photo, and the application recognizes the exact card (even with reflections), gives you its current market value, and adds it to your digital collection.",
       "context": "Manual management of thousands of physical cards is tedious and prone to entry errors.",
       "challenge": "Precisely identify a card among thousands of visually similar variants (Reverse Holo, Full Art) from a simple smartphone photo.",
       "solution": "Hybrid computer vision pipeline: Azure Cognitive Services for textual OCR + Perceptual hashing algorithm for exact image matching."

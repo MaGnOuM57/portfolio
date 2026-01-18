@@ -14,8 +14,33 @@ const themeStyles = {
   cyan: { bg: "bg-cyan-500/10", text: "text-cyan-400", border: "border-cyan-500/20", hoverBorder: "group-hover:border-cyan-500/50", glow: "shadow-cyan-500/20" },
 };
 
+const STATUS_CONFIG = {
+  production: { 
+    color: "emerald", 
+    icon: <Target size={12} />, 
+    bg: "bg-emerald-500/10", 
+    border: "border-emerald-500/20", 
+    text: "text-emerald-400" 
+  },
+  prototype: { 
+    color: "blue", 
+    icon: <Zap size={12} />, 
+    bg: "bg-blue-500/10", 
+    border: "border-blue-500/20", 
+    text: "text-blue-400" 
+  },
+  development: { 
+    color: "amber", 
+    icon: <Zap size={12} />, 
+    bg: "bg-amber-500/10", 
+    border: "border-amber-500/20", 
+    text: "text-amber-400" 
+  }
+};
+
 const ProjectCard = ({ project, index, isHighlighted }) => {
   const styles = themeStyles[project.theme];
+  const statusStyle = STATUS_CONFIG[project.status] || STATUS_CONFIG.production;
   const [isExpanded, setIsExpanded] = useState(isHighlighted);
   const { t } = useTranslation();
   const cardRef = useRef(null);
@@ -49,7 +74,8 @@ const ProjectCard = ({ project, index, isHighlighted }) => {
             {project.icon}
           </div>
           <div className="flex gap-2">
-            <span className="px-3 py-1 rounded-full bg-slate-800/50 border border-white/5 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            <span className={`px-3 py-1.5 rounded-full ${statusStyle.bg} ${statusStyle.border} border flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider ${statusStyle.text} shadow-sm`}>
+              {statusStyle.icon}
               {t(`projects.status.${project.status}`)}
             </span>
           </div>

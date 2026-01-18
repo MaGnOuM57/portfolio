@@ -373,13 +373,9 @@
       "web_data": "Web & Data"
     },
     "status": {
-      "poc": "POC",
       "production": "Production",
-      "live_v2": "Live v2.0",
       "prototype": "Prototype",
-      "beta": "Bêta",
-      "mvp": "MVP",
-      "tool": "Outil"
+      "development": "En Développement"
     },
     "read_more": "Lire Plus",
     "read_less": "Lire Moins",
@@ -482,89 +478,89 @@
   },
   "projects_list": {
     "elliev": {
-      "title": "Elliev : La Tour de Contrôle E-Réputation",
-      "shortDesc": "Plateforme intelligente de surveillance multi-canal (Web, Réseaux Sociaux, Médias).",
-      "fullDesc": "Une plateforme de veille stratégique qui agit comme une extension de votre équipe marketing. Elliev surveille en permanence le web (Google News, Reddit, Twitter, TikTok) pour détecter les mentions de votre marque. Doté d'une IA d'analyse de sentiment, l'outil filtre le bruit, dédoublonne les informations et les trie par pertinence. Contrairement aux solutions invasives, il offre un contrôle total à l'utilisateur (mise à jour à la demande, nettoyage facile).",
+      "title": "Analyseur de Sentiments",
+      "shortDesc": "Une IA qui écoute les réseaux sociaux pour détecter ce que l'on dit de votre marque en temps réel.",
+      "fullDesc": "Imaginez une oreille numérique capable d'écouter simultanément Twitter, Reddit et Google News. Ce système capte chaque mention de votre entreprise, analyse l'émotion derrière les mots (positif/négatif) grâce à l'IA, et vous alerte uniquement quand c'est important. C'est l'outil ultime pour maîtriser votre réputation sans y passer vos journées.",
       "context": "Le volume d'information sur le web rend impossible la surveillance manuelle de sa réputation sans y passer des heures.",
       "challenge": "Connecter des sources hétérogènes (APIs officielles, Scraping) tout en garantissant la stabilité, la discrétion (système anti-blocage) et la pertinence des résultats (filtrage IA).",
       "solution": "Agrégateur multi-source avec proxy rotatifs, moteur d'analyse de sentiment (NLP) pour le tri qualitatif et interface Dashboard réactive."
     },
     "tokenization-platform": {
-      "title": "Plateforme de Tokenisation de Fonds (POC)",
-      "shortDesc": "Infrastructure de tokenisation d'actifs réels (RWA) sur Blockchain pour un règlement instantané (T+0).",
-      "fullDesc": "L'application est segmentée en trois interfaces distinctes pour adresser tous les acteurs de la chaîne de valeur : 'Comprendre' (Pédagogie & Onboarding), 'Espace Investisseur' (Expérience Utilisateur type néo-banque) et 'Console Fonds' (Back-Office / Admin). Ce POC valide que la technologie est mature pour réinventer l'expérience client et optimiser les opérations bancaires.",
+      "title": "Investissement Fractionné",
+      "shortDesc": "Plateforme permettant d'investir dans l'immobilier ou l'art dès 10€, de manière simple et instantanée.",
+      "fullDesc": "Cette plateforme démocratise l'investissement en découpant des actifs coûteux (immeubles, œuvres d'art) en parts numériques accessibles à tous. Grâce à la Blockchain, les transactions sont instantanées (T+0) et sécurisées, supprimant les délais bancaires de 3 jours et la paperasse administrative habituelle.",
       "context": "Prouver qu'en remplaçant l'infrastructure bancaire traditionnelle (silos, délais T+3) par une infrastructure tokenisée, on obtient un système plus rapide, transparent et rentable.",
       "challenge": "Délais de règlement (T+2 / T+3), Opacité & Silos de données, Coûts administratifs élevés et Barrière à l'entrée élevée.",
       "solution": "Règlement Atomique (T+0), Registre Partagé (DLT) pour la transparence, Smart Contracts pour l'automatisation et Fractionnement pour l'accessibilité."
     },
     "job-monitor": {
-      "title": "Job Monitor IA",
-      "shortDesc": "Orchestrateur de bots Discord pour la veille d'emploi multi-plateformes 24/7.",
-      "fullDesc": "Une véritable 'usine à agents' intégrée à Discord. Le système permet à chaque utilisateur de déployer son propre worker autonome qui surveille le web en continu. L'outil intègre plus de 30 plateformes de recrutement couvrant l'Europe et le monde entier, agrégeant des sources disparates (APIs, Scraping, Sites Carrières) en un flux unique et propre.",
+      "title": "Chasseur de Têtes 24/7",
+      "shortDesc": "Un assistant personnel qui scrute pour vous le marché de l'emploi jour et nuit.",
+      "fullDesc": "Ne ratez plus jamais l'offre de vos rêves. Ce robot surveille en permanence plus de 30 sites d'emploi (LinkedIn, Indeed, etc.) et vous notifie instantanément sur Discord dès qu'une opportunité correspond à vos critères. C'est comme avoir une équipe de recruteurs qui travaille pour vous 24h/24.",
       "context": "La fragmentation du marché de l'emploi oblige les candidats à surveiller manuellement des dizaines de sites, perdant un temps précieux.",
       "challenge": "Industrialiser le scraping sur des sites protégés (LinkedIn, Indeed) tout en maintenant des sessions isolées pour chaque utilisateur.",
       "solution": "Architecture Maître-Esclave générant des scripts Node.js dynamiques à la volée. Système de files d'attente intelligent et rotation de proxies pour l'indétectabilité."
     },
     "algo-trading": {
-      "title": "Algo Trading Bot",
-      "shortDesc": "Automate de trading quantitatif (Momentum) sur S&P 500 & Crypto avec gestion active du risque.",
-      "fullDesc": "Un gestionnaire de portefeuille autonome qui orchestre le cycle d'investissement complet. Il analyse l'univers S&P 500 et une sélection d'actifs à fort bêta pour construire un portefeuille diversifié. L'algorithme privilégie la force relative (Momentum) tout en filtrant mathématiquement les actifs trop corrélés pour minimiser le risque systémique.",
+      "title": "Trading Automatisé",
+      "shortDesc": "Un algorithme qui gère vos investissements avec la discipline froide d'une machine.",
+      "fullDesc": "Ce robot de trading gère votre argent en suivant une stratégie mathématique rigoureuse. Il achète quand la tendance est forte et vend automatiquement avant que le marché ne s'effondre. Il supprime le facteur émotionnel (peur/avidité) pour sécuriser une performance stable sur le long terme.",
       "context": "L'investissement manuel échoue souvent par manque de discipline émotionnelle face à la volatilité et aux retournements de tendance.",
       "challenge": "Capturer l'explosivité des actifs de croissance (Tech/Crypto) tout en garantissant une sortie automatique et froide avant les krachs boursiers.",
       "solution": "Pipeline 'Screener -> Filter -> Execute'. Utilisation de filtres de tendance (SMA), de matrices de corrélation pour la sélection, et d'ordres Trailing Stops serveurs pour sécuriser les profits (Let Winners Run)."
     },
     "tiktok-automation": {
-      "title": "Viral News Automation",
-      "shortDesc": "Pipeline 100% autonome : De la veille Tech à la publication TikTok virale.",
-      "fullDesc": "Un studio de production vidéo entièrement automatisé piloté par l'IA. Le système surveille l'actualité Tech, détecte les sujets à fort potentiel viral via OpenAI, et gère toute la chaîne de production : écriture du script, recherche de médias contextuels, synthèse vocale (TTS), montage dynamique et publication automatique sur TikTok.",
+      "title": "Créateur de Contenu Viral",
+      "shortDesc": "Un studio de production autonome qui transforme l'actualité en vidéos TikTok.",
+      "fullDesc": "Pourquoi passer des heures au montage ? Ce système repère une actualité tech, rédige un script engageant, génère une voix off, trouve les images, monte la vidéo et la publie sur TikTok. Tout ça sans aucun clic humain. C'est l'automatisation totale de la création de contenu.",
       "context": "La création de contenu 'Short-Form' demande une régularité et une réactivité épuisantes pour un créateur humain.",
       "challenge": "Automatiser le montage vidéo (habituellement manuel et créatif) tout en gardant une cohérence narrative et visuelle captivante.",
       "solution": "Pipeline ETL créatif : Scraping -> Analyse LLM (Viral Score) -> Génération d'assets -> Montage programmatique (MoviePy) -> Upload API."
     },
     "auto-stream": {
-      "title": "Autoclip (Twitch Automation)",
-      "shortDesc": "Pipeline de détection de viralité et génération automatique de clips verticaux.",
-      "fullDesc": "Une solution logicielle complète de 'Content Automation' qui surveille des flux Twitch en direct pour en extraire les moments forts. Le système utilise une analyse comportementale avancée (audio/vidéo) pour détecter l'excitation et générer automatiquement des clips au format vertical (9:16) prêts pour TikTok/Reels, sans intervention humaine.",
+      "title": "Monteur Vidéo Intelligent",
+      "shortDesc": "Une IA qui regarde Twitch pour vous et extrait les meilleurs moments en un clic.",
+      "fullDesc": "Fini de regarder 5 heures de replay pour trouver une pépite. Cette IA analyse l'audio et la vidéo des streams Twitch pour détecter les moments d'excitation (rires, cris, action). Elle découpe automatiquement ces instants et les formate en vidéo verticale pour les réseaux sociaux.",
       "context": "Les éditeurs vidéo passent des heures à visionner des replays pour trouver 30 secondes intéressantes.",
       "challenge": "Développer un 'cerveau' capable de comprendre objectivement ce qu'est un moment viral sans se baser uniquement sur le chat, en analysant l'énergie sonore et visuelle.",
       "solution": "Pipeline séquentiel : Capture Streamlink -> Analyse Audio (Librosa) & Vision (OpenCV) -> Scoring Viral Composite -> Recadrage Intelligent FFmpeg."
     },
     "sports-arbitrage": {
-      "title": "Sports Arbitrage Bot",
-      "shortDesc": "Scanner d'opportunités d'arbitrage statistique en temps réel (Surebets).",
-      "fullDesc": "Un 'sniper' de marché conçu pour exploiter les inefficacités de cotation entre les bookmakers locaux et le marché international. Contrairement aux solutions classiques basées sur Selenium, ce bot utilise le Reverse Engineering d'API pour une vitesse d'exécution maximale, permettant de détecter les écarts mathématiques (Surebets) avant la correction du marché.",
+      "title": "Scanner d'Opportunités",
+      "shortDesc": "Un outil qui repère les erreurs de prix des bookmakers pour des gains garantis.",
+      "fullDesc": "Ce scanner compare les cotes des paris sportifs à la vitesse de l'éclair pour trouver des anomalies mathématiques (Surebets). Il identifie quand les bookmakers ne sont pas d'accord sur le résultat d'un match, vous permettant de parier sur toutes les issues pour réaliser un profit quel que soit le vainqueur.",
       "context": "Les bookmakers locaux ajustent parfois leurs cotes avec quelques secondes de retard sur le marché mondial (Pinnacle/Bet365).",
       "challenge": "Le 'Smart Matching' : Réconcilier automatiquement des entités nommées différemment (ex: 'Man. City' vs 'Manchester City FC') à travers des sources de données hétérogènes.",
       "solution": "Architecture modulaire Python : Scrapers API directs (Reverse Engineering) -> Moteur de Normalisation (Jaccard Similarity) -> Calculateur de probabilités implicites."
     },
     "smart-cv": {
-      "title": "Smart CV Extension",
-      "shortDesc": "Extension Chrome d'IA générative pour l'optimisation contextuelle de CVs.",
-      "fullDesc": "Un assistant de carrière intelligent intégré au navigateur (Manifest V3). L'extension analyse l'offre d'emploi active (LinkedIn, WTTJ) et réécrit le CV en temps réel pour maximiser le 'Matching'. Elle propose deux moteurs de génération : un mode 'Fast-Track' (Single-Shot) pour l'itération rapide, et un mode 'Deep-Work' (Pipeline Séquentiel) utilisant des modèles de raisonnement (o1-mini) pour une réécriture stratégique (Méthode STAR, Verbes d'action).",
+      "title": "Optimiseur de Carrière",
+      "shortDesc": "Votre CV se réécrit tout seul pour plaire aux recruteurs et aux robots.",
+      "fullDesc": "Une extension navigateur qui agit comme un coach carrière personnel. Vous consultez une offre d'emploi ? En un clic, elle analyse les mots-clés de l'annonce et réécrit votre CV pour mettre en avant vos expériences les plus pertinentes. C'est l'arme absolue pour passer les filtres automatiques des RH.",
       "context": "Adapter son CV à chaque offre est indispensable mais chronophage. Les candidats génériques sont filtrés par les ATS.",
       "challenge": "Orchestrer un pipeline d'IA complexe (Extraction -> Enrichissement -> Transposition -> Rendu PDF) directement dans le navigateur sans bloquer l'interface.",
       "solution": "Architecture hybride avec gestion d'état background.js. Injection de scripts de contenu pour le scraping et génération PDF client-side via html2pdf."
     },
     "ezlod": {
-      "title": "EZLOD (E-commerce Automation)",
-      "shortDesc": "Suite d'automatisation E-commerce : Pipeline StockX vers Vinted.",
-      "fullDesc": "Une solution logicielle complète pour l'automatisation de la revente de sneakers. Le système connecte l'intelligence de marché de StockX (Prix, Images 360°) à la plateforme Vinted via un pipeline ETL complexe. Il transforme un simple code produit (SKU) en une annonce de vente professionnelle et optimisée, prête à être publiée.",
+      "title": "Vendeur E-commerce Automatique",
+      "shortDesc": "Convertissez des données brutes en annonces de vente professionnelles.",
+      "fullDesc": "Ce système automatise le travail fastidieux des revendeurs. Il récupère les photos officielles et les prix du marché (StockX), et crée automatiquement une annonce parfaite sur Vinted. Vous passez de la réception du produit à sa mise en vente en quelques secondes.",
       "context": "La création d'annonces de qualité pour la revente de sneakers est un processus manuel répétitif et lent (photos, description, pricing).",
       "challenge": "Orchestrer la récupération de données protégées (StockX GraphQL/Images 360) et automatiser la publication sur une plateforme fermée (Vinted) sans déclencher les sécurités.",
       "solution": "Approche Hybride : Scraping API (GraphQL/HAR Analysis) pour la Data + Selenium/Requests pour l'automatisation Vinted. Moteur de traitement d'image (Pillow) pour générer des vues studio uniques."
     },
     "seo-audit": {
-      "title": "SEO Auto-Audit",
-      "shortDesc": "Bot d'analyse technique et structurelle de sites web.",
-      "fullDesc": "Un auditeur numérique autonome capable de cartographier l'architecture complète d'un site. Il simule le comportement des moteurs de recherche pour identifier les dettes techniques invisibles qui pénalisent le référencement.",
+      "title": "Expert SEO Virtuel",
+      "shortDesc": "Un diagnostic complet de votre site web pour plaire à Google.",
+      "fullDesc": "Ce robot explore votre site comme le fait Google. Il vérifie chaque page, chaque lien et chaque image pour identifier ce qui empêche votre site d'être premier dans les résultats de recherche. Il vous livre un rapport technique détaillé pour corriger vos erreurs.",
       "context": "Les audits manuels ne peuvent pas couvrir l'exhaustivité des milliers de pages d'un site moderne.",
       "challenge": "Crawler efficacement des applications web dynamiques (SPA) sans être bloqué ni impacter les performances du serveur cible.",
       "solution": "Crawler asynchrone respectueux (Polite Crawler) avec rendu JS headless et analyse de graphe."
     },
     "tcg-collector": {
-      "title": "Next.js TCG Collector",
-      "shortDesc": "Application de gestion de collection de cartes avec scanner OCR intelligent.",
-      "fullDesc": "Une plateforme complète pour les collectionneurs de cartes (TCG) alliant gestion de collection et reconnaissance d'image. L'application permet aux utilisateurs de numériser leurs cartes physiques via une photo, d'extraire automatiquement les métadonnées (PV, Rareté, Set) grâce à l'IA, et de suivre leur progression de collection avec des statistiques détaillées.",
+      "title": "Gestionnaire de Collection",
+      "shortDesc": "Scannez vos cartes, l'IA les reconnaît et vous donne leur prix.",
+      "fullDesc": "Plus besoin de chercher manuellement le prix de vos cartes Pokémon ou Magic. Prenez une photo, et l'application reconnaît la carte exacte (même avec des reflets), vous donne sa valeur actuelle sur le marché et l'ajoute à votre collection numérique.",
       "context": "La gestion manuelle de milliers de cartes physiques est fastidieuse et sujette aux erreurs de saisie.",
       "challenge": "Identifier précisément une carte parmi des milliers de variantes visuellement proches (Reverse Holo, Full Art) à partir d'une simple photo smartphone.",
       "solution": "Pipeline de vision par ordinateur hybride : Azure Cognitive Services pour l'OCR textuel + Algorithme de hachage perceptuel pour la correspondance d'image exacte."

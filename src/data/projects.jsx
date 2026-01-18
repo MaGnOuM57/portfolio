@@ -14,7 +14,7 @@ export const projects = [
   {
     id: 'tokenization-platform',
     category: "finance_blockchain",
-    status: "poc",
+    status: "prototype",
     tech: ["Node.js", "Express", "Socket.io", "TailwindCSS", "Chart.js", "Blockchain", "Smart Contracts", "Innovation"],
     icon: <ShieldCheck size={24} />,
     theme: "emerald",
@@ -34,7 +34,7 @@ export const projects = [
   {
     id: 'algo-trading',
     category: "finance_blockchain",
-    status: "live_v2",
+    status: "production",
     tech: ["Python", "Alpaca API", "Pandas", "Yahoo Finance", "Discord API", "Automatisation", "Business Intelligence", "Power BI", "Tableau", "ETL"],
     icon: <Cpu size={24} />,
     theme: "emerald",
@@ -63,7 +63,7 @@ export const projects = [
   {
     id: 'sports-arbitrage',
     category: "finance_blockchain",
-    status: "beta",
+    status: "development",
     tech: ["Python", "Reverse Engineering", "Fuzzy Logic", "Redis", "Telegram API", "Automatisation"],
     icon: <Activity size={24} />,
     theme: "orange",
@@ -72,7 +72,7 @@ export const projects = [
   {
     id: 'smart-cv',
     category: "ai_automation",
-    status: "mvp",
+    status: "prototype",
     tech: ["Javascript", "Chrome API (V3)", "OpenAI API (GPT-4o/o1)", "Webpack", "HTML2PDF", "Innovation"],
     icon: <FileText size={24} />,
     theme: "pink",
@@ -90,7 +90,7 @@ export const projects = [
   {
     id: 'seo-audit',
     category: "web_data",
-    status: "tool",
+    status: "production",
     tech: ["Python", "BeautifulSoup", "Scrapy", "React", "Tailwind", "SEO", "Google Analytics"],
     icon: <Search size={24} />,
     theme: "cyan",
