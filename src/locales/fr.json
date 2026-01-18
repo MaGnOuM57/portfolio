@@ -478,25 +478,25 @@
   },
   "projects_list": {
     "elliev": {
-      "title": "Analyseur de Sentiments",
-      "shortDesc": "Une IA qui écoute les réseaux sociaux pour détecter ce que l'on dit de votre marque en temps réel.",
-      "fullDesc": "Imaginez une oreille numérique capable d'écouter simultanément Twitter, Reddit et Google News. Ce système capte chaque mention de votre entreprise, analyse l'émotion derrière les mots (positif/négatif) grâce à l'IA, et vous alerte uniquement quand c'est important. C'est l'outil ultime pour maîtriser votre réputation sans y passer vos journées.",
+      "title": "Veille & E-Réputation",
+      "shortDesc": "Surveillez votre marque et vos concurrents en temps réel avec analyse de sentiment.",
+      "fullDesc": "Une plateforme complète de veille stratégique. Vous définissez votre marque et vos concurrents, et l'outil analyse en continu ce qui se dit sur les réseaux sociaux. Il détecte le sentiment (positif/négatif) autour de vos produits et vous alerte instantanément en cas d'actualité majeure chez la concurrence.",
       "context": "Le volume d'information sur le web rend impossible la surveillance manuelle de sa réputation sans y passer des heures.",
       "challenge": "Connecter des sources hétérogènes (APIs officielles, Scraping) tout en garantissant la stabilité, la discrétion (système anti-blocage) et la pertinence des résultats (filtrage IA).",
       "solution": "Agrégateur multi-source avec proxy rotatifs, moteur d'analyse de sentiment (NLP) pour le tri qualitatif et interface Dashboard réactive."
     },
     "tokenization-platform": {
-      "title": "Investissement Fractionné",
-      "shortDesc": "Plateforme permettant d'investir dans l'immobilier ou l'art dès 10€, de manière simple et instantanée.",
-      "fullDesc": "Cette plateforme démocratise l'investissement en découpant des actifs coûteux (immeubles, œuvres d'art) en parts numériques accessibles à tous. Grâce à la Blockchain, les transactions sont instantanées (T+0) et sécurisées, supprimant les délais bancaires de 3 jours et la paperasse administrative habituelle.",
+      "title": "Démocratisation de l'Investissement",
+      "shortDesc": "Ouvrir l'investissement exclusif au grand public grâce à la tokenisation.",
+      "fullDesc": "Ce projet pédagogique démontre comment la blockchain peut rendre accessible des fonds d'investissement habituellement réservés aux plus riches. En 'tokenisant' un fond, on fragmente le ticket d'entrée, permettant à n'importe qui d'investir de petits montants dans des actifs premium.",
       "context": "Prouver qu'en remplaçant l'infrastructure bancaire traditionnelle (silos, délais T+3) par une infrastructure tokenisée, on obtient un système plus rapide, transparent et rentable.",
       "challenge": "Délais de règlement (T+2 / T+3), Opacité & Silos de données, Coûts administratifs élevés et Barrière à l'entrée élevée.",
       "solution": "Règlement Atomique (T+0), Registre Partagé (DLT) pour la transparence, Smart Contracts pour l'automatisation et Fractionnement pour l'accessibilité."
     },
     "job-monitor": {
-      "title": "Chasseur de Têtes 24/7",
-      "shortDesc": "Un assistant personnel qui scrute pour vous le marché de l'emploi jour et nuit.",
-      "fullDesc": "Ne ratez plus jamais l'offre de vos rêves. Ce robot surveille en permanence plus de 30 sites d'emploi (LinkedIn, Indeed, etc.) et vous notifie instantanément sur Discord dès qu'une opportunité correspond à vos critères. C'est comme avoir une équipe de recruteurs qui travaille pour vous 24h/24.",
+      "title": "Assistant Recherche d'Emploi 24/7",
+      "shortDesc": "Ne cherchez plus : l'outil scanne 30 sites pour vous et trouve les offres parfaites.",
+      "fullDesc": "Fini la perte de temps à éplucher des dizaines de sites carrières. Ce robot travaille pour vous 24h/24 : il surveille une trentaine de plateformes, filtre les offres qui matchent exactement votre profil et vous permet de postuler immédiatement. Un gain de temps massif pour votre carrière.",
       "context": "La fragmentation du marché de l'emploi oblige les candidats à surveiller manuellement des dizaines de sites, perdant un temps précieux.",
       "challenge": "Industrialiser le scraping sur des sites protégés (LinkedIn, Indeed) tout en maintenant des sessions isolées pour chaque utilisateur.",
       "solution": "Architecture Maître-Esclave générant des scripts Node.js dynamiques à la volée. Système de files d'attente intelligent et rotation de proxies pour l'indétectabilité."
@@ -534,17 +534,17 @@
       "solution": "Architecture modulaire Python : Scrapers API directs (Reverse Engineering) -> Moteur de Normalisation (Jaccard Similarity) -> Calculateur de probabilités implicites."
     },
     "smart-cv": {
-      "title": "Optimiseur de Carrière",
-      "shortDesc": "Votre CV se réécrit tout seul pour plaire aux recruteurs et aux robots.",
-      "fullDesc": "Une extension navigateur qui agit comme un coach carrière personnel. Vous consultez une offre d'emploi ? En un clic, elle analyse les mots-clés de l'annonce et réécrit votre CV pour mettre en avant vos expériences les plus pertinentes. C'est l'arme absolue pour passer les filtres automatiques des RH.",
+      "title": "Optimiseur de CV Contextuel",
+      "shortDesc": "Adaptez instantanément votre CV à l'offre que vous consultez.",
+      "fullDesc": "Extension navigateur qui réécrit votre CV en temps réel pour qu'il colle parfaitement à l'offre d'emploi sous vos yeux. Elle analyse les mots-clés de l'annonce et reformule vos expériences pour maximiser vos chances d'entretien. C'est l'arme absolue pour passer les filtres automatiques des RH.",
       "context": "Adapter son CV à chaque offre est indispensable mais chronophage. Les candidats génériques sont filtrés par les ATS.",
       "challenge": "Orchestrer un pipeline d'IA complexe (Extraction -> Enrichissement -> Transposition -> Rendu PDF) directement dans le navigateur sans bloquer l'interface.",
       "solution": "Architecture hybride avec gestion d'état background.js. Injection de scripts de contenu pour le scraping et génération PDF client-side via html2pdf."
     },
     "ezlod": {
-      "title": "Vendeur E-commerce Automatique",
-      "shortDesc": "Convertissez des données brutes en annonces de vente professionnelles.",
-      "fullDesc": "Ce système automatise le travail fastidieux des revendeurs. Il récupère les photos officielles et les prix du marché (StockX), et crée automatiquement une annonce parfaite sur Vinted. Vous passez de la réception du produit à sa mise en vente en quelques secondes.",
+      "title": "Bot de Revente Automatique",
+      "shortDesc": "De StockX à Vinted : Création d'annonces produits 100% automatisée.",
+      "fullDesc": "Simplifiez la revente de sneakers. Entrez simplement le nom d'un modèle : l'outil récupère les données officielles et photos sur StockX, génère un montage professionnel, calcule le prix marché et publie automatiquement l'annonce sur Vinted et autres plateformes.",
       "context": "La création d'annonces de qualité pour la revente de sneakers est un processus manuel répétitif et lent (photos, description, pricing).",
       "challenge": "Orchestrer la récupération de données protégées (StockX GraphQL/Images 360) et automatiser la publication sur une plateforme fermée (Vinted) sans déclencher les sécurités.",
       "solution": "Approche Hybride : Scraping API (GraphQL/HAR Analysis) pour la Data + Selenium/Requests pour l'automatisation Vinted. Moteur de traitement d'image (Pillow) pour générer des vues studio uniques."

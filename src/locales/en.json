@@ -521,25 +521,25 @@
   },
   "projects_list": {
     "elliev": {
-      "title": "Sentiment Analyzer",
-      "shortDesc": "An AI that listens to social networks to tell you what people really think of your brand.",
-      "fullDesc": "Imagine a digital ear capable of listening to Twitter, Reddit, and Google News simultaneously. This system captures every mention of your company, analyzes the emotion behind the words (positive/negative) using AI, and alerts you only when it matters. It's the ultimate tool to master your reputation without spending your days on it.",
+      "title": "Competitive Intelligence & E-Reputation",
+      "shortDesc": "Monitor your brand and competitors in real-time with sentiment analysis.",
+      "fullDesc": "A complete strategic monitoring platform. You define your brand and competitors, and the tool continuously analyzes social media chatter. It detects sentiment (positive/negative) around your products and instantly alerts you to major competitor news.",
       "context": "Brands drown in noise. Missing a bad buzz or a key trend can be fatal.",
       "challenge": "Aggregating highly unstable disparate sources (Social Media APIs) while ensuring a clean and relevant feed without duplicates.",
       "solution": "Multi-Source Aggregator Architecture + NLP Filtering Pipeline."
     },
     "tokenization-platform": {
-      "title": "Fractional Investment",
-      "shortDesc": "Platform allowing investment in real estate or art starting from €10, simply and instantly.",
-      "fullDesc": "This platform democratizes investment by splitting expensive assets (buildings, works of art) into digital shares accessible to all. Thanks to Blockchain, transactions are instant (T+0) and secure, eliminating the usual 3-day banking delays and administrative paperwork.",
+      "title": "Investment Democratization",
+      "shortDesc": "Opening exclusive investment to the public through tokenization.",
+      "fullDesc": "This educational project demonstrates how blockchain can make exclusive investment funds accessible to everyone. By 'tokenizing' a fund, we fragment the entry ticket, allowing anyone to invest small amounts in premium assets.",
       "context": "To prove that replacing traditional banking infrastructure (silos, T+3 delays) with tokenized infrastructure results in a faster, transparent, and profitable system.",
       "challenge": "Settlement delays (T+2 / T+3), Opacity & Data Silos, High administrative costs, and High entry barriers.",
       "solution": "Atomic Settlement (T+0), Shared Ledger (DLT) for transparency, Smart Contracts for automation, and Fractionalization for accessibility."
     },
     "job-monitor": {
-      "title": "24/7 Headhunter",
-      "shortDesc": "A personal assistant that scans the job market for you day and night.",
-      "fullDesc": "Never miss your dream job again. This bot continuously monitors over 30 job sites (LinkedIn, Indeed, etc.) and notifies you instantly on Discord as soon as an opportunity matches your criteria. It's like having a team of recruiters working for you 24/7.",
+      "title": "24/7 Job Search Assistant",
+      "shortDesc": "Stop searching: the tool scans 30 sites for you to find the perfect matches.",
+      "fullDesc": "No more wasting time scrolling through dozens of career sites. This bot works for you 24/7: it monitors about thirty platforms, filters offers that exactly match your profile, and lets you apply immediately. A massive time-saver for your career.",
       "context": "The fragmentation of the job market forces candidates to manually monitor dozens of sites, wasting precious time.",
       "challenge": "Industrialize scraping on protected sites (LinkedIn, Indeed) while maintaining isolated sessions for each user.",
       "solution": "Master-Slave architecture generating dynamic Node.js scripts on the fly. Intelligent queue system and proxy rotation for undetectability."
@@ -577,17 +577,17 @@
       "solution": "Modular Python Architecture: Direct API Scrapers (Reverse Engineering) -> Normalization Engine (Jaccard Similarity) -> Implied Probability Calculator."
     },
     "smart-cv": {
-      "title": "Career Optimizer",
-      "shortDesc": "Your CV rewrites itself to please recruiters and robots.",
-      "fullDesc": "A browser extension that acts like a personal career coach. Viewing a job offer? In one click, it analyzes the keywords of the ad and rewrites your CV to highlight your most relevant experiences. It is the ultimate weapon to pass automatic HR filters.",
+      "title": "Contextual CV Optimizer",
+      "shortDesc": "Instantly adapt your CV to the job offer you are viewing.",
+      "fullDesc": "A browser extension that rewrites your CV in real-time to perfectly match the job listing you're looking at. It analyzes the ad's keywords and rephrases your experience to maximize your chances of getting an interview.",
       "context": "Adapting your CV to each offer is essential but time-consuming. Generic candidates are filtered by ATS.",
       "challenge": "Orchestrate a complex AI pipeline (Extraction -> Enrichment -> Transposition -> PDF Rendering) directly in the browser without blocking the interface.",
       "solution": "Hybrid architecture with background.js state management. Injection of content scripts for scraping and client-side PDF generation via html2pdf."
     },
     "ezlod": {
-      "title": "Automated E-commerce Seller",
-      "shortDesc": "Convert raw data into professional sales listings.",
-      "fullDesc": "This system automates the tedious work of resellers. It retrieves official photos and market prices (StockX), and automatically creates a perfect listing on Vinted. You go from receiving the product to listing it for sale in seconds.",
+      "title": "Automated Resale Bot",
+      "shortDesc": "From StockX to Vinted: Automated product listing creation.",
+      "fullDesc": "Simplify sneaker resale. Just enter a model name: the tool retrieves official data and photos from StockX, generates a professional montage, calculates market price, and automatically publishes the listing on Vinted and other platforms.",
       "context": "Creating quality listings for sneaker resale is a repetitive and slow manual process (photos, description, pricing).",
       "challenge": "Orchestrate the recovery of protected data (StockX GraphQL/360° Images) and automate publication on a closed platform (Vinted) without triggering security measures.",
       "solution": "Hybrid Approach: API Scraping (GraphQL/HAR Analysis) for Data + Selenium/Requests for Vinted automation. Image processing engine (Pillow) to generate unique studio views."
