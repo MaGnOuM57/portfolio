@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Briefcase, ExternalLink, Clock, Tag, Search, Filter, Bell, MapPin, Building2, Sparkles, CheckCircle2, XCircle, Info, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { trackEvent } from '../utils/analytics';
 // import { getJobs } from '../services/supabase'; // Disabled for Demo Mode
 
 const JobMonitor = () => {
@@ -122,6 +123,7 @@ const JobMonitor = () => {
                 href="https://discord.gg/VE2wXagy"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('click_discord', 'social', 'job_monitor')}
                 className="whitespace-nowrap px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-bold text-sm transition-all shadow-lg shadow-indigo-500/20 flex items-center gap-2"
             >
                 {t('job_monitor.discord_banner.button')} <ExternalLink size={16} />
@@ -156,7 +158,7 @@ const JobMonitor = () => {
             ].map((f) => (
               <button
                 key={f.key}
-                onClick={() => setFilter(f.key)}
+                onClick={() => { setFilter(f.key); trackEvent('filter_jobs', 'interaction', f.key); }}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   filter === f.key 
                     ? 'bg-blue-500/20 text-blue-400 shadow-lg shadow-blue-500/10' 
@@ -316,6 +318,7 @@ const JobCard = ({ job, index }) => {
         <a 
           href={job.url} 
           onClick={(e) => {
+            trackEvent('click_job', 'exit_link', job.platform, 1);
             if (job.url === '#' || job.url.startsWith('javascript')) {
               e.preventDefault();
               alert(t('job_monitor.demo_link_alert') || "This is a demo link. In production, this would redirect to the job board.");

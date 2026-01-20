@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Calculator, Clock, Coins, TrendingUp, Zap } from 'lucide-react';
+import { trackEvent } from '../utils/analytics';
 
 const ROICalculator = () => {
   const { t } = useTranslation();
@@ -52,6 +53,8 @@ const ROICalculator = () => {
                   max="40" 
                   value={hoursPerWeek} 
                   onChange={(e) => setHoursPerWeek(parseInt(e.target.value))}
+                  onMouseUp={() => trackEvent('calc_roi_hours', 'interaction', 'roi_calculator', hoursPerWeek)}
+                  onTouchEnd={() => trackEvent('calc_roi_hours', 'interaction', 'roi_calculator', hoursPerWeek)}
                   className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
                 />
                 <p className="text-xs text-slate-500 mt-2">{t('roi.hours_hint')}</p>
@@ -69,6 +72,8 @@ const ROICalculator = () => {
                   step="5"
                   value={hourlyRate} 
                   onChange={(e) => setHourlyRate(parseInt(e.target.value))}
+                  onMouseUp={() => trackEvent('calc_roi_rate', 'interaction', 'roi_calculator', hourlyRate)}
+                  onTouchEnd={() => trackEvent('calc_roi_rate', 'interaction', 'roi_calculator', hourlyRate)}
                   className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
                 />
               </div>

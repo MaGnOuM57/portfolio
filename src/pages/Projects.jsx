@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation, Trans } from 'react-i18next';
 import { ArrowUpRight, ChevronDown, ChevronUp, Target, Zap, X } from 'lucide-react';
 import { projects } from '../data/projects';
+import { trackEvent } from '../utils/analytics';
 
 const themeStyles = {
   blue: { bg: "bg-blue-500/10", text: "text-blue-400", border: "border-blue-500/20", hoverBorder: "group-hover:border-blue-500/50", glow: "shadow-blue-500/20" },
@@ -147,7 +148,11 @@ const ProjectCard = ({ project, index, isHighlighted }) => {
         {/* Actions */}
         <div className="flex items-center gap-4 pt-6 border-t border-white/5">
           <button 
-            onClick={() => setIsExpanded(!isExpanded)}
+            onClick={() => {
+              const newState = !isExpanded;
+              setIsExpanded(newState);
+              if (newState) trackEvent('project_expand', 'interaction', project.id);
+            }}
             className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white transition-colors group/btn"
           >
             {isExpanded ? (
@@ -164,12 +169,17 @@ const ProjectCard = ({ project, index, isHighlighted }) => {
                   href={project.demoLink} 
                   target="_blank" 
                   rel="noopener noreferrer" 
+                  onClick={() => trackEvent('project_demo_click', 'navigation', project.id)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg ${styles.bg} ${styles.text} text-sm font-bold hover:bg-opacity-20 transition-all group/btn`}
                 >
                   {t('projects.demo')} <ArrowUpRight size={16} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </a>
               ) : (
-                <Link to={project.demoLink} className={`flex items-center gap-2 px-4 py-2 rounded-lg ${styles.bg} ${styles.text} text-sm font-bold hover:bg-opacity-20 transition-all group/btn`}>
+                <Link 
+                  to={project.demoLink} 
+                  onClick={() => trackEvent('project_demo_click', 'navigation', project.id)}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg ${styles.bg} ${styles.text} text-sm font-bold hover:bg-opacity-20 transition-all group/btn`}
+                >
                   {t('projects.demo')} <ArrowUpRight size={16} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </Link>
               )
@@ -270,6 +280,7 @@ const Projects = () => {
                   setFilter(cat.value);
                   setHighlightedId(null);
                   window.history.pushState({}, '', '/projects');
+                  trackEvent('filter_projects', 'interaction', cat.value);
                 }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   filter === cat.value 

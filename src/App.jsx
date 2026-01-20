@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import Footer from "./components/Footer";
 import Logo from "./components/Logo";
 import ScrollToTop from "./components/ScrollToTop";
+import { trackEvent } from './utils/analytics';
 
 // Lazy Loading Pages
 const Resume = React.lazy(() => import("./pages/Resume"));
@@ -79,6 +80,7 @@ const Navbar = () => {
   const toggleLanguage = () => {
     const newLang = i18n.language.startsWith('en') ? 'fr' : 'en';
     i18n.changeLanguage(newLang);
+    trackEvent('change_language', 'interaction', newLang);
   };
 
   const navLinks = [

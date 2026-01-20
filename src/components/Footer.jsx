@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Logo from './Logo';
+import { trackEvent } from '../utils/analytics';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -26,10 +27,10 @@ const Footer = () => {
               {t('footer.description')}
             </p>
             <div className="flex gap-4">
-              <a href="https://linkedin.com/in/jordan-fausta" target="_blank" rel="noopener noreferrer" className="p-2 bg-slate-900 rounded-lg text-slate-400 hover:text-blue-400 hover:bg-slate-800 transition-all border border-white/5">
+              <a href="https://linkedin.com/in/jordan-fausta" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('click_linkedin', 'social', 'footer')} className="p-2 bg-slate-900 rounded-lg text-slate-400 hover:text-blue-400 hover:bg-slate-800 transition-all border border-white/5">
                 <Linkedin size={18} />
               </a>
-              <a href="mailto:jordanfaupro@gmail.com" className="p-2 bg-slate-900 rounded-lg text-slate-400 hover:text-emerald-400 hover:bg-slate-800 transition-all border border-white/5">
+              <a href="mailto:jordanfaupro@gmail.com" onClick={() => trackEvent('click_email', 'contact', 'footer')} className="p-2 bg-slate-900 rounded-lg text-slate-400 hover:text-emerald-400 hover:bg-slate-800 transition-all border border-white/5">
                 <Mail size={18} />
               </a>
             </div>

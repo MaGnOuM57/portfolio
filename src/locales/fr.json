@@ -567,8 +567,8 @@
     }
   },
   "roi": {
-    "title": "Calculateur de ROI",
-    "subtitle": "Combien l'automatisation peut-elle vous rapporter ?",
+    "title": "Calculateur de Retour sur Investissement (ROI)",
+    "subtitle": "Découvrez combien vos tâches manuelles vous coûtent réellement et ce que l'automatisation peut vous faire gagner immédiatement.",
     "hours_label": "Heures manuelles / semaine",
     "hours_hint": "Saisie de données, reporting, copier-coller...",
     "rate_label": "Coût horaire moyen",

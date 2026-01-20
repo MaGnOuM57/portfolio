@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation, Trans } from 'react-i18next';
 import ROICalculator from '../components/ROICalculator';
+import { trackEvent } from '../utils/analytics';
 import { getAccount, getClock } from '../services/alpaca';
 import { 
   Briefcase, 
@@ -68,11 +69,11 @@ const LiveStatusBadge = () => {
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     return (
-        <div className="w-full max-w-4xl px-4 mt-8 md:mt-16 mx-auto">
-            <div className="bg-slate-900/60 border border-emerald-500/20 rounded-3xl md:rounded-full py-6 md:py-4 px-6 md:px-10 grid grid-cols-2 md:flex items-center justify-between gap-6 md:gap-x-10 backdrop-blur-md shadow-2xl shadow-emerald-900/20">
+        <div className="w-full max-w-5xl px-4 mt-8 md:mt-16 mx-auto">
+            <div className="bg-slate-900/60 border border-emerald-500/20 rounded-3xl md:rounded-full py-6 md:py-5 px-6 md:px-16 grid grid-cols-2 md:flex items-center justify-between md:justify-around gap-6 md:gap-8 backdrop-blur-md shadow-2xl shadow-emerald-900/20">
                 
                 {/* 1. Latency (Tech Proof) */}
-                <div className="flex flex-col md:flex-row items-center md:gap-2.5 text-center md:text-left">
+                <div className="flex flex-col md:flex-row items-center md:gap-2.5 text-center md:text-left justify-center md:justify-start">
                     <div className="flex items-center gap-2 mb-1 md:mb-0">
                         <Wifi size={16} className={latency < 100 ? "text-emerald-400" : "text-yellow-400"} />
                         <span className="uppercase tracking-wider opacity-70 text-[10px] md:text-xs text-slate-400">{t('resume.metrics.latency')}:</span>
@@ -83,7 +84,7 @@ const LiveStatusBadge = () => {
                 <div className="h-4 w-px bg-white/10 hidden md:block"></div>
 
                 {/* 2. Market Status (Context) */}
-                <div className="flex flex-col md:flex-row items-center md:gap-2.5 text-center md:text-left">
+                <div className="flex flex-col md:flex-row items-center md:gap-2.5 text-center md:text-left justify-center md:justify-start">
                     <div className="flex items-center gap-2 mb-1 md:mb-0">
                         <Briefcase size={16} className={isMarketOpen ? "text-emerald-400" : "text-slate-500"} />
                         <span className="uppercase tracking-wider opacity-70 text-[10px] md:text-xs text-slate-400">{t('resume.metrics.market_us')}:</span>
@@ -94,7 +95,7 @@ const LiveStatusBadge = () => {
                 <div className="h-4 w-px bg-white/10 hidden md:block"></div>
 
                 {/* 3. Daily Performance (Results) */}
-                <div className="flex flex-col md:flex-row items-center md:gap-2.5 text-center md:text-left">
+                <div className="flex flex-col md:flex-row items-center md:gap-2.5 text-center md:text-left justify-center md:justify-start">
                     <div className="flex items-center gap-2 mb-1 md:mb-0">
                         <Activity size={16} className={performance >= 0 ? "text-emerald-400" : "text-red-400"} />
                         <span className="uppercase tracking-wider opacity-70 text-[10px] md:text-xs text-slate-400">{t('resume.metrics.daily_pnl')}:</span>
@@ -105,7 +106,7 @@ const LiveStatusBadge = () => {
                 <div className="h-4 w-px bg-white/10 hidden md:block"></div>
 
                 {/* 4. Visitor Zone (Personalization) */}
-                <div className="flex flex-col md:flex-row items-center md:gap-2.5 text-center md:text-left">
+                <div className="flex flex-col md:flex-row items-center md:gap-2.5 text-center md:text-left justify-center md:justify-start">
                     <div className="flex items-center gap-2 mb-1 md:mb-0">
                         <Globe size={14} className="text-blue-400" />
                         <span className="uppercase tracking-wider opacity-80 text-[10px] md:text-xs text-slate-400">Zone:</span>
@@ -204,11 +205,11 @@ const Resume = () => {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-10 md:mb-16">
-            <a href="mailto:jordanfaupro@gmail.com" className="flex items-center gap-2 md:gap-3 text-slate-300 hover:text-emerald-400 transition-colors px-4 py-2 md:px-6 md:py-3 rounded-full bg-slate-900/50 border border-white/5 hover:border-emerald-500/30 backdrop-blur-sm">
+            <a href="mailto:jordanfaupro@gmail.com" onClick={() => trackEvent('click_email', 'contact', 'header')} className="flex items-center gap-2 md:gap-3 text-slate-300 hover:text-emerald-400 transition-colors px-4 py-2 md:px-6 md:py-3 rounded-full bg-slate-900/50 border border-white/5 hover:border-emerald-500/30 backdrop-blur-sm">
               <Mail size={16} className="md:w-5 md:h-5" />
               <span className="text-sm font-medium">jordanfaupro@gmail.com</span>
             </a>
-            <a href="https://www.linkedin.com/in/jordan-fausta" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 md:gap-3 text-slate-300 hover:text-emerald-400 transition-colors px-4 py-2 md:px-6 md:py-3 rounded-full bg-slate-900/50 border border-white/5 hover:border-emerald-500/30 backdrop-blur-sm">
+            <a href="https://www.linkedin.com/in/jordan-fausta" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('click_linkedin', 'social', 'header')} className="flex items-center gap-2 md:gap-3 text-slate-300 hover:text-emerald-400 transition-colors px-4 py-2 md:px-6 md:py-3 rounded-full bg-slate-900/50 border border-white/5 hover:border-emerald-500/30 backdrop-blur-sm">
               <Linkedin size={16} className="md:w-5 md:h-5" />
               <span className="text-sm font-medium">LinkedIn</span>
             </a>
@@ -223,12 +224,12 @@ const Resume = () => {
               className="inline-flex items-center gap-2 md:gap-3 px-8 py-4 md:px-10 md:py-5 bg-emerald-500/10 text-emerald-400 rounded-full hover:bg-emerald-500/20 transition-all border border-emerald-500/30 text-base md:text-lg font-medium shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:shadow-[0_0_30px_rgba(16,185,129,0.25)]"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.print()}
+              onClick={() => { window.print(); trackEvent('download_cv', 'conversion', 'header'); }}
             >
               <Download size={20} className="md:w-[22px] md:h-[22px]" /> {t('resume.cta_download_cv')}
             </motion.button>
             
-            <Link to="/projects" className="group flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-base md:text-lg">
+            <Link to="/projects" onClick={() => trackEvent('nav_projects', 'navigation', 'header_link')} className="group flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-base md:text-lg">
               <span className="border-b border-transparent group-hover:border-emerald-500 transition-all">{t('resume.see_all')}</span>
               <ChevronRight size={18} className="md:w-5 md:h-5 group-hover:translate-x-1 transition-transform text-emerald-500" />
             </Link>
@@ -236,7 +237,7 @@ const Resume = () => {
 
           {/* Quick Access Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl w-full px-4 mb-8">
-            <Link to="/trading" className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-emerald-500/40 transition-all text-left backdrop-blur-sm">
+            <Link to="/trading" onClick={() => trackEvent('card_click', 'navigation', 'trading')} className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-emerald-500/40 transition-all text-left backdrop-blur-sm">
               <div className="flex items-center justify-between mb-3 md:mb-4">
                 <div className="p-2 md:p-3 bg-emerald-500/10 text-emerald-400 rounded-lg md:rounded-xl group-hover:bg-emerald-500 group-hover:text-white transition-colors shadow-lg shadow-emerald-900/20">
                   <Activity size={20} className="md:w-6 md:h-6" />
@@ -247,7 +248,7 @@ const Resume = () => {
               <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Bot de trading autonome connecté à l'API Alpaca.</p>
             </Link>
 
-            <Link to="/tokenization" className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-blue-500/40 transition-all text-left backdrop-blur-sm">
+            <Link to="/tokenization" onClick={() => trackEvent('card_click', 'navigation', 'tokenization')} className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-blue-500/40 transition-all text-left backdrop-blur-sm">
               <div className="flex items-center justify-between mb-3 md:mb-4">
                 <div className="p-2 md:p-3 bg-blue-500/10 text-blue-400 rounded-lg md:rounded-xl group-hover:bg-blue-500 group-hover:text-white transition-colors shadow-lg shadow-blue-900/20">
                   <Code size={20} className="md:w-6 md:h-6" />
@@ -258,7 +259,7 @@ const Resume = () => {
               <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Plateforme d'investissement immobilier sur Blockchain.</p>
             </Link>
 
-            <Link to="/jobs" className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-purple-500/40 transition-all text-left backdrop-blur-sm">
+            <Link to="/jobs" onClick={() => trackEvent('card_click', 'navigation', 'jobmonitor')} className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-purple-500/40 transition-all text-left backdrop-blur-sm">
               <div className="flex items-center justify-between mb-3 md:mb-4">
                 <div className="p-2 md:p-3 bg-purple-500/10 text-purple-400 rounded-lg md:rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors shadow-lg shadow-purple-900/20">
                   <Briefcase size={20} className="md:w-6 md:h-6" />
@@ -277,7 +278,7 @@ const Resume = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
-            onClick={() => document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => { document.getElementById('experience').scrollIntoView({ behavior: 'smooth' }); trackEvent('scroll_experience', 'interaction', 'header'); }}
           >
             <span className="text-[10px] md:text-xs font-bold text-slate-500 font-mono tracking-[0.2em] uppercase group-hover:text-emerald-400 transition-colors duration-300">{t('resume.scroll_text')}</span>
             <motion.div
@@ -573,7 +574,7 @@ const Resume = () => {
                   </div>
                 </div>
 
-                <form className="space-y-4 bg-slate-900/30 p-6 rounded-2xl border border-white/5 relative overflow-hidden group" onSubmit={handleContactSubmit}>
+                <form className="space-y-4 bg-slate-900/30 p-6 rounded-2xl border border-white/5 relative overflow-hidden group" onSubmit={(e) => { handleContactSubmit(e); trackEvent('contact_submit', 'conversion', 'contact_form'); }}>
                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <Zap size={80} className="text-emerald-500" />
                   </div>

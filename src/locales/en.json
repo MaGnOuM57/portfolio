@@ -610,8 +610,8 @@
     }
   },
   "roi": {
-    "title": "ROI Calculator",
-    "subtitle": "How much can automation save you?",
+    "title": "Return on Investment (ROI) Calculator",
+    "subtitle": "Discover exactly how much your manual tasks are costing you and what automation can save you instantly.",
     "hours_label": "Manual hours / week",
     "hours_hint": "Data entry, reporting, copy-pasting...",
     "rate_label": "Average hourly cost",
