@@ -31,6 +31,9 @@ export default async function handler(req, res) {
     case 'account':
       targetUrl = `${BASE_URL}/account`;
       break;
+    case 'clock':
+      targetUrl = `${BASE_URL}/clock`;
+      break;
     case 'history':
       const period = queryParams.period || '1A';
       targetUrl = `${BASE_URL}/account/portfolio/history?period=${period}&timeframe=1D`;

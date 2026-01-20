@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation, Trans } from 'react-i18next';
 import ROICalculator from '../components/ROICalculator';
-import { getAccount } from '../services/alpaca';
+import { getAccount, getClock } from '../services/alpaca';
 import { 
   Briefcase, 
   GraduationCap, 
@@ -36,28 +36,35 @@ import { projects } from '../data/projects';
 const LiveStatusBadge = () => {
     const { t } = useTranslation();
     const [account, setAccount] = useState(null);
+    const [clock, setClock] = useState(null);
     const [performance, setPerformance] = useState(0);
     const [latency, setLatency] = useState(0);
 
     useEffect(() => {
         const fetchStatus = async () => {
             const start = window.performance.now();
-            const data = await getAccount();
+            const [accountData, clockData] = await Promise.all([
+              getAccount(),
+              getClock()
+            ]);
             const end = window.performance.now();
             setLatency(Math.round(end - start));
 
-            if (data) {
-                setAccount(data);
-                if (data.equity && data.last_equity) {
-                   const perf = ((parseFloat(data.equity) - parseFloat(data.last_equity)) / parseFloat(data.last_equity)) * 100;
+            if (accountData) {
+                setAccount(accountData);
+                if (accountData.equity && accountData.last_equity) {
+                   const perf = ((parseFloat(accountData.equity) - parseFloat(accountData.last_equity)) / parseFloat(accountData.last_equity)) * 100;
                    setPerformance(perf);
                 }
+            }
+            if (clockData) {
+              setClock(clockData);
             }
         };
         fetchStatus();
     }, []);
 
-    const isMarketOpen = account?.clock?.is_open || false;
+    const isMarketOpen = clock?.is_open || false;
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     return (

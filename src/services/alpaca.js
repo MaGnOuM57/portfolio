@@ -12,6 +12,17 @@ export const getAccount = async () => {
   }
 };
 
+export const getClock = async () => {
+  try {
+    const response = await fetch(`${API_URL}?endpoint=clock`);
+    if (!response.ok) throw new Error('Failed to fetch clock');
+    return await response.json();
+  } catch (error) {
+    console.error('Alpaca Clock Error:', error);
+    return null;
+  }
+};
+
 export const getPortfolioHistory = async (period = '1Y') => {
   const periodMap = {
     '1W': '1W',
