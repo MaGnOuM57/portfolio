@@ -31,6 +31,7 @@ const TradingPortfolio = () => {
   const [annualPerformance, setAnnualPerformance] = useState(0);
   const [sharpeRatio, setSharpeRatio] = useState(0);
   const [marketPerformance, setMarketPerformance] = useState(0);
+  const [globalStartEquity, setGlobalStartEquity] = useState(null);
   const ANNUAL_TARGET = 50; // 50% target
   
   // Helper: Calculate Sharpe Ratio
@@ -118,6 +119,7 @@ const TradingPortfolio = () => {
 
             // 4. Calculate Global KPIs (YTD / Total) - Based on GLOBAL DATA, not Chart View
             const globalBaseValue = globalData[0].value || 1;
+            setGlobalStartEquity(globalBaseValue);
             // FIX: Use currentEquity (Live) instead of history end (Yesterday Close) for the KPI calculation
             // This ensures the % matches the displayed Dollar amount perfectly.
             let globalReturnPct = ((currentEquity - globalBaseValue) / globalBaseValue) * 100;
@@ -277,20 +279,36 @@ const TradingPortfolio = () => {
     return () => clearInterval(interval);
   }, [timeRange]);
 
-  // Simulate Live Data Updates (Only if connected or mock live)
+  // Live Data Updates (Real-time Polling)
   useEffect(() => {
     if (!isLive) return;
     
-    const interval = setInterval(() => {
-      // Random fluctuation for portfolio
-      const fluctuation = (Math.random() - 0.5) * (isConnected ? 5 : 50);
-      setPortfolioValue(prev => prev + fluctuation);
-      // Update PnL as well since it's Total P&L based on 100k
-      setMonthlyPnL(prev => prev + fluctuation);
-    }, 1500);
+    const fetchRealtime = async () => {
+      const account = await getAccount();
+      if (account) {
+        const currentEquity = parseFloat(account.equity);
+        const lastEquity = parseFloat(account.last_equity); // Previous day close
+
+        setEquityValue(currentEquity);
+
+        // Update Daily Change (PnL)
+        const dailyPnL = currentEquity - lastEquity;
+        const dailyPct = lastEquity > 0 ? (dailyPnL / lastEquity) * 100 : 0;
+        setMonthlyPnL(dailyPct);
+
+        // Update Global Performance if we have the start value
+        if (globalStartEquity) {
+          let globalReturnPct = ((currentEquity - globalStartEquity) / globalStartEquity) * 100;
+          setPortfolioValue(globalReturnPct);
+        }
+      }
+    };
+
+    fetchRealtime(); // Immediate call
+    const interval = setInterval(fetchRealtime, 1000); // 1s polling
 
     return () => clearInterval(interval);
-  }, [isLive, isConnected]);
+  }, [isLive, globalStartEquity]);
 
   const handleTimeRangeChange = (range) => {
     setTimeRange(range);
