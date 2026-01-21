@@ -1,11 +1,29 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Home, AlertTriangle } from 'lucide-react';
+import { Home } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const NotFound = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [countdown, setCountdown] = useState(10);
+  const REDIRECT_DELAY = 10;
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          navigate('/');
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [navigate]);
 
   return (
     <div className="min-h-screen pt-24 pb-12 px-6 flex items-center justify-center relative overflow-hidden">
@@ -42,13 +60,44 @@ const NotFound = () => {
             {t('not_found.description', "Oops! The page you are looking for doesn't exist. It might have been moved or deleted.")}
           </p>
 
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-white font-bold hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/20 group"
-          >
-            <Home size={20} />
-            {t('not_found.back_home', 'Back to Home')}
-          </Link>
+          <div className="flex flex-col items-center gap-6">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 text-white font-bold hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/20 group"
+            >
+              <Home size={20} />
+              {t('not_found.back_home', 'Back to Home')}
+            </Link>
+
+            <div className="flex items-center gap-3 text-slate-400 text-sm font-mono bg-slate-900/50 px-4 py-2 rounded-full border border-white/5">
+                <span>{t('not_found.redirecting')}</span>
+                <span className="text-emerald-400 font-bold text-base min-w-[20px]">{countdown}s</span>
+                <div className="w-5 h-5 ml-1 relative flex items-center justify-center">
+                    <svg className="w-full h-full transform -rotate-90">
+                        <circle
+                            cx="10"
+                            cy="10"
+                            r="8"
+                            className="stroke-slate-700"
+                            strokeWidth="2"
+                            fill="none"
+                        />
+                        <motion.circle
+                            cx="10"
+                            cy="10"
+                            r="8"
+                            className="stroke-emerald-500"
+                            strokeWidth="2"
+                            fill="none"
+                            strokeDasharray="50.2"
+                            initial={{ strokeDashoffset: 0 }}
+                            animate={{ strokeDashoffset: 50.2 }}
+                            transition={{ duration: REDIRECT_DELAY, ease: "linear" }}
+                        />
+                    </svg>
+                </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>
