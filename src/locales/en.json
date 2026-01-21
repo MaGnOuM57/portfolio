@@ -618,7 +618,7 @@
     "annual_savings": "Annual Savings",
     "potential_gain": "Direct potential gain",
     "reading_time": "Reading for {{seconds}}s",
-    "bot_work": "Meanwhile, my bots would have processed:"
+    "bot_work": "Meanwhile, my automations would have processed:"
   },
   "not_found": {
     "title": "Page Not Found",

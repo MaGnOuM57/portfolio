@@ -34,6 +34,11 @@ import {
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 
+/**
+ * Live Market Status Component
+ * Fetches real-time data from Alpaca API via our secure Proxy.
+ * Demonstrates capability to handle financial APIs and live data streams.
+ */
 const LiveStatusBadge = () => {
     const { t } = useTranslation();
     const [account, setAccount] = useState(null);
@@ -41,18 +46,24 @@ const LiveStatusBadge = () => {
     const [performance, setPerformance] = useState(0);
     const [latency, setLatency] = useState(0);
 
+    // Effect: Fetch market status and account equity on mount
     useEffect(() => {
         const fetchStatus = async () => {
+            // Measure latency for "Tech Proof" metric
             const start = window.performance.now();
+            
+            // Parallel fetch for efficiency
             const [accountData, clockData] = await Promise.all([
               getAccount(),
               getClock()
             ]);
+            
             const end = window.performance.now();
             setLatency(Math.round(end - start));
 
             if (accountData) {
                 setAccount(accountData);
+                // Compute daily PnL percentage if previous equity available
                 if (accountData.equity && accountData.last_equity) {
                    const perf = ((parseFloat(accountData.equity) - parseFloat(accountData.last_equity)) / parseFloat(accountData.last_equity)) * 100;
                    setPerformance(perf);
@@ -66,6 +77,7 @@ const LiveStatusBadge = () => {
     }, []);
 
     const isMarketOpen = clock?.is_open || false;
+    // Determine visitor timezone for personalization
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     return (
@@ -134,8 +146,23 @@ const itemVariants = {
 
 const Resume = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [contactForm, setContactForm] = useState({ name: '', email: '', company: '' });
+
+  const handleDownloadCV = () => {
+    const lang = i18n.language.startsWith('en') ? 'en' : 'fr';
+    const fileName = lang === 'en' ? 'cv-en.pdf' : 'cv-fr.pdf';
+    const filePath = `/cv/${fileName}`;
+    
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = `CV_Jordan_Fausta_${lang.toUpperCase()}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    trackEvent('download_cv', 'conversion', 'header', { language: lang });
+  };
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
@@ -224,7 +251,7 @@ const Resume = () => {
               className="inline-flex items-center gap-2 md:gap-3 px-8 py-4 md:px-10 md:py-5 bg-emerald-500/10 text-emerald-400 rounded-full hover:bg-emerald-500/20 transition-all border border-emerald-500/30 text-base md:text-lg font-medium shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:shadow-[0_0_30px_rgba(16,185,129,0.25)]"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => { window.print(); trackEvent('download_cv', 'conversion', 'header'); }}
+              onClick={handleDownloadCV}
             >
               <Download size={20} className="md:w-[22px] md:h-[22px]" /> {t('resume.cta_download_cv')}
             </motion.button>

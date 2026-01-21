@@ -575,7 +575,7 @@
     "annual_savings": "Économies Annuelles",
     "potential_gain": "Gain potentiel direct",
     "reading_time": "Vous lisez depuis {{seconds}}s",
-    "bot_work": "Pendant ce temps, mes bots auraient traité :"
+    "bot_work": "Pendant ce temps, mes automatisations auraient traité :"
   },
   "not_found": {
     "title": "Page Introuvable",

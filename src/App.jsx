@@ -1,6 +1,9 @@
+// Core Framework
 import React, { useState, useEffect, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+
+// UI Components
 import { Menu, X, Globe, ChevronDown, Loader2 } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 import Footer from "./components/Footer";
@@ -8,7 +11,7 @@ import Logo from "./components/Logo";
 import ScrollToTop from "./components/ScrollToTop";
 import { trackEvent } from './utils/analytics';
 
-// Lazy Loading Pages
+// Lazy Loaded Pages for performance optimization (Code Splitting)
 const Resume = React.lazy(() => import("./pages/Resume"));
 const TradingPortfolio = React.lazy(() => import("./pages/TradingPortfolio"));
 const JobMonitor = React.lazy(() => import("./pages/JobMonitor"));
