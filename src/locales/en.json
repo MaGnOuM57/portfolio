@@ -20,30 +20,6 @@
     "trading": "Trading",
     "jobs": "Jobs"
   },
-  "trading": {
-    "title": "Algorithmic Portfolio",
-    "header": {
-      "title": "Trading Portfolio",
-      "live_feed": "Live Feed",
-      "paused": "Replay",
-      "realtime_desc": "Real-time WebSocket connection via Alpaca Markets.",
-      "simulation_desc": "Viewing historical records (Offline Mode)."
-    },
-    "charts": {
-      "performance": "Cumulative Performance"
-    },
-    "kpi": {
-      "total_value": "Total Equity",
-      "pnl": "Daily Return",
-      "daily_change": "Daily Change",
-      "return_global": "Total",
-      "today": "Today",
-      "ytd_growth": "Annual Target",
-      "on_track": "On Track",
-      "sharpe_ratio": "Alpha vs S&P 500",
-      "excellent": "Excellent"
-    }
-  },
   "resume": {
     "role": "Innovation, Data & Automation Consultant",
     "intro": "Former high-level athlete in athletics, I dedicate my life to challenge and performance! Expert in <1>Business Intelligence</1>, <2>Automation</2>, and <3>Data Strategy</3>.",
@@ -249,7 +225,7 @@
     "profitability": "Profitability"
   },
   "tokenization": {
-    "page_title": "Fund Tokenization Platform",
+    "page_title": "Fund <1>Tokenization</1>",
     "page_subtitle": "High-fidelity prototype demonstrating asset management transformation via Blockchain.",
     "nav_pedagogy": "Understand",
     "nav_investor": "Investor Area",
@@ -456,7 +432,7 @@
     "contract": "Smart Contract Executed"
   },
   "job_monitor": {
-    "title": "Job Monitor",
+    "title": "Job <1>Monitor</1>",
     "subtitle": "Live Feed • AI Matching Engine Active",
     "filters": {
       "all": "All",
@@ -479,7 +455,7 @@
     "title": "Trading Portfolio",
     "subtitle": "Live Market Data • Alpaca API Connected",
     "header": {
-      "title": "Autonomous Trading Dashboard",
+      "title": "Autonomous <1>Trading</1> Dashboard",
       "realtime_desc": "Real-time data from Alpaca Markets (Read-Only Mode)",
       "simulation_desc": "Live simulation of personal asset management strategies.",
       "live_feed": "LIVE FEED",

@@ -69,16 +69,28 @@ const TokenizationDemo = () => {
            }
         }
         
-        // Fallback if no data
-        console.log("No real fund data found, using fallback.");
-        const MOCK_FUND_HISTORY = [
-          { time: 'Jan', value: 82.50 }, { time: 'Feb', value: 83.20 }, { time: 'Mar', value: 84.10 },
-          { time: 'Apr', value: 83.50 }, { time: 'May', value: 85.00 }, { time: 'Jun', value: 86.20 },
-          { time: 'Jul', value: 88.50 }, { time: 'Aug', value: 89.10 }, { time: 'Sep', value: 90.50 },
-          { time: 'Oct', value: 89.80 }, { time: 'Nov', value: 92.40 }, { time: 'Dec', value: 93.50 }
-        ];
-        setPriceHistory(MOCK_FUND_HISTORY);
-        setNavPrice(MOCK_FUND_HISTORY[MOCK_FUND_HISTORY.length - 1].value);
+        // Fallback if no data or error
+        console.log("Using Mock Data for Fund History");
+        const generateMockHistory = () => {
+          const data = [];
+          let price = 100;
+          const now = new Date();
+          // Generate 50 points
+          for (let i = 50; i >= 0; i--) {
+            const d = new Date();
+            d.setDate(now.getDate() - i);
+            price = price * (1 + (Math.random() * 0.04 - 0.02)); // +/- 2% daily
+            data.push({
+              time: d.toLocaleDateString(),
+              value: price
+            });
+          }
+          return data;
+        };
+        
+        const mockData = generateMockHistory();
+        setPriceHistory(mockData);
+        setNavPrice(mockData[mockData.length - 1].value);
 
       } catch (e) {
         console.error("Error fetching fund data:", e);
@@ -89,16 +101,35 @@ const TokenizationDemo = () => {
 
     if (!isSimulating) return;
 
-    // Only update logs occasionally
+    // Simulation Interval: Updates Price (Live Chart) & Logs
     const interval = setInterval(() => {
-      // Random Background Activity (Logs only)
+      // 1. Live Price Update (Random Walk simulation)
+      setNavPrice(prevPrice => {
+        const volatility = 0.2; // 0.2% max change per tick
+        const change = prevPrice * (Math.random() * volatility * 2 - volatility) / 100;
+        const newPrice = prevPrice + change;
+        
+        // Update Chart History (Sliding Window)
+        setPriceHistory(prev => {
+          const newPoint = { 
+            time: new Date().toLocaleTimeString(), 
+            value: newPrice 
+          };
+          // Keep last 50 points max
+          return [...prev.slice(1), newPoint];
+        });
+
+        return newPrice;
+      });
+
+      // 2. Random Background Logs
       if (Math.random() > 0.7) {
         addLog('tx', t('tokenization.log_new_tx', { hash: `0x${Math.random().toString(16).substr(2, 8)}` }));
       }
       if (Math.random() > 0.9) {
          addLog('block', t('tokenization.log_block_mined', { block: Math.floor(Math.random() * 100000) }));
       }
-    }, 3000); 
+    }, 2000); // Update every 2s
 
     return () => clearInterval(interval);
   }, [isSimulating]);
@@ -607,7 +638,7 @@ const InvestorView = ({ navPrice, priceHistory, userHoldings, transactions, open
           <tbody className="divide-y divide-white/5">
             {transactions.map((tx, i) => (
               <tr key={i} className="hover:bg-white/5 transition">
-                <td className="p-4 font-bold text-slate-300">{t(`tokenization.transactions.${tx.type}`)}</td>
+                <td className="p-4 font-bold text-slate-300">{tx.type}</td>
                 <td className="p-4 font-mono text-xs text-slate-500">{tx.hash}</td>
                 <td className={`p-4 text-right font-bold ${
                   tx.sentiment === 'positive' ? 'text-emerald-400' : 'text-red-400'

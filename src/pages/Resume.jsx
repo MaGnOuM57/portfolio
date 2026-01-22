@@ -282,8 +282,8 @@ const Resume = () => {
                 </div>
                 <span className="text-[10px] md:text-[11px] font-bold font-mono text-blue-400 uppercase tracking-widest bg-blue-500/10 px-2 md:px-3 py-1 rounded-full border border-blue-500/20">POC</span>
               </div>
-              <h3 className="text-white text-base md:text-lg font-bold mb-1 md:mb-2 group-hover:text-blue-300 transition-colors">RWA Tokenization</h3>
-              <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Plateforme d'investissement immobilier sur Blockchain.</p>
+              <h3 className="text-white text-base md:text-lg font-bold mb-1 md:mb-2 group-hover:text-blue-300 transition-colors">Fund Tokenization</h3>
+              <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Plateforme de gestion de fonds Private Equity sur Blockchain.</p>
             </Link>
 
             <Link to="/jobs" onClick={() => trackEvent('card_click', 'navigation', 'jobmonitor')} className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-purple-500/40 transition-all text-left backdrop-blur-sm">
@@ -524,9 +524,7 @@ const Resume = () => {
                 {[
                   { lang: 'Français', level: 'Native', percent: 100 },
                   { lang: 'Anglais', level: 'Full Professional', percent: 90 },
-                  { lang: 'Espagnol', level: 'Limited Working', percent: 60 },
-                  { lang: 'Chinois', level: 'Elementary', percent: 30 },
-                  { lang: 'Créole', level: 'Native', percent: 100 }
+                  { lang: 'Espagnol', level: 'Limited Working', percent: 60 }
                 ].map((item) => (
                   <li key={item.lang} className="group/lang">
                     <div className="flex justify-between text-xs font-medium text-slate-300 mb-1">

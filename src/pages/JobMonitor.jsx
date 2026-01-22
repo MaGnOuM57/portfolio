@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { Briefcase, ExternalLink, Clock, Tag, Search, Filter, Bell, MapPin, Building2, Sparkles, CheckCircle2, XCircle, Info, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { trackEvent } from '../utils/analytics';
@@ -133,15 +133,17 @@ const JobMonitor = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
-            <div className="flex items-center gap-2 text-sm text-slate-400 mb-1">
+            <div className="flex items-center gap-2 text-sm text-slate-400 mb-2">
               <Link to="/" className="hover:text-emerald-400 transition-colors">{t('navbar.resume')}</Link>
               <span>/</span>
-              <span className="text-white">{t('job_monitor.title')}</span>
+              <span className="text-white">
+                <Trans i18nKey="job_monitor.title" components={{ 1: <span className="text-emerald-400" /> }} />
+              </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 tracking-tight">
-              Job <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Monitor</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+              <Trans i18nKey="job_monitor.title" components={{ 1: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 pr-2 pb-2 inline-block" /> }} />
             </h1>
-            <p className="text-slate-400 flex items-center gap-2">
+            <p className="text-slate-400 text-lg leading-relaxed flex items-center gap-2 max-w-2xl">
               <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981] animate-pulse"></span>
               {t('job_monitor.subtitle')}
             </p>

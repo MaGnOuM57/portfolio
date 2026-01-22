@@ -20,30 +20,6 @@
     "trading": "Trading",
     "jobs": "Jobs"
   },
-  "trading": {
-    "title": "Portefeuille Algorithmique",
-    "header": {
-      "title": "Portefeuille Trading",
-      "live_feed": "Flux Direct",
-      "paused": "Replay",
-      "realtime_desc": "Connexion WebSocket en temps réel via Alpaca Markets.",
-      "simulation_desc": "Visionnage de l'historique enregistré (Mode Déconnecté)."
-    },
-    "charts": {
-      "performance": "Performance Cumulée"
-    },
-    "kpi": {
-      "total_value": "Valeur Totale",
-      "pnl": "Journée en cours",
-      "daily_change": "Variation Jour",
-      "return_global": "Total",
-      "today": "Aujourd'hui",
-      "ytd_growth": "Objectif Annuel",
-      "on_track": "En bonne voie",
-      "sharpe_ratio": "Alpha vs S&P 500",
-      "excellent": "Excellent"
-    }
-  },
   "resume": {
     "role": "Consultant Innovation, Data & Automatisation",
     "intro": "Ancien athlète de haut niveau dans le domaine de l'athlétisme, je dédie ma vie au challenge et à la performance ! Expert en <1>Business Intelligence</1>, <2>Automatisation</2> et <3>Stratégie Data</3>.",
@@ -247,7 +223,7 @@
     "profitability": "Rentabilité"
   },
   "tokenization": {
-    "page_title": "Plateforme de Tokenisation de Fonds",
+    "page_title": "<1>Tokenisation</1> de Fonds",
     "page_subtitle": "Prototype haute-fidélité démontrant la transformation de la gestion d'actifs via la Blockchain.",
     "nav_pedagogy": "Comprendre",
     "nav_investor": "Espace Investisseur",
@@ -408,7 +384,7 @@
     "contract": "Smart Contract Exécuté"
   },
   "job_monitor": {
-    "title": "Job Monitor",
+    "title": "Job <1>Monitor</1>",
     "subtitle": "Flux en Direct • Moteur de Matching IA Actif",
     "discord_banner": {
         "title": "Démonstration Interactive",
@@ -436,7 +412,7 @@
     "title": "Portefeuille Trading",
     "subtitle": "Données de Marché en Direct • Connecté à l'API Alpaca",
     "header": {
-      "title": "Tableau de Bord de Trading Autonome",
+      "title": "Tableau de Bord de <1>Trading</1> Autonome",
       "realtime_desc": "Données en temps réel depuis Alpaca Markets (Mode Lecture Seule)",
       "simulation_desc": "Simulation en direct de stratégies de gestion d'actifs personnels.",
       "live_feed": "FLUX EN DIRECT",

@@ -13,7 +13,7 @@ import {
   Legend,
   ReferenceLine
 } from 'recharts';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { ArrowUpRight, ArrowDownRight, Wallet, Activity, TrendingUp, DollarSign, RefreshCw, Lock, Bitcoin, Layers, Target, Zap, BarChart3, Network, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -25,7 +25,6 @@ const TradingPortfolio = () => {
   const [portfolioValue, setPortfolioValue] = useState(0);
   const [equityValue, setEquityValue] = useState(0);
   const [monthlyPnL, setMonthlyPnL] = useState(0);
-  const [isLive, setIsLive] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
   const [chartData, setChartData] = useState([]);
   const [annualPerformance, setAnnualPerformance] = useState(0);
@@ -279,37 +278,6 @@ const TradingPortfolio = () => {
     return () => clearInterval(interval);
   }, [timeRange]);
 
-  // Live Data Updates (Real-time Polling)
-  useEffect(() => {
-    if (!isLive) return;
-    
-    const fetchRealtime = async () => {
-      const account = await getAccount();
-      if (account) {
-        const currentEquity = parseFloat(account.equity);
-        const lastEquity = parseFloat(account.last_equity); // Previous day close
-
-        setEquityValue(currentEquity);
-
-        // Update Daily Change (PnL)
-        const dailyPnL = currentEquity - lastEquity;
-        const dailyPct = lastEquity > 0 ? (dailyPnL / lastEquity) * 100 : 0;
-        setMonthlyPnL(dailyPct);
-
-        // Update Global Performance if we have the start value
-        if (globalStartEquity) {
-          let globalReturnPct = ((currentEquity - globalStartEquity) / globalStartEquity) * 100;
-          setPortfolioValue(globalReturnPct);
-        }
-      }
-    };
-
-    fetchRealtime(); // Immediate call
-    const interval = setInterval(fetchRealtime, 1000); // 1s polling
-
-    return () => clearInterval(interval);
-  }, [isLive, globalStartEquity]);
-
   const handleTimeRangeChange = (range) => {
     setTimeRange(range);
     // Trigger re-fetch in useEffect
@@ -335,28 +303,19 @@ const TradingPortfolio = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           <div>
-            <div className="flex items-center gap-2 text-sm text-slate-400 mb-1">
+            <div className="flex items-center gap-2 text-sm text-slate-400 mb-2">
               <Link to="/" className="hover:text-emerald-400 transition-colors">{t('navbar.resume')}</Link>
               <span>/</span>
               <span className="text-white">{t('trading.title')}</span>
             </div>
-            <h1 className="text-3xl font-bold text-white flex items-center gap-3 tracking-tight">
-              {t('trading.header.title')}
-              {isConnected && <span className="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded border border-emerald-500/30">ALPACA LIVE</span>}
+            <h1 className="text-4xl md:text-6xl font-bold text-white flex items-center gap-3 tracking-tight mb-4">
+              <Trans i18nKey="trading.header.title" components={{ 1: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 pr-2 pb-2 inline-block" /> }} />
+              {isConnected && <span className="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded border border-emerald-500/30 font-mono">ALPACA LIVE</span>}
             </h1>
-            <p className="text-slate-400 text-sm mt-1 flex items-center gap-2">
+            <p className="text-slate-400 text-lg leading-relaxed flex items-center gap-2 max-w-2xl">
               {isConnected ? t('trading.header.realtime_desc') : t('trading.header.simulation_desc')}
               {isConnected && <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>}
             </p>
-          </div>
-          <div className="flex gap-3">
-            <button 
-              onClick={() => setIsLive(!isLive)}
-              className={`px-4 py-2 border rounded-lg flex items-center gap-2 transition-all ${isLive ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.2)]' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
-            >
-              <div className={`w-2 h-2 rounded-full ${isLive ? 'bg-emerald-500 animate-pulse' : 'bg-slate-500'}`}></div>
-              <span className="text-sm font-mono font-bold">{isLive ? t('trading.header.live_feed') : t('trading.header.paused')}</span>
-            </button>
           </div>
         </div>
 

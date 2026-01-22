@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import TokenizationDemo from '../components/tokenization/TokenizationDemo';
 
 const Tokenization = () => {
@@ -10,10 +10,17 @@ const Tokenization = () => {
         
         {/* Header */}
         <div className="mb-8 md:mb-12 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-4">
-            {t('tokenization.page_title')}
+          <div className="flex items-center justify-center gap-2 text-sm text-slate-400 mb-2">
+            <span className="text-emerald-400">DEMO</span>
+            <span>/</span>
+            <span className="text-white">
+              <Trans i18nKey="tokenization.page_title" components={{ 1: <span className="text-emerald-400" /> }} />
+            </span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
+             <Trans i18nKey="tokenization.page_title" components={{ 1: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 pr-2 pb-2 inline-block" /> }} />
           </h1>
-          <p className="text-slate-400 max-w-2xl mx-auto">
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
             {t('tokenization.page_subtitle')}
           </p>
         </div>
