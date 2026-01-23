@@ -308,8 +308,8 @@ const TradingPortfolio = () => {
               <span>/</span>
               <span className="text-white">{t('trading.title')}</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white flex items-center gap-3 tracking-tight mb-4">
-              <Trans i18nKey="trading.header.title" components={{ 1: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 pr-2 pb-2 inline-block" /> }} />
+            <h1 className="text-3xl md:text-6xl font-bold text-white flex flex-wrap items-center gap-2 md:gap-3 tracking-tight mb-4 leading-tight">
+              <Trans i18nKey="trading.header.title" components={{ 1: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 pr-2 pb-1 inline-block" /> }} />
               {isConnected && <span className="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded border border-emerald-500/30 font-mono">ALPACA LIVE</span>}
             </h1>
             <p className="text-slate-400 text-lg leading-relaxed flex items-center gap-2 max-w-2xl">
@@ -479,21 +479,26 @@ const TradingPortfolio = () => {
 
 const KpiCard = ({ title, value, change, isPositive, icon, animateValue }) => (
   <motion.div 
-    className="glass-card p-6"
+    className="glass-card p-4 md:p-6"
     whileHover={{ y: -5, borderColor: '#10b981' }}
     transition={{ type: "spring", stiffness: 300 }}
   >
     <div className="flex justify-between items-start mb-4">
       <div className="p-2 bg-slate-800/50 rounded-lg text-slate-400 border border-slate-700/50">
-        {icon}
+        {React.cloneElement(icon, { size: 20 })}
       </div>
-      <div className={`flex items-center gap-1 text-sm font-medium ${isPositive ? 'text-emerald-400' : 'text-red-400'}`}>
-        {isPositive ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />}
-        {change}
+      <div className={`
+        flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] md:text-xs font-bold border backdrop-blur-sm
+        ${isPositive 
+          ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' 
+          : 'bg-red-500/10 border-red-500/20 text-red-400'}
+      `}>
+        {isPositive ? <ArrowUpRight size={14} className="shrink-0" /> : <ArrowDownRight size={14} className="shrink-0" />}
+        <span className="text-right leading-tight">{change}</span>
       </div>
     </div>
-    <h3 className="text-slate-400 text-sm mb-1 font-medium">{title}</h3>
-    <div className="text-2xl font-bold text-white font-mono tracking-tight">
+    <h3 className="text-slate-400 text-xs md:text-sm mb-1 font-medium">{title}</h3>
+    <div className="text-xl md:text-2xl font-bold text-white font-mono tracking-tight">
       {/* Simple flash effect key could be added here if needed */}
       {value}
     </div>

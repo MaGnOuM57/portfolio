@@ -250,8 +250,8 @@ const Projects = () => {
               <span>/</span>
               <span className="text-white">{t('navbar.projects')}</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
-              <Trans i18nKey="projects.title" components={{ 1: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 pr-2 pb-2 inline-block" /> }} />
+            <h1 className="text-3xl md:text-6xl font-bold text-white mb-4 tracking-tight leading-tight">
+              <Trans i18nKey="projects.title" components={{ 1: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 pr-2 pb-1 inline-block" /> }} />
             </h1>
             <p className="text-slate-400 text-lg max-w-xl leading-relaxed">
               {t('projects.subtitle')}

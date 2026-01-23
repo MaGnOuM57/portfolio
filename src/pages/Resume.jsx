@@ -263,39 +263,50 @@ const Resume = () => {
           </div>
 
           {/* Quick Access Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl w-full px-4 mb-8">
-            <Link to="/trading" onClick={() => trackEvent('card_click', 'navigation', 'trading')} className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-emerald-500/40 transition-all text-left backdrop-blur-sm">
-              <div className="flex items-center justify-between mb-3 md:mb-4">
-                <div className="p-2 md:p-3 bg-emerald-500/10 text-emerald-400 rounded-lg md:rounded-xl group-hover:bg-emerald-500 group-hover:text-white transition-colors shadow-lg shadow-emerald-900/20">
-                  <Activity size={20} className="md:w-6 md:h-6" />
+          <div className="w-full max-w-5xl px-4 md:mb-8 mt-8">
+            <fieldset className="w-full border border-white/5 bg-white/[0.02] rounded-3xl p-6 md:p-10 backdrop-blur-sm group">
+              <legend className="px-4 mx-auto select-none">
+                <div className="flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/5 backdrop-blur-md shadow-[0_0_15px_rgba(16,185,129,0.1)] group-hover:border-emerald-500/30 transition-colors">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse box-shadow-green"></span>
+                    <h2 className="text-[10px] md:text-xs font-bold text-emerald-400 uppercase tracking-widest">{t('resume.live_demos_title')}</h2>
                 </div>
-                <span className="text-[10px] md:text-[11px] font-bold font-mono text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-2 md:px-3 py-1 rounded-full border border-emerald-500/20">Live Demo</span>
-              </div>
-              <h3 className="text-white text-base md:text-lg font-bold mb-1 md:mb-2 group-hover:text-emerald-300 transition-colors">Algo Trading</h3>
-              <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Bot de trading autonome connecté à l'API Alpaca.</p>
-            </Link>
+              </legend>
 
-            <Link to="/tokenization" onClick={() => trackEvent('card_click', 'navigation', 'tokenization')} className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-blue-500/40 transition-all text-left backdrop-blur-sm">
-              <div className="flex items-center justify-between mb-3 md:mb-4">
-                <div className="p-2 md:p-3 bg-blue-500/10 text-blue-400 rounded-lg md:rounded-xl group-hover:bg-blue-500 group-hover:text-white transition-colors shadow-lg shadow-blue-900/20">
-                  <Code size={20} className="md:w-6 md:h-6" />
-                </div>
-                <span className="text-[10px] md:text-[11px] font-bold font-mono text-blue-400 uppercase tracking-widest bg-blue-500/10 px-2 md:px-3 py-1 rounded-full border border-blue-500/20">POC</span>
-              </div>
-              <h3 className="text-white text-base md:text-lg font-bold mb-1 md:mb-2 group-hover:text-blue-300 transition-colors">Fund Tokenization</h3>
-              <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Plateforme de gestion de fonds Private Equity sur Blockchain.</p>
-            </Link>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                <Link to="/trading" onClick={() => trackEvent('card_click', 'navigation', 'trading')} className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-emerald-500/40 transition-all text-left backdrop-blur-sm">
+                  <div className="flex items-center justify-between mb-3 md:mb-4">
+                    <div className="p-2 md:p-3 bg-emerald-500/10 text-emerald-400 rounded-lg md:rounded-xl group-hover:bg-emerald-500 group-hover:text-white transition-colors shadow-lg shadow-emerald-900/20">
+                      <Activity size={20} className="md:w-6 md:h-6" />
+                    </div>
+                    <span className="text-[10px] md:text-[11px] font-bold font-mono text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-2 md:px-3 py-1 rounded-full border border-emerald-500/20">Live Demo</span>
+                  </div>
+                  <h3 className="text-white text-base md:text-lg font-bold mb-1 md:mb-2 group-hover:text-emerald-300 transition-colors">Algo Trading</h3>
+                  <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Bot de trading autonome connecté à l'API Alpaca.</p>
+                </Link>
 
-            <Link to="/jobs" onClick={() => trackEvent('card_click', 'navigation', 'jobmonitor')} className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-purple-500/40 transition-all text-left backdrop-blur-sm">
-              <div className="flex items-center justify-between mb-3 md:mb-4">
-                <div className="p-2 md:p-3 bg-purple-500/10 text-purple-400 rounded-lg md:rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors shadow-lg shadow-purple-900/20">
-                  <Briefcase size={20} className="md:w-6 md:h-6" />
-                </div>
-                <span className="text-[10px] md:text-[11px] font-bold font-mono text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2 md:px-3 py-1 rounded-full border border-purple-500/20">AI Tool</span>
+                <Link to="/tokenization" onClick={() => trackEvent('card_click', 'navigation', 'tokenization')} className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-blue-500/40 transition-all text-left backdrop-blur-sm">
+                  <div className="flex items-center justify-between mb-3 md:mb-4">
+                    <div className="p-2 md:p-3 bg-blue-500/10 text-blue-400 rounded-lg md:rounded-xl group-hover:bg-blue-500 group-hover:text-white transition-colors shadow-lg shadow-blue-900/20">
+                      <Code size={20} className="md:w-6 md:h-6" />
+                    </div>
+                    <span className="text-[10px] md:text-[11px] font-bold font-mono text-blue-400 uppercase tracking-widest bg-blue-500/10 px-2 md:px-3 py-1 rounded-full border border-blue-500/20">POC</span>
+                  </div>
+                  <h3 className="text-white text-base md:text-lg font-bold mb-1 md:mb-2 group-hover:text-blue-300 transition-colors">Fund Tokenization</h3>
+                  <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Plateforme de gestion de fonds Private Equity sur Blockchain.</p>
+                </Link>
+
+                <Link to="/jobs" onClick={() => trackEvent('card_click', 'navigation', 'jobmonitor')} className="group bg-slate-900/40 border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-slate-800/60 hover:border-purple-500/40 transition-all text-left backdrop-blur-sm">
+                  <div className="flex items-center justify-between mb-3 md:mb-4">
+                    <div className="p-2 md:p-3 bg-purple-500/10 text-purple-400 rounded-lg md:rounded-xl group-hover:bg-purple-500 group-hover:text-white transition-colors shadow-lg shadow-purple-900/20">
+                      <Briefcase size={20} className="md:w-6 md:h-6" />
+                    </div>
+                    <span className="text-[10px] md:text-[11px] font-bold font-mono text-purple-400 uppercase tracking-widest bg-purple-500/10 px-2 md:px-3 py-1 rounded-full border border-purple-500/20">AI Tool</span>
+                  </div>
+                  <h3 className="text-white text-base md:text-lg font-bold mb-1 md:mb-2 group-hover:text-purple-300 transition-colors">Job Monitor</h3>
+                  <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Agrégateur d'offres d'emploi avec scoring IA.</p>
+                </Link>
               </div>
-              <h3 className="text-white text-base md:text-lg font-bold mb-1 md:mb-2 group-hover:text-purple-300 transition-colors">Job Monitor</h3>
-              <p className="text-xs md:text-sm text-slate-400 leading-relaxed">Agrégateur d'offres d'emploi avec scoring IA.</p>
-            </Link>
+            </fieldset>
           </div>
 
           <LiveStatusBadge />
