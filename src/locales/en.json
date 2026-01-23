@@ -434,6 +434,11 @@
   "job_monitor": {
     "title": "Job <1>Monitor</1>",
     "subtitle": "Live Feed • AI Matching Engine Active",
+    "discord_banner": {
+        "title": "Interactive Demo",
+        "description": "This page is a simulation. The real bot runs 24/7 on my private Discord server, scanning thousands of job offers in real-time.",
+        "button": "Join Discord"
+    },
     "filters": {
       "all": "All",
       "high_match": "High Match (>90%)"
